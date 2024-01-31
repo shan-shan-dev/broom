@@ -22,13 +22,16 @@ Full tech stack [here](/techstack.md)
 <div align="center">
 
 # Tech Stack File
+
 ![](https://img.stackshare.io/repo.svg "repo") [shan-shan-dev/shan-shan](https://github.com/shan-shan-dev/shan-shan)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
 |2<br/>Tools used|01/31/24 <br/>Report generated|
 |------|------|
+
 </div>
 
 ## <img src='https://img.stackshare.io/devops.svg'/> DevOps (2)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1046/git.png' alt='Git'>

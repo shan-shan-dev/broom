@@ -1,8 +1,10 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"scripts": {
-		"lint:format": "biome format . --verbose",
-		"fix:format": "biome format . --verbose --write"
+		"fix": "pnpm run \"/^fix:.*/\" ",
+		"fix:format": "biome format . --verbose --write",
+		"lint": "pnpm run \"/^lint:.*/\" ",
+		"lint:format": "biome format . --verbose"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3"

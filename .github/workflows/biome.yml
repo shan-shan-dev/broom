@@ -14,7 +14,6 @@ env:
 
 jobs:
     biome:
-        name: lint / Biome
         runs-on: ubuntu-latest
         permissions:
             contents: read

@@ -1,0 +1,6 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"devDependencies": {
+		"@biomejs/biome": "1.5.3"
+	}
+}

@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+---
+name: Biome
+on:
+    workflow_call:
+    workflow_dispatch:
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+
+jobs:
+    biome:
+        name: Formatter / Biome
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pull-requests: read
+        timeout-minutes: 1
+        steps:
+            # https://github.com/actions/checkout
+            - uses: actions/checkout@v4
+
+            # https://github.com/mongolyy/reviewdog-action-biome
+            - uses: mongolyy/reviewdog-action-biome@v1
+              with:
+                  github_token: ${{ secrets.github_token }}
+                  reporter: github-pr-check

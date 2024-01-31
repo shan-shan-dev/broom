@@ -1,5 +1,9 @@
 {
 	"$schema": "https://json.schemastore.org/package",
+	"scripts": {
+		"lint:format": "biome format . --verbose",
+		"fix:format": ""
+	},
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3"
 	}

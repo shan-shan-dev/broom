@@ -6,7 +6,7 @@ name: CI
 on:
     pull_request:
         branches: [main]
-        types: [ready_for_review, reopened]
+        types: [opened, ready_for_review, reopened, synchronize]
     push:
         branches: [main]
     workflow_dispatch:

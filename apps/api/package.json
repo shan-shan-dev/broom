@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"private": true,
+	"type": "module",
+	"name": "@apps/api",
+	"version": "0.1.0",
+	"engines": {
+		"node": ">=20"
+	},
+	"files": [
+		"/lib"
+	],
+	"exports": {
+		".": {
+			"types": "./lib/main.d.ts",
+			"import": "./lib/main.js"
+		}
+	},
+	"scripts": {
+		"fix": "pnpm run \"/^fix:.*/\" ",
+		"fix:format": "biome format . --verbose --write",
+		"lint": "pnpm run \"/^lint:.*/\" ",
+		"lint:format": "biome format . --verbose"
+	}
+}

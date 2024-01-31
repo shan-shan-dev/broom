@@ -16,6 +16,6 @@
 Where as:
 
 - [`../`](../README.md) - project workspace root
-- [`[1] api`](./api/README.md) -> Package `@apps/api` - API server application
-- [`[2] client`](./client/README.md) -> Package `@apps/client` - Web-based client
-- [`[2] landing`](./landing/README.md) -> Package `@apps/landing` - Landing pages
+- [`[1] api`](./api/README.md) -> `@apps/api` - API server application
+- [`[2] client`](./client/README.md) -> `@apps/client` - Web-based client
+- [`[2] landing`](./landing/README.md) -> `@apps/landing` - Landing pages

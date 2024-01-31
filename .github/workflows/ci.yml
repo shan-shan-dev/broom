@@ -34,5 +34,4 @@ permissions:
 
 jobs:
     lint_biome:
-        name: lint / Biome
         uses: ./.github/workflows/biome.yml

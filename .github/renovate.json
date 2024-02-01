@@ -1,6 +1,6 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>shan-shan-dev/.github"],
+	"extends": ["github>shan-shan-dev/.github//.github/renovate/default"],
 	"packageRules": [
 		{
 			"groupName": "CI dependencies",

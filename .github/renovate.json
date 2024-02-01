@@ -1,0 +1,11 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["github>shan-shan-dev/.github"],
+	"packageRules": [
+		{
+			"groupName": "CI dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["biome"]
+		}
+	]
+}

@@ -49,7 +49,7 @@ jobs:
 
             - name: Execute build task with compression report
               # https://github.com/preactjs/compressed-size-action
-              uses: preactjs/compressed-size-action@v2.5.0
+              uses: preactjs/compressed-size-action@2.5.0
               with:
                   build-script: build
                   exclude: "{**/*.map,**/node_modules/**}"

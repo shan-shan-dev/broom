@@ -4,9 +4,10 @@
 		"build": "pnpm run \"/^build:.*/\" ",
 		"build:bin": "pnpm run --filter \"@apps/*\" \"build\" ",
 		"build:lib": "pnpm run --filter \"@packages/*\" \"build\" ",
-		"dev:build": "pnpm run \"/^dev:build:.*/\" ",
-		"dev:build:bin": "pnpm run --filter \"@apps/*\" \"dev:build\" ",
-		"dev:build:lib": "pnpm run --filter \"@packages/*\" \"dev:build\" ",
+		"dev": "pnpm run --recursive \"dev\" ",
+		"dev:build": "pnpm run --recursive \"dev:build\" ",
+		"dev:doc": "pnpm run --recursive \"dev:doc\" ",
+		"doc": "typedoc",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"lint": "pnpm run \"/^lint:.*/\" ",
@@ -19,6 +20,10 @@
 		"typescript": "5.3.3"
 	},
 	"optionalDependencies": {
-		"@biomejs/biome": "1.5.3"
+		"@biomejs/biome": "1.5.3",
+		"typedoc": "0.25.7",
+		"typedoc-plugin-coverage": "2.2.0",
+		"typedoc-plugin-mdn-links": "3.1.14",
+		"typedoc-plugin-zod": "1.1.2"
 	}
 }

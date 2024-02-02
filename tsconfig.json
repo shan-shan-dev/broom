@@ -36,13 +36,13 @@
 			"path": "packages/logger",
 		},
 		{
-			"path": "packages/paths",
+			"path": "packages/path",
 		},
 		{
-			"path": "packages/units",
+			"path": "packages/unit",
 		},
 		{
-			"path": "packages/utils",
+			"path": "packages/util",
 		},
 	],
 }

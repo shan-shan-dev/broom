@@ -27,6 +27,10 @@ jobs:
             # https://github.com/actions/checkout
             - uses: actions/checkout@v4
 
+            # https://nodejs.org/api/corepack.html
+            - name: Enable corepack (for pnpm)
+              run: corepack enable
+
             - name: Setup the latest Node.js LTS version
               # https://github.com/actions/setup-node
               uses: actions/setup-node@v4

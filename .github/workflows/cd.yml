@@ -34,4 +34,4 @@ permissions:
 jobs:
     build_docs:
         name: build
-        uses: ./.github/workflows/biome.yml
+        uses: ./.github/workflows/typedoc.yml

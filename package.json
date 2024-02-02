@@ -20,6 +20,9 @@
 	},
 	"optionalDependencies": {
 		"@biomejs/biome": "1.5.3",
-		"typedoc": "0.25.7"
+		"typedoc": "0.25.7",
+		"typedoc-plugin-coverage": "2.2.0",
+		"typedoc-plugin-mdn-links": "3.1.14",
+		"typedoc-plugin-zod": "1.1.2"
 	}
 }

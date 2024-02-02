@@ -48,6 +48,10 @@ jobs:
                   pnpm install
                   --frozen-lockfile
 
+            - name: Build docs
+              # https://pnpm.io/cli/run
+              run: pnpm run doc
+
             - name: Configure GitHub Pages
               # https://github.com/actions/configure-pages
               uses: actions/configure-pages@v4

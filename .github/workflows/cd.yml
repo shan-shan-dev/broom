@@ -34,6 +34,6 @@ permissions:
     pull-requests: read
 
 jobs:
-    build_docs:
-        name: build
+    docs_typedoc:
+        name: docs
         uses: ./.github/workflows/typedoc.yml

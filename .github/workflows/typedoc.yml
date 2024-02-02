@@ -29,12 +29,6 @@ jobs:
             # https://github.com/actions/checkout
             - uses: actions/checkout@v4
 
-            - name: Setup the latest pnpm version
-              # https://github.com/pnpm/action-setup
-              uses: pnpm/action-setup@v2.4.0
-              with:
-                  version: latest
-
             - name: Setup the latest Node.js LTS version
               # https://github.com/actions/setup-node
               uses: actions/setup-node@v4

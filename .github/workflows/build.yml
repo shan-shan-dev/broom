@@ -27,11 +27,12 @@ jobs:
             # https://github.com/actions/checkout
             - uses: actions/checkout@v4
 
-            - name: Setup the latest pnpm version
-              # https://github.com/pnpm/action-setup
-              uses: pnpm/action-setup@v2.4.0
+            - name: Setup the latest Node.js LTS version
+              # https://github.com/actions/setup-node
+              uses: actions/setup-node@v4
               with:
-                  version: latest
+                  cache: pnpm
+                  node-version: lts/*
 
             - name: Execute build task with compression report
               # https://github.com/preactjs/compressed-size-action

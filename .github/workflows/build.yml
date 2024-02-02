@@ -51,7 +51,7 @@ jobs:
               # https://github.com/preactjs/compressed-size-action
               uses: preactjs/compressed-size-action@v2
               with:
-                  build-script: build
+                  build-script: pnpm build
                   exclude: "{**/*.map,**/node_modules/**}"
                   pattern: "./apps/*/bin/**/*.js,./packages/*/lib/**/*.js"
                   repo-token: ${{ secrets.GITHUB_TOKEN }}

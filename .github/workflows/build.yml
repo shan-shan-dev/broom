@@ -33,20 +33,6 @@ jobs:
               with:
                   version: latest
 
-            - name: Setup the latest Node.js LTS version
-              # https://github.com/actions/setup-node
-              uses: actions/setup-node@v4
-              with:
-                  cache: pnpm
-                  node-version: lts/*
-
-            - name: Install Node.js dependencies with pnpm
-              # https://pnpm.io/cli/install
-              run: >
-                  pnpm install
-                  --frozen-lockfile
-                  --no-optional
-
             - name: Execute build task with compression report
               # https://github.com/preactjs/compressed-size-action
               uses: preactjs/compressed-size-action@2.5.0

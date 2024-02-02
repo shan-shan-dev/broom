@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+---
+name: Build
+on:
+    workflow_call:
+    workflow_dispatch:
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+    # Prevent possible memory leaks by setting limit
+    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    NODE_OPTIONS: --max-old-space-size=6144
+
+jobs:
+    tsc:
+        name: tsc
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pull-requests: read
+        timeout-minutes: 2
+        steps:
+            # https://github.com/actions/checkout
+            - uses: actions/checkout@v4
+
+            - name: Setup the latest pnpm version
+              # https://github.com/pnpm/action-setup
+              uses: pnpm/action-setup@v2
+              with:
+                  version: latest
+
+            - name: Setup the latest Node.js LTS version
+              # https://github.com/actions/setup-node
+              uses: actions/setup-node@v4
+              with:
+                  cache: pnpm
+                  node-version: lts/*
+
+            - name: Install Node.js dependencies with pnpm
+              # https://pnpm.io/cli/install
+              run: >
+                  pnpm install
+                  --frozen-lockfile
+                  --no-optional
+
+            - name: Execute build task with compression report
+              # https://github.com/preactjs/compressed-size-action
+              uses: preactjs/compressed-size-action@v2
+              with:
+                  build-script: build
+                  exclude: "{**/*.map,**/node_modules/**}"
+                  include: "./apps/*/bin/**/*.js,./packages/*/lib/**/*.js"
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Upload built output to GitHub Actions workflow artifacts
+              # https://github.com/actions/upload-artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  if-no-files-found: error
+                  name: build-output
+                  path: |
+                      ./apps/*/bin/
+                      ./packages/*/lib/

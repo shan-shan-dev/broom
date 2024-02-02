@@ -36,3 +36,7 @@ jobs:
     lint_biome:
         name: lint
         uses: ./.github/workflows/biome.yml
+
+    build:
+        name: build
+        uses: ./.github/workflows/build.yml

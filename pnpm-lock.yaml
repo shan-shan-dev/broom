@@ -7,10 +7,11 @@ settings:
 importers:
 
   .:
-    devDependencies:
+    optionalDependencies:
       '@biomejs/biome':
         specifier: 1.5.3
         version: 1.5.3
+    devDependencies:
       '@terminal-nerds/typescript-config':
         specifier: 0.10.1
         version: 0.10.1(typescript@5.3.3)
@@ -38,11 +39,11 @@ importers:
 
   packages/logger: {}
 
-  packages/paths: {}
+  packages/path: {}
 
-  packages/units: {}
+  packages/unit: {}
 
-  packages/utils: {}
+  packages/util: {}
 
 packages:
 
@@ -60,7 +61,8 @@ packages:
       '@biomejs/cli-linux-x64-musl': 1.5.3
       '@biomejs/cli-win32-arm64': 1.5.3
       '@biomejs/cli-win32-x64': 1.5.3
-    dev: true
+    dev: false
+    optional: true
 
   /@biomejs/cli-darwin-arm64@1.5.3:
     resolution: {integrity: sha512-ImU7mh1HghEDyqNmxEZBoMPr8SxekkZuYcs+gynKlNW+TALQs7swkERiBLkG9NR0K1B3/2uVzlvYowXrmlW8hw==}
@@ -68,7 +70,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-darwin-x64@1.5.3:
@@ -77,7 +79,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-linux-arm64-musl@1.5.3:
@@ -86,7 +88,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-linux-arm64@1.5.3:
@@ -95,7 +97,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-linux-x64-musl@1.5.3:
@@ -104,7 +106,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-linux-x64@1.5.3:
@@ -113,7 +115,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-win32-arm64@1.5.3:
@@ -122,7 +124,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-win32-x64@1.5.3:
@@ -131,7 +133,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@terminal-nerds/typescript-config@0.10.1(typescript@5.3.3):

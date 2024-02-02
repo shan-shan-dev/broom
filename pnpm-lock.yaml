@@ -4,10 +4,46 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
-  '@biomejs/biome':
-    specifier: 1.5.3
-    version: 1.5.3
+importers:
+
+  .:
+    optionalDependencies:
+      '@biomejs/biome':
+        specifier: 1.5.3
+        version: 1.5.3
+    devDependencies:
+      '@terminal-nerds/typescript-config':
+        specifier: 0.10.1
+        version: 0.10.1(typescript@5.3.3)
+      '@total-typescript/ts-reset':
+        specifier: 0.5.1
+        version: 0.5.1
+      type-fest:
+        specifier: 4.10.2
+        version: 4.10.2
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
+  apps/api: {}
+
+  apps/client: {}
+
+  apps/landing: {}
+
+  packages/config: {}
+
+  packages/core: {}
+
+  packages/database: {}
+
+  packages/logger: {}
+
+  packages/path: {}
+
+  packages/unit: {}
+
+  packages/util: {}
 
 packages:
 
@@ -25,7 +61,8 @@ packages:
       '@biomejs/cli-linux-x64-musl': 1.5.3
       '@biomejs/cli-win32-arm64': 1.5.3
       '@biomejs/cli-win32-x64': 1.5.3
-    dev: true
+    dev: false
+    optional: true
 
   /@biomejs/cli-darwin-arm64@1.5.3:
     resolution: {integrity: sha512-ImU7mh1HghEDyqNmxEZBoMPr8SxekkZuYcs+gynKlNW+TALQs7swkERiBLkG9NR0K1B3/2uVzlvYowXrmlW8hw==}
@@ -33,7 +70,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-darwin-x64@1.5.3:
@@ -42,7 +79,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-linux-arm64-musl@1.5.3:
@@ -51,7 +88,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-linux-arm64@1.5.3:
@@ -60,7 +97,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-linux-x64-musl@1.5.3:
@@ -69,7 +106,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-linux-x64@1.5.3:
@@ -78,7 +115,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-win32-arm64@1.5.3:
@@ -87,7 +124,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@biomejs/cli-win32-x64@1.5.3:
@@ -96,5 +133,29 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
+
+  /@terminal-nerds/typescript-config@0.10.1(typescript@5.3.3):
+    resolution: {integrity: sha512-wAI6TG4fRT91bi4f70wDzzwKAAhsjLi3u1HRQ6/ktKR/k5GegmzgZRFAW4qk9nw+GLLAlOeqIrtAFF+XIRlSag==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      typescript: 5.3.3
+    dependencies:
+      typescript: 5.3.3
+    dev: true
+
+  /@total-typescript/ts-reset@0.5.1:
+    resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
+    dev: true
+
+  /type-fest@4.10.2:
+    resolution: {integrity: sha512-anpAG63wSpdEbLwOqH8L84urkL6PiVIov3EMmgIhhThevh9aiMQov+6Btx0wldNcvm4wV+e2/Rt1QdDwKHFbHw==}
+    engines: {node: '>=16'}
+    dev: true
+
+  /typescript@5.3.3:
+    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true

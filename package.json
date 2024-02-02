@@ -1,12 +1,24 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"scripts": {
+		"build": "pnpm run \"/^build:.*/\" ",
+		"build:bin": "pnpm run --filter \"@apps/*\" \"build\" ",
+		"build:lib": "pnpm run --filter \"@packages/*\" \"build\" ",
+		"dev:build": "pnpm run \"/^dev:build:.*/\" ",
+		"dev:build:bin": "pnpm run --filter \"@apps/*\" \"dev:build\" ",
+		"dev:build:lib": "pnpm run --filter \"@packages/*\" \"dev:build\" ",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose"
 	},
 	"devDependencies": {
+		"@terminal-nerds/typescript-config": "0.10.1",
+		"@total-typescript/ts-reset": "0.5.1",
+		"type-fest": "4.10.2",
+		"typescript": "5.3.3"
+	},
+	"optionalDependencies": {
 		"@biomejs/biome": "1.5.3"
 	}
 }

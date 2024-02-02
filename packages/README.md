@@ -12,9 +12,9 @@
 ├── [2] core
 ├── [3] database
 ├── [4] logger
-├── [5] paths
-├── [6] units
-└── [7] utils
+├── [5] path
+├── [6] unit
+└── [7] util
 ```
 
 Where as:
@@ -24,6 +24,6 @@ Where as:
 - [`[2] core`](./core/README.md) -> `@packages/core` - fundamental structures
 - [`[3] database`](./database/README.md) -> `@packages/database` - database services
 - [`[4] logger`](./logger/README.md) -> `@packages/logger` - universal logger
-- [`[6] paths`](./paths/README.md) -> `@packages/paths` - absolute paths
-- [`[5] units`](./units/README.md) -> `@packages/units` - smallest and modular units
-- [`[7] utils`](./utils/README.md) -> `@packages/utils` - reusable snippets
+- [`[5] path`](./path/README.md) -> `@packages/path` - absolute paths
+- [`[6] unit`](./unit/README.md) -> `@packages/unit` - smallest and modular units
+- [`[7] util`](./util/README.md) -> `@packages/util` - reusable snippets

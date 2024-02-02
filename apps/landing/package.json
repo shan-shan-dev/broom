@@ -17,6 +17,8 @@
 		}
 	},
 	"scripts": {
+		"build": "tsc --project \"./tsconfig.build.json\" ",
+		"dev:build": "pnpm build --watch",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"lint": "pnpm run \"/^lint:.*/\" ",

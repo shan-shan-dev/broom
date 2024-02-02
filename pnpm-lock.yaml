@@ -11,6 +11,9 @@ importers:
       '@biomejs/biome':
         specifier: 1.5.3
         version: 1.5.3
+      '@terminal-nerds/typescript-config':
+        specifier: 0.10.1
+        version: 0.10.1(typescript@5.3.3)
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1
@@ -130,6 +133,15 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@terminal-nerds/typescript-config@0.10.1(typescript@5.3.3):
+    resolution: {integrity: sha512-wAI6TG4fRT91bi4f70wDzzwKAAhsjLi3u1HRQ6/ktKR/k5GegmzgZRFAW4qk9nw+GLLAlOeqIrtAFF+XIRlSag==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      typescript: 5.3.3
+    dependencies:
+      typescript: 5.3.3
+    dev: true
 
   /@total-typescript/ts-reset@0.5.1:
     resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}

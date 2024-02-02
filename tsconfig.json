@@ -25,10 +25,10 @@
 			"path": "packages/logger",
 		},
 		{
-			"path": "packages/logger",
+			"path": "packages/paths",
 		},
 		{
-			"path": "packages/path",
+			"path": "packages/units",
 		},
 		{
 			"path": "packages/utils",

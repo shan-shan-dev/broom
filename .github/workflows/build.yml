@@ -53,7 +53,7 @@ jobs:
               with:
                   build-script: build
                   exclude: "{**/*.map,**/node_modules/**}"
-                  include: "./apps/*/bin/**/*.js,./packages/*/lib/**/*.js"
+                  pattern: "./apps/*/bin/**/*.js,./packages/*/lib/**/*.js"
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Upload built output to GitHub Actions workflow artifacts

@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+---
+name: Build
+on:
+    workflow_call:
+    workflow_dispatch:
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+    # Prevent possible memory leaks by setting limit
+    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    NODE_OPTIONS: --max-old-space-size=6144
+
+jobs:
+    tsc:
+        name: TypeDoc
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
+            pages: write
+            pull-requests: read
+        timeout-minutes: 2
+        steps:
+            # https://github.com/actions/checkout
+            - uses: actions/checkout@v4
+
+            - name: Setup the latest pnpm version
+              # https://github.com/pnpm/action-setup
+              uses: pnpm/action-setup@v2.4.0
+              with:
+                  version: latest
+
+            - name: Setup the latest Node.js LTS version
+              # https://github.com/actions/setup-node
+              uses: actions/setup-node@v4
+              with:
+                  cache: pnpm
+                  node-version: lts/*
+
+            - name: Install Node.js dependencies with pnpm
+              # https://pnpm.io/cli/install
+              run: >
+                  pnpm install
+                  --frozen-lockfile
+
+            - name: Configure GitHub Pages
+              # https://github.com/actions/configure-pages
+              uses: actions/configure-pages@v4
+
+            - name: Configure GitHub Pages
+              # https://github.com/actions/configure-pages
+              uses: actions/configure-pages@v4
+
+            - name: Upload page artifact
+              # https://github.com/actions/upload-pages-artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: "./docs"
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              # https://github.com/actions/deploy-pages
+              uses: actions/deploy-pages@v4

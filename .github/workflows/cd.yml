@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow
 ---
-# NOTE: CI -> Continuous Integration
-name: CI
+# NOTE: CD -> Continuous Deployment
+name: CD
 
 on:
     pull_request:
@@ -32,10 +32,6 @@ permissions:
     pull-requests: read
 
 jobs:
-    lint_biome:
-        name: lint
-        uses: ./.github/workflows/biome.yml
-
-    build:
+    build_docs:
         name: build
-        uses: ./.github/workflows/build.yml
+        uses: ./.github/workflows/biome.yml

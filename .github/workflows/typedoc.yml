@@ -15,14 +15,16 @@ env:
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     NODE_OPTIONS: --max-old-space-size=6144
 
+permissions:
+    id-token: write
+    pages: write
+
 jobs:
-    tsc:
+    typedoc:
         name: TypeDoc
         runs-on: ubuntu-latest
         permissions:
             contents: read
-            id-token: write
-            pages: write
             pull-requests: read
         timeout-minutes: 2
         steps:

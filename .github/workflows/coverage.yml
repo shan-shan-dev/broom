@@ -3,7 +3,7 @@
 name: Tests coverage report
 on:
     workflow_run:
-        workflows: [vitest]
+        workflows: ["vitest"]
         types:
             - completed
 

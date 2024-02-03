@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+---
+name: Tests coverage report
+on:
+    workflow_run:
+        workflows: ["vitest"]
+        types:
+            - completed
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+    # Prevent possible memory leaks by setting limit
+    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    NODE_OPTIONS: --max-old-space-size=6144
+
+permissions:
+    pull-requests: write
+
+jobs:
+    tests_coverage_report:
+        runs-on: ubuntu-latest
+        steps:
+            # https://github.com/actions/checkout
+            - uses: actions/checkout@v4
+
+            - uses: actions/download-artifact@v4
+              # https://github.com/actions/download-artifact
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  run-id: ${{ github.event.workflow_run.id }}
+
+            - name: Generate tests coverage (from Vitest) report
+              # https://github.com/davelosert/vitest-coverage-report-action
+              uses: davelosert/vitest-coverage-report-action@v2

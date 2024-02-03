@@ -7,3 +7,6 @@ bin/
 
 # Documentation output (auto-generated)
 docs/
+
+# Tests coverage (auto-generated)
+coverage/

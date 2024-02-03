@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow
 ---
-name: Build
+name: tsc
 on:
     workflow_call:
     workflow_dispatch:
@@ -15,13 +15,13 @@ env:
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     NODE_OPTIONS: --max-old-space-size=6144
 
+permissions:
+    contents: read
+    pull-requests: read
+
 jobs:
     tsc:
-        name: tsc
         runs-on: ubuntu-latest
-        permissions:
-            contents: read
-            pull-requests: read
         timeout-minutes: 2
         steps:
             # https://github.com/actions/checkout

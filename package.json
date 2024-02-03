@@ -11,7 +11,8 @@
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"lint": "pnpm run \"/^lint:.*/\" ",
-		"lint:format": "biome format . --verbose"
+		"lint:format": "biome format . --verbose",
+		"test": "vitest run --passWithNoTests"
 	},
 	"devDependencies": {
 		"@terminal-nerds/typescript-config": "0.10.1",
@@ -21,7 +22,6 @@
 	},
 	"optionalDependencies": {
 		"@biomejs/biome": "1.5.3",
-		"@terminal-nerds/vitest-config": "0.15.0",
 		"typedoc": "0.25.7",
 		"typedoc-plugin-coverage": "2.2.0",
 		"typedoc-plugin-mdn-links": "3.1.14",

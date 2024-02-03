@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow
 ---
-name: Build
+name: TypeDoc
 on:
     workflow_call:
     workflow_dispatch:
@@ -15,22 +15,22 @@ env:
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     NODE_OPTIONS: --max-old-space-size=6144
 
+permissions:
+    contents: read
+    id-token: write
+    pages: write
+    pull-requests: read
+
 jobs:
     typedoc:
-        name: TypeDoc
         runs-on: ubuntu-latest
-        permissions:
-            contents: read
-            id-token: write
-            pages: write
-            pull-requests: read
         timeout-minutes: 2
         steps:
             # https://github.com/actions/checkout
             - uses: actions/checkout@v4
 
-            # https://nodejs.org/api/corepack.html
             - name: Enable corepack (for pnpm)
+              # https://nodejs.org/api/corepack.html
               run: corepack enable
 
             - name: Setup the latest Node.js LTS version

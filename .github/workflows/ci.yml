@@ -42,4 +42,4 @@ jobs:
 
     build:
         name: build
-        uses: ./.github/workflows/build.yml
+        uses: ./.github/workflows/tsc.yml

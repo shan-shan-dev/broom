@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+---
+name: Typos
+
+on:
+    workflow_call:
+    workflow_dispatch:
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+    CARGO_TERM_COLOR: always
+
+permissions:
+    pull-requests: write
+
+jobs:
+    typos:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout to the repository
+              # https://github.com/actions/checkout
+              uses: actions/checkout@v4
+
+            - name: Spell check with `typos`
+              # https://github.com/crate-ci/typos
+              uses: crate-ci/typos@v1.18.0

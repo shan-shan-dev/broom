@@ -12,6 +12,7 @@
 		"fix:format": "biome format . --verbose --write",
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose",
+		"prepare": "lefthook install",
 		"test": "vitest run --passWithNoTests"
 	},
 	"devDependencies": {
@@ -24,6 +25,7 @@
 		"@biomejs/biome": "1.5.3",
 		"@vitest/coverage-v8": "1.2.2",
 		"@vitest/ui": "1.2.2",
+		"lefthook": "1.6.1",
 		"typedoc": "0.25.7",
 		"typedoc-plugin-coverage": "2.2.0",
 		"typedoc-plugin-mdn-links": "3.1.14",

@@ -1,0 +1,19 @@
+name: Default
+description: Default issue template
+
+body:
+    - type: textarea
+      id: resources
+      attributes:
+          label: Resources
+          description: What are the helpful resources related to this issue?
+          placeholder: "- [link]()"
+      validations:
+          required: true
+
+    - type: textarea
+      id: tasks
+      attributes:
+          label: Tasks
+          description: What are possible subtasks related to this issue?
+          placeholder: "- [ ] Sub-task..."

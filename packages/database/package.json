@@ -18,7 +18,11 @@
 	},
 	"scripts": {
 		"build": "tsc --project \"./tsconfig.build.json\" ",
+		"clean": "pnpm run \"/^clean:.*/\" ",
+		"clean:build": "del \"./lib\" ",
 		"clean:docker": "pnpm run stop && docker compose rm --force --volumes",
+		"clean:cache": "del \"./node_modules/.cache\" ",
+		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",
 		"dev:build": "pnpm build --watch",
 		"dev:doc": "typedoc --watch",

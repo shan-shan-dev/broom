@@ -10,8 +10,10 @@
 		"doc": "typedoc",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
+		"fix:typos": "typos --verbose --write-changes",
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose",
+		"lint:typos": "typos --verbose",
 		"prepare": "lefthook install",
 		"test": "vitest run --passWithNoTests"
 	},

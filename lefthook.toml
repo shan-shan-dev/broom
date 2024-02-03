@@ -3,3 +3,4 @@
 [pre-commit.commands]
 biome = { glob = "*.{cjs,js,ts,d.ts,json,jsonc}", run = "pnpm biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}" }
 vitest = { glob = "**/src/*.{ts,d.ts}", run = "pnpm test" }
+typos = { glob = "*", run = "typos --verbose" }

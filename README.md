@@ -7,7 +7,8 @@
 
 ## Technology stack
 
-For a detailed review of the technology stack used, please see the [./techstack.md](./techstack.md) file.
+For a detailed review of the technology stack used,
+please see the [./techstack.md](./techstack.md) file.
 
 ---
 
@@ -15,9 +16,25 @@ For a detailed review of the technology stack used, please see the [./techstack.
 
 In this section you can find instructions on how to get started with the project.
 
+### Prerequisites
+
+#### Required
+
+- [Git](https://git-scm.com)
+- [Node.js LTS version](https://nodejs.org)
+- [pnpm](https://pnpm.io)
+- [Docker](https://www.docker.com) or [Orbstack](https://orbstack.dev)
+
+#### Optional _(for development)_
+
+- [typos](https://github.com/crates-ci/typos-cli)
+
+---
+
 ### Project structure
 
-Below is a quick legend which should help how to navigate in this project workspace root **directories**.
+Below is a quick legend which should help onto
+how to navigate in this project workspace root **directories**.
 
 ```text
 .

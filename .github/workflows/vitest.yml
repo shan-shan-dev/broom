@@ -49,7 +49,6 @@ jobs:
                   path: build-output
 
             - name: Extract build output from downloaded artifact
-              if: inputs.download-build == 'true'
               # https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh
               shell: bash
               run: >

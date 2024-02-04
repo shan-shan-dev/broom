@@ -78,6 +78,9 @@ importers:
 
   packages/path:
     dependencies:
+      '@packages/logger':
+        specifier: workspace:*
+        version: link:../logger
       find-up:
         specifier: 7.0.0
         version: 7.0.0

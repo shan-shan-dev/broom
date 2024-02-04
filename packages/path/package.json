@@ -33,6 +33,7 @@
 		"lint:typos": "typos --verbose"
 	},
 	"dependencies": {
+		"@packages/logger": "workspace:*",
 		"find-up": "7.0.0"
 	}
 }

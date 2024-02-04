@@ -1,7 +1,8 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow
 ---
 # NOTE: CI -> Continuous Integration
-name: CI
+# NOTE: CD -> Continuous Deployment
+name: CI & CD
 
 on:
     pull_request:
@@ -29,6 +30,8 @@ env:
 
 permissions:
     contents: read
+    id-token: write
+    pages: write
     pull-requests: write
 
 jobs:
@@ -43,6 +46,11 @@ jobs:
     build_tsc:
         name: build
         uses: ./.github/workflows/tsc.yml
+
+    docs_typedoc:
+        name: docs
+        needs: [build_tsc]
+        uses: ./.github/workflows/typedoc.yml
 
     test_vitest:
         needs: [build_tsc]

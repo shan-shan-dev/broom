@@ -44,11 +44,6 @@ jobs:
         name: test
         uses: ./.github/workflows/vitest.yml
 
-    test_coverage_report:
-        needs: test_vitest
-        name: test
-        uses: ./.github/workflows/coverage.yml
-
-    build:
+    build_tsc:
         name: build
         uses: ./.github/workflows/tsc.yml

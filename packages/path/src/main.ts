@@ -36,9 +36,11 @@ async function determinePath(directory: string): ReturnType<typeof findUp> {
 	const pathHasFile = await pathExists(pathAttempt);
 
 	if (pathHasFile) {
+		// TODO: Create util snippet linkFile(path)
 		log.debug(`Determined the absolute path of the project workspace ROOT: file://${directory}`);
 		return directory;
 	}
 
+	// TODO: Create util snippet linkFile(path)
 	log.trace(`This absolute path is NOT the workspace ROOT: file://${directory}`);
 }

@@ -40,9 +40,14 @@ jobs:
         name: lint
         uses: ./.github/workflows/typos.yml
 
-    test:
+    test_vitest:
         name: test
         uses: ./.github/workflows/vitest.yml
+
+    test_coverage_report:
+        needs: test_vitest
+        name: test
+        uses: ./.github/workflows/coverage.yml
 
     build:
         name: build

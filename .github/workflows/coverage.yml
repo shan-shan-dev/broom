@@ -1,11 +1,9 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow
 ---
-name: Tests coverage report
+name: Test coverage report
 on:
-    workflow_run:
-        workflows: ["vitest"]
-        types:
-            - completed
+    workflow_call:
+    workflow_dispatch:
 
 defaults:
     run:
@@ -18,10 +16,11 @@ env:
     NODE_OPTIONS: --max-old-space-size=6144
 
 permissions:
+    contents: read
     pull-requests: write
 
 jobs:
-    tests_coverage_report:
+    test_coverage_report:
         runs-on: ubuntu-latest
         steps:
             # https://github.com/actions/checkout

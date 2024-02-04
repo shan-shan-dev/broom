@@ -40,10 +40,11 @@ jobs:
         name: lint
         uses: ./.github/workflows/typos.yml
 
-    test_vitest:
-        name: test
-        uses: ./.github/workflows/vitest.yml
-
     build_tsc:
         name: build
         uses: ./.github/workflows/tsc.yml
+
+    test_vitest:
+        needs: [build_tsc]
+        name: test
+        uses: ./.github/workflows/vitest.yml

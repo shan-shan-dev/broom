@@ -41,6 +41,23 @@ jobs:
                   pnpm install
                   --frozen-lockfile
 
+            - name: Download build output from artifacts
+              # https://github.com/actions/download-artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: build-output
+                  path: build-output
+
+            - name: Extract build output from downloaded artifact
+              if: inputs.download-build == 'true'
+              # https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh
+              shell: bash
+              run: >
+                  curl
+                  --request GET
+                  https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh
+                  | bash -s build-output
+
             - name: Run tests with Vitest
               # https://vitest.dev/guide/cli.html
               run: >

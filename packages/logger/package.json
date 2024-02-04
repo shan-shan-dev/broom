@@ -31,5 +31,9 @@
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose",
 		"lint:typos": "typos --verbose"
+	},
+	"dependencies": {
+		"pino": "8.18.0",
+		"pino-pretty": "10.3.1"
 	}
 }

@@ -32,7 +32,7 @@ permissions:
     contents: read
     id-token: write
     pages: write
-    pull-requests: read
+    pull-requests: write
 
 jobs:
     lint_biome:

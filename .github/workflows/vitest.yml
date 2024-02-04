@@ -14,7 +14,7 @@ env:
 
 permissions:
     contents: read
-    pull-requests: read
+    pull-requests: write
 
 jobs:
     vitest:
@@ -50,8 +50,6 @@ jobs:
                   --coverage.reporter=json-summary
                   --coverage.reporter=json
 
-            - name: "Upload Coverage"
-              uses: actions/upload-artifact@v4
-              with:
-                  name: coverage
-                  path: coverage
+            - name: Generate tests coverage report
+              # https://github.com/davelosert/vitest-coverage-report-action
+              uses: davelosert/vitest-coverage-report-action@v2

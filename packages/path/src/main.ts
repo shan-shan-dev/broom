@@ -3,6 +3,8 @@ import path from "node:path";
 import { log } from "@packages/logger";
 import { findUp, pathExists } from "find-up";
 
+import { isAbsolutePath, pathToURL } from "./util.js";
+
 /**
  * A file which will determine that the directory is a workspace root.
  */
@@ -14,12 +16,12 @@ const FILENAME_TO_FIND = "pnpm-workspace.yaml";
  *
  * @throws When the directory cannot be determined.
  */
-export async function findWorkspaceRootPath(): Promise<string> {
+export async function findWorkspaceRootPath(): Promise<URL> {
 	log.trace(`Attempting to determine the workspace root path based on the filename: "${FILENAME_TO_FIND}"...`);
 	const directoryPath = await findUp(determinePath, { type: "directory" });
 
-	if (directoryPath) {
-		return directoryPath;
+	if (directoryPath && isAbsolutePath(directoryPath)) {
+		return pathToURL(directoryPath);
 	}
 
 	throw new Error(
@@ -32,15 +34,18 @@ export async function findWorkspaceRootPath(): Promise<string> {
  * @param directory - Directory path which is being determined
  */
 async function determinePath(directory: string): ReturnType<typeof findUp> {
+	if (!isAbsolutePath(directory)) {
+		throw new TypeError("The provided directory path is not absolute.");
+	}
+
 	const pathAttempt = path.join(directory, FILENAME_TO_FIND);
 	const pathHasFile = await pathExists(pathAttempt);
+	const directoryURL = pathToURL(directory);
 
 	if (pathHasFile) {
-		// TODO: Create util snippet linkFile(path)
-		log.debug(`Determined the absolute path of the project workspace ROOT: file://${directory}`);
+		log.debug({ directoryURL }, "Determined the absolute path of the project workspace ROOT");
 		return directory;
 	}
 
-	// TODO: Create util snippet linkFile(path)
-	log.trace(`This absolute path is NOT the workspace ROOT: file://${directory}`);
+	log.trace({ directoryURL }, "This is NOT the workspace ROOT");
 }

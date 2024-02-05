@@ -8,7 +8,7 @@ import { findWorkspaceRootPath } from "./main.js";
  * Currently available project's workspace **library** packages.
  */
 export const WORKSPACE_PACKAGES = [
-	// biome-ignore format: Easier to read & modify
+	// TODO: Make it automatically generated via script.
 	"config",
 	"core",
 	"database",
@@ -22,15 +22,15 @@ export const WORKSPACE_PACKAGES = [
 export type WorkspacePackage = (typeof WORKSPACE_PACKAGES)[number];
 
 /**
- * Get the **absolute path** to the project's workspace targeted _package_ root directory.
+ * Get the **absolute path URL** to the project's workspace targeted _package_ root directory.
  * @param name - workspace package to target
  */
-export async function findPackageRootPath<T extends WorkspacePackage>(name: T) {
+export async function findPackageRootPath<T extends WorkspacePackage>(name: T): Promise<URL> {
 	const directory = "packages";
-	const result = path.join(await findWorkspaceRootPath(), directory, name) as `/${string}/${typeof directory}/${T}`;
+	const directoryURL = await findWorkspaceRootPath();
 
-	// TODO: Create util snippet linkFile(path)
-	log.debug(`Determined the absolute path of the LIBRARY package "@${directory}/${name}": file://${result}`);
+	directoryURL.pathname = path.join(directoryURL.pathname, directory, name);
 
-	return result;
+	log.debug({ directoryURL }, "Absolute path of the APP directory");
+	return directoryURL;
 }

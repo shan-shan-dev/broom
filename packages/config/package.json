@@ -37,6 +37,7 @@
 		"lint:typos": "typos --verbose"
 	},
 	"dependencies": {
+		"@packages/logger": "workspace:*",
 		"dotenv": "16.4.1"
 	}
 }

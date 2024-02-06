@@ -38,6 +38,17 @@ jobs:
                   cache: pnpm
                   node-version: lts/*
 
+            - name: Create .env file
+              # https://github.com/SpicyPizza/create-envfile
+              uses: SpicyPizza/create-envfile@v2.0.2
+              with:
+                  envkey_DEBUG: true
+                  envkey_LOG: "debug"
+                  envkey_NODE_ENV: "production"
+                  file_name: .env
+                  fail_on_empty: true
+                  sort_keys: true
+
             - name: Execute build task with compression report
               # https://github.com/preactjs/compressed-size-action
               uses: preactjs/compressed-size-action@2.5.0

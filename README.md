@@ -5,6 +5,12 @@
 
 ---
 
+## License
+
+See [LICENSE.md](./LICENSE.md) for more information.
+
+---
+
 ## Technology stack
 
 For a detailed review of the technology stack used,

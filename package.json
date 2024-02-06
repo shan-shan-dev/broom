@@ -20,6 +20,7 @@
 		"lint:format": "biome format . --verbose",
 		"lint:typos": "typos --verbose",
 		"prepare": "lefthook install",
+		"setup:env": "pnpm run --filter \"@packages/config\" \"setup:env\" ",
 		"test": "vitest run --passWithNoTests"
 	},
 	"devDependencies": {

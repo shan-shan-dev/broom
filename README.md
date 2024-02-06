@@ -31,6 +31,16 @@ In this section you can find instructions on how to get started with the project
 
 ---
 
+### First steps
+
+1. Setup environment variables via the following quick CLI script:
+
+```sh
+pnpm setup:env
+```
+
+---
+
 ### Project structure
 
 Below is a quick legend which should help onto

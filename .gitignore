@@ -10,3 +10,6 @@ docs/
 
 # Tests coverage (auto-generated)
 coverage/
+
+# Sensitive data
+.env

@@ -61,7 +61,11 @@ importers:
 
   apps/landing: {}
 
-  packages/config: {}
+  packages/config:
+    dependencies:
+      dotenv:
+        specifier: 16.4.1
+        version: 16.4.1
 
   packages/core: {}
 
@@ -1109,6 +1113,11 @@ packages:
       path-type: 4.0.0
     dev: false
     optional: true
+
+  /dotenv@16.4.1:
+    resolution: {integrity: sha512-CjA3y+Dr3FyFDOAMnxZEGtnW9KBR2M0JvvUtXNW+dYJL5ROWxP9DUHCwgFqpMk0OXCc0ljhaNTr2w/kutYIcHQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /end-of-stream@1.4.4:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}

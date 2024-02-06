@@ -31,5 +31,8 @@
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose",
 		"lint:typos": "typos --verbose"
+	},
+	"dependencies": {
+		"dotenv": "16.4.1"
 	}
 }

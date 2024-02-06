@@ -66,6 +66,9 @@ importers:
       '@packages/logger':
         specifier: workspace:*
         version: link:../logger
+      '@packages/path':
+        specifier: workspace:*
+        version: link:../path
       dotenv:
         specifier: 16.4.1
         version: 16.4.1

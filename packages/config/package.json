@@ -38,6 +38,7 @@
 	},
 	"dependencies": {
 		"@packages/logger": "workspace:*",
+		"@packages/path": "workspace:*",
 		"dotenv": "16.4.1"
 	}
 }

@@ -76,6 +76,9 @@ importers:
       dotenv:
         specifier: 16.4.1
         version: 16.4.1
+      znv:
+        specifier: 0.4.0
+        version: 0.4.0(zod@3.22.4)
 
   packages/core: {}
 
@@ -2848,6 +2851,15 @@ packages:
   /yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
+    dev: false
+
+  /znv@0.4.0(zod@3.22.4):
+    resolution: {integrity: sha512-6/pGsQhBisLzKdyC90mUCRgYDtCfQ4aQ68sDybexq3GMzqqkp662GH6qIyuCHJC1i72hJPHbWAhccTJVuZUQfA==}
+    peerDependencies:
+      zod: ^3.13.2
+    dependencies:
+      colorette: 2.0.20
+      zod: 3.22.4
     dev: false
 
   /zod@3.22.4:

@@ -39,7 +39,11 @@
 	"dependencies": {
 		"@packages/logger": "workspace:*",
 		"@packages/path": "workspace:*",
+		"@packages/util": "workspace:*",
 		"dotenv": "16.4.1",
 		"znv": "0.4.0"
+	},
+	"devDependencies": {
+		"enquirer": "2.4.1"
 	}
 }

@@ -1,0 +1,42 @@
+[
+	{
+		"path": "./apps/api/bin/*.js",
+		"limit": "500 ms"
+	},
+	{
+		"path": "./apps/client/bin/*.js",
+		"limit": "500 ms"
+	},
+	{
+		"path": "./apps/landing/bin/*.js",
+		"limit": "500 ms"
+	},
+	{
+		"path": "./packages/config/lib/**/*.js",
+		"limit": "3 kB"
+	},
+	{
+		"path": "./packages/core/lib/**/*.js",
+		"limit": "10 kB"
+	},
+	{
+		"path": "./packages/database/lib/**/*.js",
+		"limit": "10 kB"
+	},
+	{
+		"path": "./packages/logger/lib/**/*.js",
+		"limit": "3 kB"
+	},
+	{
+		"path": "./packages/path/lib/**/*.js",
+		"limit": "3 kB"
+	},
+	{
+		"path": "./packages/unit/lib/**/*.js",
+		"limit": "5 kB"
+	},
+	{
+		"path": "./packages/util/lib/**/*.js",
+		"limit": "5 kB"
+	}
+]

@@ -20,8 +20,8 @@
 		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./lib\" ",
-		"clean:docker": "pnpm run stop && docker compose rm --force --volumes",
 		"clean:cache": "del \"./node_modules/.cache\" ",
+		"clean:container": "pnpm run stop:container && docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" rm --force --volumes",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",
 		"dev:build": "pnpm build --watch",
@@ -38,8 +38,8 @@
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" ",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
-		"stop:docker": "docker compose stop",
+		"stop:container": "docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" stop",
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck",
-		"up:docker": "docker compose up --detach --build"
+		"up:container": "docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" up --detach --build"
 	}
 }

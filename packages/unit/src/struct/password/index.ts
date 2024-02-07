@@ -2,7 +2,7 @@ import { faker } from "@faker-js/faker";
 import { getRandomInteger } from "@packages/util/random";
 import { z } from "zod";
 
-import type { NewType } from "./struct.d.ts";
+import type { NewType } from "../struct.d.ts";
 
 /** @see {@link Password} */
 export type PasswordType = Password | string;
@@ -16,18 +16,31 @@ export class Password implements NewType<string> {
 	/** @see {@link https://bitwarden.com/blog/how-long-should-my-password-be} */
 	public static MAX = 64 as const;
 
+	/** Allowed special characters to use for password. */
+	public static ALLOWED_SPECIAL_CHARACTERS = /[!"#$%&'()*+,./:;<=>?@[\\\]^_`{|}~-]/;
+	/** Disallowed special characters to use for password. */
+	public static DISALLOWED_SPECIAL_CHARACTERS: RegExp | undefined = undefined;
+
 	/**
 	 * Zod default schema, to parse **without** instantiation _(without transformation)_.
 	 */
 	public static schema() {
-		return z
-			.string()
-			.min(Password.MIN)
-			.max(Password.MAX)
-			.regex(/.*[A-Z].*/, "Password must contain atleast one uppercase character")
-			.regex(/.*[a-z].*/, "Password must contain atleast one lowercase character")
-			.regex(/.*\d.*/, "Password must contain atleast one number")
-			.regex(/.*[!"#$%&'()*+,./:;<=>?@[\\\]^_`{|}~-].*/, "Password must contain at least one special character");
+		return (
+			z
+				.string()
+				.min(Password.MIN)
+				.max(Password.MAX)
+				.regex(/[A-Z]/, "Password must contain atleast one uppercase character")
+				.regex(/[a-z]/, "Password must contain atleast one lowercase character")
+				.regex(/\d/, "Password must contain atleast one number")
+				// biome-ignore lint/complexity/noThisInStatic: Child classes can override static.
+				.regex(this.ALLOWED_SPECIAL_CHARACTERS, "Password must contain at least one special character")
+				.refine(
+					// biome-ignore lint/complexity/noThisInStatic: Child classes can override static.
+					(v) => (this.DISALLOWED_SPECIAL_CHARACTERS ? !this.DISALLOWED_SPECIAL_CHARACTERS.test(v) : true),
+					"Password shouldn't contain any disallowed special characters",
+				)
+		);
 	}
 
 	/**

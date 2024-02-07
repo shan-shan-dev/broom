@@ -2,7 +2,7 @@ import { faker } from "@faker-js/faker";
 import { describe, it } from "vitest";
 import { ZodError } from "zod";
 
-import { Password } from "./password.js";
+import { Password } from ".";
 
 const VALID_PASSWORD = "SuperSecretPassword@1337";
 const INVALID_PASSWORD = "secret";

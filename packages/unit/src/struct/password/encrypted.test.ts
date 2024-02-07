@@ -1,8 +1,8 @@
 import { describe, it } from "vitest";
 import { ZodError } from "zod";
 
-import { EncryptedPassword } from "./encrypted-password.js";
-import { Password } from "./password.js";
+import { Password } from ".";
+import { EncryptedPassword } from "./encrypted.js";
 
 describe("EncryptedPassword", () => {
 	const timeout = 150;

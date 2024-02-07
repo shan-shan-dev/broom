@@ -19,7 +19,7 @@ async function main() {
 	const content: string = [...answers.entries()].map(([key, value]) => `${key}="${value}"`).join("\n");
 
 	writeFileSync(DOTENV_PATH, content, { encoding: "utf8" });
-	log.info(`Successfully saved environment variables in: file://${DOTENV_PATH}`);
+	log.info(`Successfully saved environment variables in: ${DOTENV_PATH}`);
 }
 
 async function promptQuestions() {

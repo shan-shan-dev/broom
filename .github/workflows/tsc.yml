@@ -38,6 +38,12 @@ jobs:
                   cache: pnpm
                   node-version: lts/*
 
+            - name: Install Node.js dependencies with pnpm
+              # https://pnpm.io/cli/install
+              run: >
+                  pnpm install
+                  --frozen-lockfile
+
             - name: Create .env file
               # https://github.com/SpicyPizza/create-envfile
               uses: SpicyPizza/create-envfile@v2.0.2

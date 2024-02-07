@@ -38,5 +38,12 @@
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
+	},
+	"dependencies": {
+		"@faker-js/faker": "8.4.0",
+		"@packages/logger": "workspace:*",
+		"@packages/util": "workspace:*",
+		"@types/bcrypt": "5.0.2",
+		"bcrypt": "5.1.1"
 	}
 }

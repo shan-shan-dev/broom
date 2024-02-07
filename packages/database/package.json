@@ -28,9 +28,13 @@
 		"dev:doc": "typedoc --watch",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
+		"fix:js": "biome lint . --verbose --apply-unsafe",
 		"fix:typos": "typos --verbose --write-changes",
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose",
+		"lint:js": "biome lint . --verbose",
+		"lint:ts": "tsc --noEmit",
+		"lint:typos": "typos --verbose",
 		"stop:docker": "docker compose stop",
 		"up:docker": "docker compose up --detach --build"
 	}

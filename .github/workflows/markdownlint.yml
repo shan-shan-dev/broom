@@ -1,0 +1,27 @@
+name: markdownlint
+
+on:
+    workflow_call:
+    workflow_dispatch:
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+
+permissions:
+    contents: read
+    pull-requests: read
+
+jobs:
+    markdownlint:
+        runs-on: ubuntu-latest
+        timeout-minutes: 1
+        steps:
+            # https://github.com/actions/checkout
+            - uses: actions/checkout@v4
+
+            # https://github.com/marketplace/actions/markdownlint-cli2-action
+            - uses: DavidAnson/markdownlint-cli2-action@v15

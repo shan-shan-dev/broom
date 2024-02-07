@@ -35,10 +35,12 @@
 	},
 	"optionalDependencies": {
 		"@biomejs/biome": "1.5.3",
+		"@terminal-nerds/markdownlint-config": "0.14.0",
 		"@vitest/coverage-v8": "1.2.2",
 		"@vitest/ui": "1.2.2",
 		"del-cli": "5.1.0",
 		"lefthook": "1.6.1",
+		"markdownlint-cli2": "0.12.1",
 		"tsx": "4.7.0",
 		"typedoc": "0.25.7",
 		"typedoc-plugin-coverage": "2.2.0",

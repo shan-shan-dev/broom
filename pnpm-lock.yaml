@@ -94,6 +94,9 @@ importers:
       '@packages/path':
         specifier: workspace:*
         version: link:../path
+      '@packages/unit':
+        specifier: workspace:*
+        version: link:../unit
       '@packages/util':
         specifier: workspace:*
         version: link:../util

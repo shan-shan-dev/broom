@@ -4,13 +4,17 @@ import { z } from "zod";
 
 import type { NewType } from "./struct.d.ts";
 
+/** @see {@link Password} */
 export type PasswordType = Password | string;
 
+/**
+ * A struct to store securely the password, with access to schema, and methods related to its usage.
+ */
 export class Password implements NewType<string> {
 	/** @see {@link https://bitwarden.com/blog/how-long-should-my-password-be} */
 	public static MIN = 16 as const;
 	/** @see {@link https://bitwarden.com/blog/how-long-should-my-password-be} */
-	public static MAX = 128 as const;
+	public static MAX = 64 as const;
 
 	/**
 	 * Zod default schema, to parse **without** instantiation _(without transformation)_.

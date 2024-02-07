@@ -4,7 +4,7 @@
 		"build": "pnpm run \"/^build:.*/\" ",
 		"build:bin": "pnpm run --filter \"@apps/*\" \"build\" ",
 		"build:lib": "pnpm run --filter \"@packages/*\" \"build\" ",
-		"clean": "pnpm run \"/^clean:.*/\" ",
+		"clean": "pnpm run \"/^clean:.*/\"; del \"./**/node_modules\" ",
 		"clean:cache": "del \"./node_modules/.cache\" ",
 		"clean:doc": "del \"./docs\" ",
 		"clean:pkg": "pnpm run --recursive clean",

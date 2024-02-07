@@ -3,9 +3,5 @@
 	"includeVersion": true,
 	"exclude": ["**/test/**/*", "./**/*.test.ts"],
 	"logLevel": "Verbose",
-	"plugin": [
-		"typedoc-plugin-coverage",
-		"typedoc-plugin-mdn-links",
-		"typedoc-plugin-zod"
-	]
+	"plugin": ["typedoc-plugin-coverage", "typedoc-plugin-mdn-links", "typedoc-plugin-zod"]
 }

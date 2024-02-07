@@ -118,7 +118,11 @@ importers:
         specifier: 7.0.0
         version: 7.0.0
 
-  packages/unit: {}
+  packages/unit:
+    dependencies:
+      '@packages/util':
+        specifier: workspace:*
+        version: link:../util
 
   packages/util: {}
 

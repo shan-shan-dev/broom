@@ -12,6 +12,7 @@
 		"dev": "pnpm run --recursive \"dev\" ",
 		"dev:build": "pnpm run --recursive \"dev:build\" ",
 		"dev:doc": "pnpm run --recursive \"dev:doc\" ",
+		"dev:test": "pnpm vitest watch --passWithNoTests --typecheck --ui",
 		"doc": "typedoc",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",

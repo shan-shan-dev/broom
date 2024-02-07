@@ -40,6 +40,7 @@
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
+		"@faker-js/faker": "8.4.0",
 		"@packages/util": "workspace:*"
 	}
 }

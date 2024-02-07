@@ -120,6 +120,9 @@ importers:
 
   packages/unit:
     dependencies:
+      '@faker-js/faker':
+        specifier: 8.4.0
+        version: 8.4.0
       '@packages/util':
         specifier: workspace:*
         version: link:../util
@@ -495,6 +498,11 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@faker-js/faker@8.4.0:
+    resolution: {integrity: sha512-htW87352wzUCdX1jyUQocUcmAaFqcR/w082EC8iP/gtkF0K+aKcBp0hR5Arb7dzR8tQ1TrhE9DNa5EbJELm84w==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    dev: false
 
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}

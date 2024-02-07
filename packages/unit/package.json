@@ -41,6 +41,9 @@
 	},
 	"dependencies": {
 		"@faker-js/faker": "8.4.0",
-		"@packages/util": "workspace:*"
+		"@packages/logger": "workspace:*",
+		"@packages/util": "workspace:*",
+		"@types/bcrypt": "5.0.2",
+		"bcrypt": "5.1.1"
 	}
 }

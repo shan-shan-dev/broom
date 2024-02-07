@@ -28,12 +28,6 @@ export async function loadDotenv() {
 	}
 
 	if (parsed) {
-		if (log.level === "trace" || log.level === "debug") {
-			for (const variable in Object.keys(parsed)) {
-				log.debug(`Found set environment variable "${variable}" in dotenv file`);
-			}
-		}
-
 		return parsed;
 	}
 

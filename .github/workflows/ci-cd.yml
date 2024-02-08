@@ -60,6 +60,7 @@ jobs:
     docs_typedoc:
         name: docs
         needs: [build_tsc]
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: ./.github/workflows/typedoc.yml
 
     test_vitest:

@@ -55,6 +55,7 @@ jobs:
     build_tsc:
         name: build
         uses: ./.github/workflows/tsc.yml
+        secrets: inherit
 
     docs_typedoc:
         name: docs
@@ -65,3 +66,4 @@ jobs:
         needs: [build_tsc]
         name: test
         uses: ./.github/workflows/vitest.yml
+        secrets: inherit

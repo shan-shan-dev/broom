@@ -78,7 +78,7 @@ jobs:
               uses: isbang/compose-action@v1.5.1
               with:
                   compose-file: "./packages/database/docker-compose.yml"
-                  env-file: "./.env"
+                  compose-flags: "--env-file ./.env"
 
             - name: Run tests with Vitest
               # https://vitest.dev/guide/cli.html

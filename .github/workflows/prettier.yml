@@ -15,7 +15,7 @@ permissions:
     pull-requests: read
 
 jobs:
-    biome:
+    prettier:
         runs-on: ubuntu-latest
         timeout-minutes: 1
         steps:

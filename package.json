@@ -1,5 +1,6 @@
 {
 	"$schema": "https://json.schemastore.org/package",
+	"type": "module",
 	"scripts": {
 		"build": "pnpm run \"/^build:.*/\" ",
 		"build:bin": "pnpm run --filter \"@apps/*\" \"build\" ",
@@ -20,11 +21,13 @@
 		"fix:format": "biome format . --verbose --write",
 		"fix:js": "biome lint . --verbose --apply-unsafe",
 		"fix:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" \"#techstack.md\" --fix",
+		"fix:prettier": "prettier --cache --cache-location=\"./node_modules/.cache/prettier\" --log-level=log \"./**/*.{astro,html,svelte}\" --write",
 		"fix:typos": "typos --verbose --write-changes",
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose",
 		"lint:js": "biome lint . --verbose",
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" \"#techstack.md\" ",
+		"lint:prettier": "prettier --cache --cache-location=\"./node_modules/.cache/prettier\" --log-level=log \"./**/*.{astro,html,svelte}\" --check",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
 		"prepare": "lefthook install",

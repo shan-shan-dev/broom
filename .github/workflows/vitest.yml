@@ -80,6 +80,9 @@ jobs:
                   compose-file: "./packages/database/docker-compose.yml"
                   compose-flags: "--env-file ./.env"
 
+            - name: Seed the database with random data
+              run: pnpm db:seed
+
             - name: Run tests with Vitest
               # https://vitest.dev/guide/cli.html
               run: >

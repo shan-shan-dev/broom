@@ -38,6 +38,7 @@
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" ",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
+		"seed": "tsx \"./scripts/seed.ts\" ",
 		"stop:container": "docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" stop",
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck",
 		"up:container": "docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" up --detach --build"

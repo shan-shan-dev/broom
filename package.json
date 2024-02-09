@@ -9,6 +9,8 @@
 		"clean:doc": "del \"./docs\" ",
 		"clean:pkg": "pnpm run --recursive clean",
 		"clean:test": "del \"./coverage\" ",
+		"db:seed": "pnpm run --filter \"@packages/database\" \"seed\" ",
+		"db:start": "pnpm run --filter \"@packages/database\" \"up:container\" ",
 		"dev": "pnpm run --recursive \"dev\" ",
 		"dev:build": "pnpm run --recursive \"dev:build\" ",
 		"dev:doc": "pnpm run --recursive \"dev:doc\" ",

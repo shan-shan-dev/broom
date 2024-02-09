@@ -113,7 +113,11 @@ importers:
 
   packages/core: {}
 
-  packages/database: {}
+  packages/database:
+    devDependencies:
+      '@packages/config':
+        specifier: workspace:^
+        version: link:../config
 
   packages/logger:
     dependencies:

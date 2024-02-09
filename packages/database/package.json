@@ -41,5 +41,8 @@
 		"stop:container": "docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" stop",
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck",
 		"up:container": "docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" up --detach --build"
+	},
+	"devDependencies": {
+		"@packages/config": "workspace:^"
 	}
 }

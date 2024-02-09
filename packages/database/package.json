@@ -46,6 +46,7 @@
 		"@packages/config": "workspace:^",
 		"@packages/logger": "workspace:^",
 		"@packages/util": "workspace:^",
+		"drizzle-orm": "^0.29.3",
 		"postgres": "^3.4.3"
 	}
 }

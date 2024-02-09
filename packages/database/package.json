@@ -43,6 +43,7 @@
 		"up:container": "docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" up --detach --build"
 	},
 	"devDependencies": {
-		"@packages/config": "workspace:^"
+		"@packages/config": "workspace:^",
+		"@packages/logger": "workspace:^"
 	}
 }

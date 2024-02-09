@@ -118,6 +118,9 @@ importers:
       '@packages/config':
         specifier: workspace:^
         version: link:../config
+      '@packages/logger':
+        specifier: workspace:^
+        version: link:../logger
 
   packages/logger:
     dependencies:

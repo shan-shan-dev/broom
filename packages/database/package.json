@@ -44,6 +44,7 @@
 	},
 	"devDependencies": {
 		"@packages/config": "workspace:^",
-		"@packages/logger": "workspace:^"
+		"@packages/logger": "workspace:^",
+		"postgres": "^3.4.3"
 	}
 }

@@ -121,6 +121,9 @@ importers:
       '@packages/logger':
         specifier: workspace:^
         version: link:../logger
+      postgres:
+        specifier: ^3.4.3
+        version: 3.4.3
 
   packages/logger:
     dependencies:
@@ -3478,6 +3481,11 @@ packages:
       source-map-js: 1.0.2
     dev: false
     optional: true
+
+  /postgres@3.4.3:
+    resolution: {integrity: sha512-iHJn4+M9vbTdHSdDzNkC0crHq+1CUdFhx+YqCE+SqWxPjm+Zu63jq7yZborOBF64c8pc58O5uMudyL1FQcHacA==}
+    engines: {node: '>=12'}
+    dev: true
 
   /pretty-format@29.7.0:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}

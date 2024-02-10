@@ -2,7 +2,7 @@
 node_modules/
 
 # Build outputs
-lib/
+/packages/**/lib/
 bin/
 .svelte-kit/
 

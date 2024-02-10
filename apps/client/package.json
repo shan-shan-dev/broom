@@ -37,6 +37,7 @@
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
 		"preview": "vite preview",
+		"sync": "svelte-kit sync",
 		"test": "pnpm run \"/^test:.*/\" ",
 		"test:unit": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},

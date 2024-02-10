@@ -43,6 +43,10 @@ jobs:
         name: lint
         uses: ./.github/workflows/markdownlint.yml
 
+    lint_prettier:
+        name: lint
+        uses: ./.github/workflows/prettier.yml
+
     lint_size_limit:
         if: github.event_name == 'pull_request'
         name: lint

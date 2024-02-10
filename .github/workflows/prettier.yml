@@ -22,6 +22,23 @@ jobs:
             # https://github.com/actions/checkout
             - uses: actions/checkout@v4
 
+            - name: Enable corepack (for pnpm)
+              # https://nodejs.org/api/corepack.html
+              run: corepack enable
+
+            - name: Setup the latest Node.js LTS version
+              # https://github.com/actions/setup-node
+              uses: actions/setup-node@v4
+              with:
+                  cache: pnpm
+                  node-version: lts/*
+
+            - name: Install Node.js dependencies with pnpm
+              # https://pnpm.io/cli/install
+              run: >
+                  pnpm install
+                  --frozen-lockfile
+
             # https://github.com/EPMatt/reviewdog-action-prettier
             - uses: EPMatt/reviewdog-action-prettier@v1.2.0
               with:

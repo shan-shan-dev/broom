@@ -71,4 +71,5 @@ jobs:
                   name: build-output
                   path: |
                       ./apps/*/bin/
+                      ./apps/*/.svelte-kit/
                       ./packages/*/lib/

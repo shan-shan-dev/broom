@@ -1,8 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": "../../tsconfig.json",
+	"extends": ["../../tsconfig.json", "./.svelte-kit/tsconfig.json"],
 	"compilerOptions": {
 		"tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
 	},
-	"include": ["../../types/*.d.ts", "src/"],
+	"include": ["../../types/*.d.ts", "./.svelte-kit/", "src/", "./**/*.config.ts"],
 }

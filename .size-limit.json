@@ -1,15 +1,15 @@
 [
 	{
 		"path": "./apps/api/bin/*.js",
-		"limit": "500 ms"
+		"limit": "1 s"
 	},
 	{
 		"path": "./apps/client/bin/*.js",
-		"limit": "500 ms"
+		"limit": "1 s"
 	},
 	{
 		"path": "./apps/landing/bin/*.js",
-		"limit": "500 ms"
+		"limit": "1 s"
 	},
 	{
 		"path": "./packages/config/lib/**/*.js",

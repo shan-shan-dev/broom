@@ -2,7 +2,9 @@ name: CodeSee
 
 on:
     workflow_call:
-    workflow_dispatch:
+        secrets:
+            CODESEE_ARCH_DIAG_API_TOKEN:
+                required: true
 
 defaults:
     run:

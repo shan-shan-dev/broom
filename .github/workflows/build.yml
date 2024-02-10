@@ -49,8 +49,8 @@ jobs:
               uses: SpicyPizza/create-envfile@v2.0.2
               with:
                   envkey_DEBUG: true
-                  envkey_LOG: "debug"
-                  envkey_NODE_ENV: "production"
+                  envkey_LOG: debug
+                  envkey_NODE_ENV: production
                   envkey_DB_USER: ${{ secrets.DB_USER }}
                   envkey_DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
                   envkey_DB_HOSTNAME: ${{ secrets.DB_HOSTNAME }}

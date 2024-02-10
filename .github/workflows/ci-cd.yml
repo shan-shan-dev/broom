@@ -56,19 +56,19 @@ jobs:
         name: lint
         uses: ./.github/workflows/typos.yml
 
-    build_tsc:
-        name: build
-        uses: ./.github/workflows/tsc.yml
+    build_packages:
+        name: packages
+        uses: ./.github/workflows/build.yml
         secrets: inherit
 
     docs_typedoc:
         name: docs
-        needs: [build_tsc]
+        needs: [build_packages]
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: ./.github/workflows/typedoc.yml
 
     test_vitest:
-        needs: [build_tsc]
+        needs: [build_packages]
         name: test
         uses: ./.github/workflows/vitest.yml
         secrets: inherit

@@ -15,15 +15,6 @@
 	"include": ["types/*.d.ts", "*.js", "*.json", "*.ts"],
 	"references": [
 		{
-			"path": "apps/api",
-		},
-		{
-			"path": "apps/client",
-		},
-		{
-			"path": "apps/landing",
-		},
-		{
 			"path": "packages/config",
 		},
 		{

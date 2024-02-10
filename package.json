@@ -21,13 +21,13 @@
 		"fix:format": "biome format . --verbose --write",
 		"fix:js": "biome lint . --verbose --apply-unsafe",
 		"fix:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" \"#techstack.md\" --fix",
-		"fix:prettier": "prettier --cache --cache-location=\"./node_modules/.cache/prettier\" --log-level=log \"./**/*.{astro,html,svelte}\" --write",
+		"fix:prettier": "prettier --cache --cache-location=\"./node_modules/.cache/prettier\" --log-level=log --plugin prettier-plugin-svelte \"./**/*.{astro,html,svelte}\" --write",
 		"fix:typos": "typos --verbose --write-changes",
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose",
 		"lint:js": "biome lint . --verbose",
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" \"#techstack.md\" ",
-		"lint:prettier": "prettier --cache --cache-location=\"./node_modules/.cache/prettier\" --log-level=log \"./**/*.{astro,html,svelte}\" --check",
+		"lint:prettier": "prettier --cache --cache-location=\"./node_modules/.cache/prettier\" --log-level=log --plugin prettier-plugin-svelte \"./**/*.{astro,html,svelte}\" --check",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
 		"prepare": "lefthook install",
@@ -38,11 +38,14 @@
 		"zod": "3.22.4"
 	},
 	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "3.0.2",
 		"@terminal-nerds/typescript-config": "0.10.1",
 		"@total-typescript/ts-reset": "0.5.1",
 		"@types/node": "20.11.16",
+		"tslib": "2.6.2",
 		"type-fest": "4.10.2",
-		"typescript": "5.3.3"
+		"typescript": "5.3.3",
+		"vite": "5.1.0"
 	},
 	"optionalDependencies": {
 		"@biomejs/biome": "1.5.3",

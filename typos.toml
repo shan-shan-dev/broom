@@ -1,0 +1,2 @@
+[files]
+extend-exclude = ["apps/client/src/routes/sverdle/words.server.ts"]

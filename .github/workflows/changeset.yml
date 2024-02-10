@@ -1,0 +1,52 @@
+name: Release
+
+on: workflow_call
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+
+permissions:
+    contents: read
+    pull-requests: write
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    release:
+        name: Release
+        runs-on: ubuntu-latest
+        timeout-minutes: 1
+        steps:
+            # https://github.com/actions/checkout
+            - uses: actions/checkout@v4
+
+            - name: Enable corepack (for pnpm)
+              # https://nodejs.org/api/corepack.html
+              run: corepack enable
+
+            - name: Setup the latest Node.js LTS version
+              # https://github.com/actions/setup-node
+              uses: actions/setup-node@v4
+              with:
+                  cache: pnpm
+                  node-version: lts/*
+
+            - name: Install Node.js dependencies with pnpm
+              # https://pnpm.io/cli/install
+              run: >
+                  pnpm install
+                  --frozen-lockfile
+
+            - name: Create Release Pull Request
+              # https://github.com/changesets/action
+              uses: changesets/action@v1
+              if: ${{ github.ref_name == 'main' && github.repository_owner == 'terminal-nerds' }}
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  title: "chore(Changesets): Versioning package(s)"
+                  version: pnpm changeset version

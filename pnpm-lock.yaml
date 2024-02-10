@@ -25,8 +25,8 @@ importers:
         specifier: 0.14.0
         version: 0.14.0
       '@terminal-nerds/prettier-config':
-        specifier: 0.17.0
-        version: 0.17.0(prettier@3.2.5)
+        specifier: 0.18.0
+        version: 0.18.0(prettier@3.2.5)
       '@vitest/coverage-v8':
         specifier: 1.2.2
         version: 1.2.2(vitest@1.2.2)
@@ -53,19 +53,19 @@ importers:
         version: 0.3.0(size-limit@11.0.2)
       tsx:
         specifier: 4.7.0
-        version: 4.7.0
+        version: 4.7.1
       typedoc:
         specifier: 0.25.7
-        version: 0.25.7(typescript@5.3.3)
+        version: 0.25.8(typescript@5.3.3)
       typedoc-plugin-coverage:
         specifier: 2.2.0
-        version: 2.2.0(typedoc@0.25.7)
+        version: 3.1.0(typedoc@0.25.8)
       typedoc-plugin-mdn-links:
         specifier: 3.1.14
-        version: 3.1.14(typedoc@0.25.7)
+        version: 3.1.15(typedoc@0.25.8)
       typedoc-plugin-zod:
         specifier: 1.1.2
-        version: 1.1.2(typedoc@0.25.7)
+        version: 1.1.2(typedoc@0.25.8)
       vitest:
         specifier: 1.2.2
         version: 1.2.2(@types/node@20.11.16)(@vitest/ui@1.2.2)
@@ -899,12 +899,12 @@ packages:
     dev: false
     optional: true
 
-  /@terminal-nerds/prettier-config@0.17.0(prettier@3.2.5):
-    resolution: {integrity: sha512-9iSDtc1MjR3OpLlE+AvYZdrUEak+/Gyj1VXY7ftNU72QUx+U/0Uckrj1cOXYt7/ZIQExejOeC8kO0NfdSRbBVQ==}
+  /@terminal-nerds/prettier-config@0.18.0(prettier@3.2.5):
+    resolution: {integrity: sha512-f1BL7c7dolFVycmuBpc81YIAObJJQWISxd69IHNyBMdxXIMhTlVRZ2PO08axO91zVi13LUk2I/18FuXqB07+Ow==}
     engines: {node: '>=20'}
     requiresBuild: true
     peerDependencies:
-      prettier: 3.1.1
+      prettier: 3.2.5
       svelte: '*'
     peerDependenciesMeta:
       svelte:
@@ -913,7 +913,7 @@ packages:
       prettier: 3.2.5
       prettier-plugin-jsdoc: 1.3.0(prettier@3.2.5)
       prettier-plugin-svelte: 3.1.2(prettier@3.2.5)
-      prettier-plugin-tailwindcss: 0.5.10(prettier-plugin-jsdoc@1.3.0)(prettier-plugin-svelte@3.1.2)(prettier@3.2.5)
+      prettier-plugin-tailwindcss: 0.5.11(prettier-plugin-jsdoc@1.3.0)(prettier-plugin-svelte@3.1.2)(prettier@3.2.5)
     transitivePeerDependencies:
       - '@ianvs/prettier-plugin-sort-imports'
       - '@prettier/plugin-pug'
@@ -3748,8 +3748,8 @@ packages:
     dev: false
     optional: true
 
-  /prettier-plugin-tailwindcss@0.5.10(prettier-plugin-jsdoc@1.3.0)(prettier-plugin-svelte@3.1.2)(prettier@3.2.5):
-    resolution: {integrity: sha512-9UGSejqFxGG6brYjFfTYlJ8zs4L/lvZg1AngFfaC5Fs1otSskASv5IWKmjPu5MlABQUtTKtMArKyYr/hWpXSUg==}
+  /prettier-plugin-tailwindcss@0.5.11(prettier-plugin-jsdoc@1.3.0)(prettier-plugin-svelte@3.1.2)(prettier@3.2.5):
+    resolution: {integrity: sha512-AvI/DNyMctyyxGOjyePgi/gqj5hJYClZ1avtQvLlqMT3uDZkRbi4HhGUpok3DRzv9z7Lti85Kdj3s3/1CeNI0w==}
     engines: {node: '>=14.21.3'}
     requiresBuild: true
     peerDependencies:
@@ -4505,8 +4505,8 @@ packages:
     dev: false
     optional: true
 
-  /tsx@4.7.0:
-    resolution: {integrity: sha512-I+t79RYPlEYlHn9a+KzwrvEwhJg35h/1zHsLC2JXvhC2mdynMv6Zxzvhv5EMV6VF5qJlLlkSnMVvdZV3PSIGcg==}
+  /tsx@4.7.1:
+    resolution: {integrity: sha512-8d6VuibXHtlN5E3zFkgY8u4DX7Y3Z27zvvPKVmLon/D4AjuKzarkUBTLDBgj9iTQ0hg5xM7c/mYiRVM+HETf0g==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     requiresBuild: true
@@ -4537,39 +4537,39 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /typedoc-plugin-coverage@2.2.0(typedoc@0.25.7):
-    resolution: {integrity: sha512-/hq9nwSNBz2p7+VYfljT/zFSmaxN8tlfcIp6CCAaQN6VIxXCciYFIqR+pcckRhjmfHIeSJ5uy2OpCt5F683npA==}
-    engines: {node: '>= 16'}
+  /typedoc-plugin-coverage@3.1.0(typedoc@0.25.8):
+    resolution: {integrity: sha512-fxeJRrxQR3yM/aFZU7mOuatgRCztiMCbeNiCRVZKY6VNgOcVMC1HS+ZfZnlbLLteUOdeWleSQ6yntuipz5zi6A==}
+    engines: {node: '>= 18'}
     requiresBuild: true
     peerDependencies:
-      typedoc: ^0.22.12 || 0.23.x || 0.24.x || 0.25.x
+      typedoc: 0.25.x
     dependencies:
-      typedoc: 0.25.7(typescript@5.3.3)
+      typedoc: 0.25.8(typescript@5.3.3)
     dev: false
     optional: true
 
-  /typedoc-plugin-mdn-links@3.1.14(typedoc@0.25.7):
-    resolution: {integrity: sha512-zPnzIHvMChiuS4BvI4mbs89HwS6HSPE+q7rPRliJCeIkQYqW7YaTXuBwbUQFPg++02KNUY0IMp0MFvouoi1Qgw==}
+  /typedoc-plugin-mdn-links@3.1.15(typedoc@0.25.8):
+    resolution: {integrity: sha512-PniQgrCAmhbJf8fPiZULxPV9aYVszNoEk1R7XbTBIMluqplaUkG3qfckthb2l++5yDR1lHEycTMu6hQyKyz+QA==}
     requiresBuild: true
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:
-      typedoc: 0.25.7(typescript@5.3.3)
+      typedoc: 0.25.8(typescript@5.3.3)
     dev: false
     optional: true
 
-  /typedoc-plugin-zod@1.1.2(typedoc@0.25.7):
+  /typedoc-plugin-zod@1.1.2(typedoc@0.25.8):
     resolution: {integrity: sha512-jsmuYg1xsGjwKdhKN4tgRYORnbKpU7v5B1ZpsazMH5lUsI6ZLxBqAY5iiZ06oz/01gHOsAdhpABgWD97MOjKQA==}
     requiresBuild: true
     peerDependencies:
       typedoc: 0.23.x || 0.24.x || 0.25.x
     dependencies:
-      typedoc: 0.25.7(typescript@5.3.3)
+      typedoc: 0.25.8(typescript@5.3.3)
     dev: false
     optional: true
 
-  /typedoc@0.25.7(typescript@5.3.3):
-    resolution: {integrity: sha512-m6A6JjQRg39p2ZVRIN3NKXgrN8vzlHhOS+r9ymUYtcUP/TIQPvWSq7YgE5ZjASfv5Vd5BW5xrir6Gm2XNNcOow==}
+  /typedoc@0.25.8(typescript@5.3.3):
+    resolution: {integrity: sha512-mh8oLW66nwmeB9uTa0Bdcjfis+48bAjSH3uqdzSuSawfduROQLlXw//WSNZLYDdhmMVB7YcYZicq6e8T0d271A==}
     engines: {node: '>= 16'}
     hasBin: true
     requiresBuild: true

@@ -27,3 +27,7 @@ jobs:
         uses: ./.github/workflows/codesee.yml
         secrets:
             CODESEE_ARCH_DIAG_API_TOKEN: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
+
+    release:
+        name: Release
+        uses: ./.github/workflows/changeset.yml

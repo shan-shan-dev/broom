@@ -12,7 +12,7 @@
 	},
 	{
 		"name": "@apps/landing",
-		"path": "./apps/landing/bin/*.js",
+		"path": "./apps/landing/bin/",
 		"limit": "1 s"
 	},
 	{

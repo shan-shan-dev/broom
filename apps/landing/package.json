@@ -42,6 +42,7 @@
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
+		"@astrojs/check": "0.5.2",
 		"astro": "4.3.5"
 	}
 }

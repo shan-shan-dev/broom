@@ -1,6 +1,4 @@
-# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
----
-name: tsc
+name: Build
 on:
     workflow_call:
     workflow_dispatch:
@@ -20,8 +18,8 @@ permissions:
     pull-requests: read
 
 jobs:
-    tsc:
-        runs-on: ubuntu-latest
+    build:
+        runs-on: macos-14
         timeout-minutes: 2
         steps:
             # https://github.com/actions/checkout

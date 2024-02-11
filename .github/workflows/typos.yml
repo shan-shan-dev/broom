@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
----
 name: Typos
 
 on:
@@ -19,6 +17,7 @@ permissions:
 
 jobs:
     typos:
+        # FIXME: The typos action doesn't support macos
         runs-on: ubuntu-latest
         steps:
             - name: Checkout to the repository

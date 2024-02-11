@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
----
 name: TypeDoc
 on:
     workflow_call:
@@ -23,7 +21,7 @@ permissions:
 
 jobs:
     typedoc:
-        runs-on: ubuntu-latest
+        runs-on: macos-14
         timeout-minutes: 2
         steps:
             # https://github.com/actions/checkout

@@ -19,7 +19,7 @@ permissions:
 
 jobs:
     codesee:
-        runs-on: ubuntu-latest
+        runs-on: macos-14
         continue-on-error: true
         timeout-minutes: 1
         steps:

@@ -8,7 +8,7 @@ readonly COMPRESSED_FILE="$COMPRESSED_DIRECTORY.tar.gz"
 cd "$ARTIFACT_DIRECTORY" || exit 1
 echo "- Changed current working directory to: $ARTIFACT_DIRECTORY"
 
-mkdir --parents "../$TEMPORARY_DIRECTORY"
+mkdir -p "../$TEMPORARY_DIRECTORY"
 echo "- Created a temporary directory at: ../$TEMPORARY_DIRECTORY"
 
 mv ./* "../$TEMPORARY_DIRECTORY"

@@ -1,8 +1,6 @@
-# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
----
+name: CI & CD
 # NOTE: CI -> Continuous Integration
 # NOTE: CD -> Continuous Deployment
-name: CI & CD
 
 on:
     pull_request:

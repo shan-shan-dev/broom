@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
----
 name: Vitest
 on:
     workflow_call:
@@ -18,6 +16,7 @@ permissions:
 
 jobs:
     vitest:
+        # FIXME: Using Docker action fails on MacOS, needs invegistation
         runs-on: ubuntu-latest
         timeout-minutes: 2
         steps:

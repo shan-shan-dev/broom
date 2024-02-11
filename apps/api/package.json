@@ -41,5 +41,8 @@
 	},
 	"dependencies": {
 		"fastify": "4.26.0"
+	},
+	"devDependencies": {
+		"fastify-cli": "6.1.0"
 	}
 }

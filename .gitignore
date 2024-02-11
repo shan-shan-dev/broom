@@ -5,6 +5,7 @@ node_modules/
 /packages/**/lib/
 bin/
 .svelte-kit/
+.astro/
 
 # Documentation output (auto-generated)
 docs/

@@ -18,7 +18,8 @@ permissions:
 
 jobs:
     size-limit:
-        runs-on: macos-14
+        # FIXME: It fails on MacOS, needs invegistation
+        runs-on: ubuntu-latest
         timeout-minutes: 2
         steps:
             # https://github.com/actions/checkout

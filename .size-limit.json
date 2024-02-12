@@ -1,8 +1,8 @@
 [
 	{
 		"name": "@apps/api",
-		"path": "./apps/api/bin/*.js",
-		"limit": "1 s"
+		"path": "./apps/api/bin/main.js",
+		"limit": "3 MB"
 	},
 	{
 		"name": "@apps/client",

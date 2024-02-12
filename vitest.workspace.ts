@@ -16,6 +16,7 @@ const config = defineWorkspace([
 		extends: resolve(__dirname, "apps", "api", "vite.config.ts"),
 		test: {
 			setupFiles: resolve(__dirname, "apps", "api", "test", "setup.ts"),
+			include: [resolve(__dirname, "apps", "api", "src", "**", "*.test.ts")],
 			name: "@apps/api",
 		},
 	},

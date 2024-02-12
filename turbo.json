@@ -1,0 +1,20 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"pipeline": {
+		"build": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["src/**"],
+			"outputs": ["bin/**", "lib/**", "./svelte-kit/**"]
+		},
+		"test": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["src/**", "test/**"],
+			"outputs": [".coverage/**"]
+		}
+	},
+	"remoteCache": {
+		"signature": true
+	}
+}

@@ -2,9 +2,7 @@
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
 	"scripts": {
-		"build": "pnpm run \"/^build:.*/\" ",
-		"build:bin": "pnpm run --filter \"@apps/*\" \"build\" ",
-		"build:lib": "pnpm run --filter \"@packages/*\" \"build\" ",
+		"build": "turbo run build",
 		"changelog": "pnpm changeset add",
 		"clean": "pnpm run \"/^clean:.*/\"; del \"./**/node_modules\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
@@ -33,7 +31,7 @@
 		"lint:typos": "typos --verbose",
 		"prepare": "lefthook install",
 		"setup:env": "pnpm run --filter \"@packages/config\" \"setup:env\" ",
-		"test": "vitest run --passWithNoTests"
+		"test": "turbo run test"
 	},
 	"dependencies": {
 		"zod": "3.22.4"

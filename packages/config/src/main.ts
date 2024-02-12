@@ -26,6 +26,25 @@ export const CONFIG_SCHEMA = {
 
 	NODE_ENV: z.enum(ENVIRONMENTS, { description: "The project environment." }).default("development"),
 
+	// API
+	API_CLOSE_GRACE_DELAY: z
+		.number({ coerce: true, description: "Number of milliseconds for the graceful close to finish." })
+		.min(500)
+		.max(10_000)
+		.default(500),
+	API_HOSTNAME: z
+		.string({
+			description: "API hostname.",
+		})
+		.ip({ version: "v4" })
+		.default("0.0.0.0"),
+	// biome-ignore format: Better readability
+	API_PORT:
+		z.number({ coerce: true, description: "API port to listen." })
+		.min(1024)
+		.max(65_535)
+		.default(3000),
+
 	// Database
 	DB_USER: z
 		.string({

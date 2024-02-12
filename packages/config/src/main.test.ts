@@ -14,18 +14,18 @@ describe("loadConfig()", async () => {
 	const config = await loadConfig();
 
 	describe("general:", async () => {
-		test("- 'debug' is boolean", ({ expect }) => {
+		test("- 'DEBUG' is boolean", ({ expect }) => {
 			expect(config.DEBUG).toBeTypeOf("boolean");
 		});
 
-		test(`- 'env' is string from enum: [${ENVIRONMENTS}]`, ({ expect }) => {
+		test(`- 'NODE_ENV' is string from enum: [${ENVIRONMENTS}]`, ({ expect }) => {
 			const env = config.NODE_ENV;
 
 			expect(env).toBeTypeOf("string");
 			expect(ENVIRONMENTS).toContain(env);
 		});
 
-		test(`- 'log' is string from enum: [${LOG_LEVELS}]`, ({ expect }) => {
+		test(`- 'LOG' is string from enum: [${LOG_LEVELS}]`, ({ expect }) => {
 			const level = config.LOG;
 
 			expect(level).toBeTypeOf("string");
@@ -33,26 +33,42 @@ describe("loadConfig()", async () => {
 		});
 	});
 
+	describe("API:", () => {
+		const { API_CLOSE_GRACE_DELAY, API_HOSTNAME, API_PORT } = config;
+
+		test("- 'API_CLOSE_GRACE_DELAY' is number", ({ expect }) => {
+			expect(API_CLOSE_GRACE_DELAY).toBeTypeOf("number");
+		});
+
+		test("- 'API_PORT' is a number from allowed range", ({ expect }) => {
+			expect(API_PORT).toBeTypeOf("number");
+		});
+
+		test("- 'API_HOSTNAME' is string", ({ expect }) => {
+			expect(API_HOSTNAME).toBeTypeOf("string");
+		});
+	});
+
 	describe("database:", () => {
 		const { DB_USER, DB_PASSWORD, DB_HOSTNAME, DB_PORT, DB_NAME } = config;
 
-		test("- 'user' is Name", ({ expect }) => {
+		test("- 'DB_USER' is Name", ({ expect }) => {
 			expect(DB_USER).toBeInstanceOf(Name);
 		});
 
-		test("- 'password' is Password", ({ expect }) => {
+		test("- 'DB_PASSWORD' is Password", ({ expect }) => {
 			expect(DB_PASSWORD).toBeInstanceOf(DatabasePassword);
 		});
 
-		test("- 'hostname' is string", ({ expect }) => {
+		test("- 'DB_HOSTNAME' is string", ({ expect }) => {
 			expect(DB_HOSTNAME).toBeTypeOf("string");
 		});
 
-		test("- 'port' is number", ({ expect }) => {
+		test("- 'DB_PORT' is number", ({ expect }) => {
 			expect(DB_PORT).toBeTypeOf("number");
 		});
 
-		test("- 'name' is Name", ({ expect }) => {
+		test("- 'DB_NAME' is Name", ({ expect }) => {
 			expect(DB_NAME).toBeInstanceOf(Name);
 		});
 	});

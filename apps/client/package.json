@@ -14,7 +14,7 @@
 		"build": "vite build",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./bin\" ",
-		"clean:cache": "del \"./node_modules/.cache\" ",
+		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:svelte": "del \"./.svelte-kit\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",

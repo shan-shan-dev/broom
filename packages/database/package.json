@@ -20,7 +20,7 @@
 		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./lib\" ",
-		"clean:cache": "del \"./node_modules/.cache\" ",
+		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:container": "pnpm run stop:container && docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" rm --force --volumes",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",

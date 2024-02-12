@@ -7,7 +7,7 @@
 		"build:lib": "pnpm run --filter \"@packages/*\" \"build\" ",
 		"changelog": "pnpm changeset add",
 		"clean": "pnpm run \"/^clean:.*/\"; del \"./**/node_modules\" ",
-		"clean:cache": "del \"./node_modules/.cache\" ",
+		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:doc": "del \"./docs\" ",
 		"clean:pkg": "pnpm run --recursive clean",
 		"clean:test": "del \"./coverage\" ",

@@ -85,7 +85,7 @@ jobs:
             - name: Run tests with Vitest
               # https://vitest.dev/guide/cli.html
               run: >
-                  pnpm test --
+                  pnpm vitest run
                   --coverage.enabled
                   --coverage.provider=v8
                   --coverage.reporter=json-summary

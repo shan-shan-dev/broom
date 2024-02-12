@@ -17,7 +17,7 @@
 		}
 	},
 	"scripts": {
-		"build": "tsc --project \"./tsconfig.build.json\" ",
+		"build": "vite build",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./bin\" ",
 		"clean:cache": "del \"./node_modules/.cache\" ",
@@ -37,11 +37,15 @@
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" ",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
-		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
+		"start": "fastify start \"./bin/app.js\" --",
+		"test": "vitest run --dir \"./test\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
 		"@fastify/autoload": "5.8.0",
 		"@fastify/sensible": "5.5.0",
+		"@packages/config": "workspace:*",
+		"@packages/logger": "workspace:*",
+		"close-with-grace": "1.2.0",
 		"fastify": "4.26.0",
 		"fastify-plugin": "4.5.1"
 	},

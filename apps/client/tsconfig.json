@@ -4,5 +4,5 @@
 	"compilerOptions": {
 		"tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
 	},
-	"include": ["../../types/*.d.ts", "./.svelte-kit/", "src/", "./**/*.config.ts"],
+	"include": ["../../types/*.d.ts", "./.svelte-kit/", "src/", "./*.{json,js,ts}"],
 }

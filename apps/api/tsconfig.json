@@ -1,8 +1,5 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "../../tsconfig.json",
-	"compilerOptions": {
-		"tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
-	},
-	"include": ["../../types/*.d.ts", "src/"],
+	"include": ["../../types/*.d.ts", "src/", "test/", "./*.{json,js,ts}"],
 }

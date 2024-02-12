@@ -20,7 +20,7 @@
 		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./bin\" ",
-		"clean:cache": "del \"./node_modules/.cache\" ",
+		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",
 		"dev:build": "pnpm build --watch",

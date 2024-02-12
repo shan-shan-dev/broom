@@ -2,12 +2,10 @@
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
 	"scripts": {
-		"build": "pnpm run \"/^build:.*/\" ",
-		"build:bin": "pnpm run --filter \"@apps/*\" \"build\" ",
-		"build:lib": "pnpm run --filter \"@packages/*\" \"build\" ",
+		"build": "turbo run build",
 		"changelog": "pnpm changeset add",
 		"clean": "pnpm run \"/^clean:.*/\"; del \"./**/node_modules\" ",
-		"clean:cache": "del \"./node_modules/.cache\" ",
+		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:doc": "del \"./docs\" ",
 		"clean:pkg": "pnpm run --recursive clean",
 		"clean:test": "del \"./coverage\" ",
@@ -33,7 +31,7 @@
 		"lint:typos": "typos --verbose",
 		"prepare": "lefthook install",
 		"setup:env": "pnpm run --filter \"@packages/config\" \"setup:env\" ",
-		"test": "vitest run --passWithNoTests"
+		"test": "turbo run test"
 	},
 	"dependencies": {
 		"zod": "3.22.4"
@@ -44,6 +42,7 @@
 		"@total-typescript/ts-reset": "0.5.1",
 		"@types/node": "20.11.16",
 		"tslib": "2.6.2",
+		"turbo": "1.12.3",
 		"type-fest": "4.10.2",
 		"typescript": "5.3.3",
 		"vite": "5.1.0"

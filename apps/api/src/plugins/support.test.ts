@@ -1,7 +1,7 @@
 import fastify from "fastify";
 import { describe, it } from "vitest";
 
-import Support from "../../src/plugins/support.js";
+import Support from "./support.js";
 
 describe("support", () => {
 	it("support works standalone", async ({ expect }) => {

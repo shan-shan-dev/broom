@@ -38,7 +38,7 @@
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
 		"start": "fastify start \"./bin/app.js\" --",
-		"test": "vitest run --dir \"./test\" --passWithNoTests --typecheck"
+		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
 		"@fastify/autoload": "5.8.0",

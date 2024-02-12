@@ -19,16 +19,18 @@ export function createApp(config: Config): FastifyPluginAsync {
 		// those should be support plugins that are reused through the application
 		void fastify.register(AutoLoad, {
 			dir: join(__dirname, "plugins"),
-			options,
+			ignorePattern: /^.*(?:test|spec).ts$/,
 			forceESM: true,
+			options,
 		});
 
 		// NOTE:
 		// This loads all plugins defined in `./routes/` directory
 		void fastify.register(AutoLoad, {
 			dir: join(__dirname, "routes"),
-			options,
+			ignorePattern: /.test.ts/,
 			forceESM: true,
+			options,
 		});
 	};
 }

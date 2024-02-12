@@ -43,6 +43,8 @@
 	"dependencies": {
 		"@fastify/autoload": "5.8.0",
 		"@fastify/sensible": "5.5.0",
+		"@fastify/swagger": "8.14.0",
+		"@fastify/swagger-ui": "2.1.0",
 		"@packages/config": "workspace:*",
 		"@packages/logger": "workspace:*",
 		"close-with-grace": "1.2.0",

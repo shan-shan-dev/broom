@@ -13,9 +13,8 @@ const __dirname = dirname(__filename);
 const config = defineWorkspace([
 	// Binaries
 	{
-		extends: resolve(__dirname, "apps", "api", "vite.config.ts"),
+		extends: resolve(__dirname, "apps", "api", "vitest.config.ts"),
 		test: {
-			setupFiles: resolve(__dirname, "apps", "api", "test", "setup.ts"),
 			include: [resolve(__dirname, "apps", "api", "src", "**", "*.test.ts")],
 			name: "@apps/api",
 		},

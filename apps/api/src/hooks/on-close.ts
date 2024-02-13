@@ -5,7 +5,7 @@ import type { onCloseAsyncHookHandler } from "fastify";
 export const handleClose: onCloseAsyncHookHandler = async function close(instance) {
 	const listener = closeWithGrace(
 		{
-			delay: instance.config.closeWithGraceDelay,
+			delay: instance.config.closeGraceDelay,
 		},
 		async (options) => {
 			const { err, signal, manual } = options;

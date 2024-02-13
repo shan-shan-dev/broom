@@ -17,13 +17,13 @@
 		}
 	},
 	"scripts": {
-		"build": "vite build",
+		"build": "tsup",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./bin\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",
-		"dev:build": "pnpm build --watch",
+		"dev:build": "tsx watch \"./src/main.ts\" ",
 		"dev:doc": "typedoc --watch",
 		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui",
 		"fix": "pnpm run \"/^fix:.*/\" ",
@@ -37,7 +37,7 @@
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" ",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
-		"start": "fastify start \"./bin/app.js\" --",
+		"start": "node \"./bin/main.js\" --",
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
@@ -49,9 +49,12 @@
 		"@packages/logger": "workspace:*",
 		"close-with-grace": "1.2.0",
 		"fastify": "4.26.0",
+		"fastify-overview": "3.9.0",
+		"fastify-overview-ui": "2.2.5",
 		"fastify-plugin": "4.5.1"
 	},
 	"devDependencies": {
-		"fastify-cli": "6.1.0"
+		"fastify-cli": "6.1.0",
+		"tsup": "8.0.2"
 	}
 }

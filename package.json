@@ -1,6 +1,14 @@
 {
 	"$schema": "https://json.schemastore.org/package",
+	"private": true,
 	"type": "module",
+	"homepage": "https://github.com/shan-shan-dev/shan-shan",
+	"repository": "shan-shan-dev/shan-shan",
+	"bugs": "https://github.com/shan-shan-dev/shan-shan/issues",
+	"engines": {
+		"node": ">=20",
+		"pnpm": ">=8"
+	},
 	"scripts": {
 		"build": "turbo run build",
 		"changelog": "pnpm changeset add",

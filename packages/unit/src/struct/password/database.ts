@@ -1,4 +1,4 @@
-import { Password } from ".";
+import { Password } from "./index.js";
 
 /**
  * A struct to store securely the **database** password,

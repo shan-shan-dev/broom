@@ -2,7 +2,7 @@ import { log } from "@packages/logger";
 import bcrypt from "bcrypt";
 import { z } from "zod";
 
-import type { Password } from ".";
+import type { Password } from "./index.js";
 import type { NewType } from "../struct.d.ts";
 
 /** A better string type for the encrypted password format. */

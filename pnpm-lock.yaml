@@ -222,6 +222,12 @@ importers:
         specifier: 3.4.3
         version: 3.4.3
 
+  packages/i18n:
+    dependencies:
+      '@packages/logger':
+        specifier: workspace:*
+        version: link:../logger
+
   packages/logger:
     dependencies:
       pino:

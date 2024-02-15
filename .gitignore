@@ -2,10 +2,11 @@
 node_modules/
 
 # Build outputs
+.astro/
+.svelte-kit/
 /packages/**/lib/
 bin/
-.svelte-kit/
-.astro/
+storybook-static/
 
 # Documentation output (auto-generated)
 docs/
@@ -24,3 +25,5 @@ pnpm-debug.log*
 
 # Turborepo cache
 .turbo/
+
+#

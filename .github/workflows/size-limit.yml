@@ -48,7 +48,6 @@ jobs:
               with:
                   name: build-output
                   path: build-output
-                  repository: shan-shan-dev/shan-shan
 
             - name: Extract build output from downloaded artifact
               # https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh

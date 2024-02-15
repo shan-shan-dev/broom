@@ -25,7 +25,7 @@
 		"dev": "pnpm run \"/^dev:.*/\" ",
 		"dev:build": "tsx watch \"./src/main.ts\" ",
 		"dev:doc": "typedoc --watch",
-		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui",
+		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui --open=false",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"fix:js": "biome lint . --verbose --apply-unsafe",

@@ -45,6 +45,12 @@ jobs:
         name: lint
         uses: ./.github/workflows/prettier.yml
 
+    lint_size_limit:
+        name: lint
+        uses: ./.github/workflows/size-limit.yml
+        needs: [build_packages]
+        if: github.event_name == 'pull_request'
+
     lint_typos:
         name: lint
         uses: ./.github/workflows/typos.yml

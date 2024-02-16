@@ -1,11 +1,11 @@
 import { describe, it } from "vitest";
 
-import { WORKSPACE_PACKAGES, findPackageRootPath } from "./package.js";
+import { WORKSPACE_PACKAGES, getPackageRootPathURL } from "./package.js";
 
-describe("getPackageRootPath(name)", () => {
+describe(`${getPackageRootPathURL.name}(name)`, () => {
 	for (const name of WORKSPACE_PACKAGES) {
-		it(`successfully finds the absolute root path for the package ("${name}")`, async ({ expect }) => {
-			const pathURL = await findPackageRootPath(name);
+		it(`succeeds for the package name ("${name}")`, async ({ expect }) => {
+			const pathURL = await getPackageRootPathURL(name);
 
 			expect(pathURL).toBeInstanceOf(URL);
 			// biome-ignore lint/complexity/useLiteralKeys: Conflicting with TS config

@@ -1,11 +1,11 @@
 import { describe, it } from "vitest";
 
-import { WORKSPACE_APPS, findAppRootPath } from "./app.js";
+import { WORKSPACE_APPS, getAppRootPathURL } from "./app.js";
 
-describe("findAppRootPath(name)", () => {
+describe(`${getAppRootPathURL.name}(name)`, () => {
 	for (const name of WORKSPACE_APPS) {
-		it(`successfully finds the absolute root path for app ("${name}")`, async ({ expect }) => {
-			const pathURL = await findAppRootPath(name);
+		it(`succeeds for the app name ("${name}")`, async ({ expect }) => {
+			const pathURL = await getAppRootPathURL(name);
 
 			expect(pathURL).toBeInstanceOf(URL);
 			// biome-ignore lint/complexity/useLiteralKeys: Conflicting with TS config

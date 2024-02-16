@@ -4,5 +4,5 @@
 	"compilerOptions": {
 		"tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
 	},
-	"include": ["../../types/*.d.ts", "scripts/", "src/"],
+	"include": ["../../types/*.d.ts", "hooks/", "src/"],
 }

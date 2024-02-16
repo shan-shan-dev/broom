@@ -21,7 +21,7 @@
 		}
 	},
 	"scripts": {
-		"prebuild": "tsx \"./scripts/prebuild.ts\" ",
+		"prebuild": "tsx \"./hooks/prebuild.ts\" ",
 		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./lib\" ",

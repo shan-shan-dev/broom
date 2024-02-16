@@ -11,10 +11,8 @@ export const WORKSPACE_PACKAGES = [
 	"config",
 	"core",
 	"database",
-	"i18n",
 	"logger",
 	"path",
-	"ui",
 	"unit",
 	"util",
 ] as const;

@@ -1,10 +1,14 @@
 {
+	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"title": "Shan-Shan application",
 	"pages": {
 		"error": {
 			"404": {
 				"title": "Page resources not found"
 			}
+		},
+		"home": {
+			"title": "Main homepage"
 		}
 	}
 }

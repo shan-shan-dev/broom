@@ -1,10 +1,4 @@
 {
-	"title": "Aplikacja Shan-Shan",
-	"pages": {
-		"error": {
-			"404": {
-				"title": "Zasoby tej strony nie zostały znalezione"
-			}
-		}
-	}
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"title": "Aplikacja Shan-Shan"
 }

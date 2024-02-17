@@ -1,0 +1,10 @@
+{
+	"title": "Aplikacja Shan-Shan",
+	"pages": {
+		"error": {
+			"404": {
+				"title": "Zasoby tej strony nie zostały znalezione"
+			}
+		}
+	}
+}

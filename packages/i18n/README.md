@@ -1,6 +1,12 @@
 # `@packages/i18n`
 
-Translation messages to reuse across the apps/libraries.
+Translation messages to reuse across the apps/libraries in this project workspace.
+
+## Supported languages
+
+- English
+- Polish
+- Traditional Chinese _(Taiwan)_
 
 ## Resources
 

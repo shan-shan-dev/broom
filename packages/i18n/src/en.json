@@ -1,0 +1,10 @@
+{
+	"title": "Shan-Shan application",
+	"pages": {
+		"error": {
+			"404": {
+				"title": "Page resources not found"
+			}
+		}
+	}
+}

@@ -66,11 +66,18 @@ jobs:
         needs: [build_packages]
         if: |
             github.event_name == 'push' &&
-            github.event.ref == 'refs/heads/main' &&
-            github.event.head_commit.parents.length > 1
+            github.event.ref == 'refs/heads/main'
 
     test_vitest:
-        needs: [build_packages]
         name: test
         uses: ./.github/workflows/vitest.yml
+        needs: [build_packages]
         secrets: inherit
+
+    release:
+        name: Release
+        uses: ./.github/workflows/changesets.yml
+        needs: [build_packages, docs_typedoc, test_vitest]
+        if: |
+            github.event_name == 'push' &&
+            github.event.ref == 'refs/heads/main'

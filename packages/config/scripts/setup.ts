@@ -1,18 +1,20 @@
 import { writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 import { log } from "@packages/logger";
-import { findWorkspaceRootPath } from "@packages/path";
+import { getWorkspaceRootPathURL } from "@packages/path";
 import { typedObjectKeys } from "@packages/util/object";
 import Enquirer from "enquirer";
 import { ZodBoolean, ZodDefault, ZodEffects, ZodEnum, ZodNumber, type ZodTypeAny } from "zod";
 
-import { type AbsolutePath, pathToURL } from "@packages/path/util";
+import { type AbsolutePath } from "@packages/path/util";
 import { CONFIG_SCHEMA, type EnvironmentVariable } from "../src/main.js";
 
 const { prompt } = Enquirer;
-const WORKSPACE_ROOT_URL = await findWorkspaceRootPath();
-const DOTENV_PATH = pathToURL(join(WORKSPACE_ROOT_URL.pathname, ".env") as AbsolutePath);
+
+const WORKSPACE_ROOT_URL = await getWorkspaceRootPathURL();
+const DOTENV_PATH = pathToFileURL(resolve(WORKSPACE_ROOT_URL.pathname, ".env") as AbsolutePath);
 
 async function main() {
 	const answers = await promptQuestions();

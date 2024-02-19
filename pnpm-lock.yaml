@@ -176,6 +176,10 @@ importers:
       astro:
         specifier: 4.3.5
         version: 4.3.5(@types/node@20.11.16)(typescript@5.3.3)
+    devDependencies:
+      '@packages/i18n':
+        specifier: workspace:^
+        version: link:../../packages/i18n
 
   packages/config:
     dependencies:

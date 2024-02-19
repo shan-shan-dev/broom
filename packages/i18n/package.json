@@ -8,31 +8,35 @@
 		"node": ">=20"
 	},
 	"files": [
-		"/lib"
+		"/lib/**/*.js"
 	],
 	"exports": {
 		"./*": {
-			"import": "./lib/*.js"
+			"types": "./lib/*.d.ts",
+			"default": "./lib/*.js"
 		}
 	},
 	"scripts": {
-		"build": "paraglide-js compile --project \"./project.inlang\" ",
+		"prebuild": "paraglide-js compile --outdir \"./src\" --project \"./project.inlang\" ",
+		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./lib\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",
-		"dev:build": "pnpm build --watch",
+		"dev:build": "paraglide-js compile --outdir \"./lib\" --project \"./project.inlang\" --watch",
 		"dev:doc": "typedoc --watch",
 		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui --open=false",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
+		"fix:i18n": "inlang machine translate --project \"./project.inlang\" ",
 		"fix:js": "biome lint . --verbose --apply-unsafe",
 		"fix:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" --fix",
 		"fix:typos": "typos --verbose --write-changes",
 		"lint": "pnpm run \"/^lint:.*/\" ",
 		"lint:format": "biome format . --verbose",
-		"lint:js": "biome lint . --verbose",
+		"lint:i18n": "inlang lint --project \"./project.inlang\" ",
+		"lint:js": "biome lint \"./src\" --verbose",
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" ",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",

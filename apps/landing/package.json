@@ -46,5 +46,8 @@
 	"dependencies": {
 		"@astrojs/check": "0.5.2",
 		"astro": "4.3.5"
+	},
+	"devDependencies": {
+		"@packages/i18n": "workspace:*"
 	}
 }

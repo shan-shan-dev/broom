@@ -24,6 +24,9 @@
 			"path": "packages/database",
 		},
 		{
+			"path": "packages/i18n",
+		},
+		{
 			"path": "packages/logger",
 		},
 		{

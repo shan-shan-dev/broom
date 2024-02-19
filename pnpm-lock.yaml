@@ -190,9 +190,6 @@ importers:
       '@packages/i18n':
         specifier: workspace:*
         version: link:../../packages/i18n
-      '@packages/path':
-        specifier: workspace:*
-        version: link:../../packages/path
 
   packages/config:
     dependencies:

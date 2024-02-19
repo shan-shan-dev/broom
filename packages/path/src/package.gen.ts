@@ -14,6 +14,7 @@ export const WORKSPACE_PACKAGES = [
 	"i18n",
 	"logger",
 	"path",
+	"token",
 	"ui",
 	"unit",
 	"util",

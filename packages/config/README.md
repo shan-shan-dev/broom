@@ -1,4 +1,4 @@
-# `@package/config`
+# `@packages/config`
 
 Configuration for this project.
 

@@ -1,10 +1,10 @@
 import { describe, it } from "vitest";
 
-import { findWorkspaceRootPath } from "./main.js";
+import { getWorkspaceRootPathURL } from "./main.js";
 
-describe("findWorkspaceRootPath()", () => {
-	it("successfully found the workspace absolute root path", async ({ expect }) => {
-		const pathURL = await findWorkspaceRootPath();
+describe(`${getWorkspaceRootPathURL.name}()`, () => {
+	it("successfully returns the workspace root absolute path URL", async ({ expect }) => {
+		const pathURL = await getWorkspaceRootPathURL();
 
 		expect(pathURL).toBeInstanceOf(URL);
 		// biome-ignore lint/complexity/useLiteralKeys: Conflicting with TS config

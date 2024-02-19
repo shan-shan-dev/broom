@@ -1,7 +1,10 @@
 <script>
-	import Counter from "./Counter.svelte";
+	import { greet, title } from "@packages/i18n";
+
 	import welcome from "$lib/images/svelte-welcome.webp";
 	import welcome_fallback from "$lib/images/svelte-welcome.png";
+
+	import Counter from "./Counter.svelte";
 </script>
 
 <svelte:head>
@@ -17,8 +20,9 @@
 				<img src={welcome_fallback} alt="Welcome" />
 			</picture>
 		</span>
-
-		to your new<br />SvelteKit app
+		<span>{greet({ name: "xeho91" }, { languageTag: "zh-TW" })}</span>
+		to your new<br />
+		{title()}
 	</h1>
 
 	<h2>

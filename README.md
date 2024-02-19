@@ -7,16 +7,42 @@
 
 ## License
 
-See [LICENSE.md](./LICENSE.md) for more information.
+See [./LICENSE.md] file for more information.
+
+[./LICENSE.md]: https://github.com/shan-shan-dev/shan-shan/blob/main/LICENSE.md
 
 ---
 
 ## Technology stack
 
 For a detailed review of the technology stack used,
-please see the [./techstack.md](./techstack.md) file.
+please see the [./TECHSTACK.md] file.
+
+[./TECHSTACK.md]: https://github.com/shan-shan-dev/shan-shan/blob/main/.github/TECHSTACK.md
 
 ---
+
+### Project structure
+
+Below is a quick legend which should help onto
+how to navigate in this project workspace root **directories**.
+
+```text
+.
+├── [1] .changeset
+├── [2] .github
+├── [3] apps
+├── [4] packages
+└── [5] types
+```
+
+Where as:
+
+- [`[1] .changeset`](https://github.com/shan-shan-dev/shan-shan/tree/main/.changeset) -> Atomized upcoming release notes
+- [`[2] .github`](https://github.com/shan-shan-dev/shan-shan/tree/main/.github) -> GitHub related setup for this repository
+- [`[3] apps`](https://github.com/shan-shan-dev/shan-shan/tree/main/apps) -> workspace apps
+- [`[4] packages`](https://github.com/shan-shan-dev/shan-shan/tree/main/packages) -> library packages
+- [`[5] types`](https://github.com/shan-shan-dev/shan-shan/tree/main/types) -> reusable types for the entire workspace
 
 ## Getting started
 
@@ -39,26 +65,16 @@ In this section you can find instructions on how to get started with the project
 
 ### First steps
 
+These instructions are for **general** usage _(as in for any other purposes than development)_.
+
+1. Install the project dependencies _(optional ones are for development purpose only)_:
+
+```sh
+pnpm install --no-optional
+```
+
 1. Setup environment variables via the following quick CLI script:
 
 ```sh
 pnpm setup:env
 ```
-
----
-
-### Project structure
-
-Below is a quick legend which should help onto
-how to navigate in this project workspace root **directories**.
-
-```text
-.
-├── [1] apps
-└── [2] packages
-```
-
-Where as:
-
-- [`[1] apps`](/apps/README.md) -> binary packages _(applications)_
-- [`[2] packages`](./packages/README.md) -> library packages

@@ -21,6 +21,7 @@
 		}
 	},
 	"scripts": {
+		"prebuild": "tsx \"./hooks/prebuild.ts\" ",
 		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./lib\" ",
@@ -29,7 +30,7 @@
 		"dev": "pnpm run \"/^dev:.*/\" ",
 		"dev:build": "pnpm build --watch",
 		"dev:doc": "typedoc --watch",
-		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui",
+		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui --open=false",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"fix:js": "biome lint . --verbose --apply-unsafe",
@@ -46,5 +47,8 @@
 	"dependencies": {
 		"@packages/logger": "workspace:*",
 		"find-up": "7.0.0"
+	},
+	"devDependencies": {
+		"handlebars": "4.7.8"
 	}
 }

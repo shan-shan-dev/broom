@@ -37,6 +37,10 @@ jobs:
         name: lint
         uses: ./.github/workflows/biome.yml
 
+    lint_inlang:
+        name: lint
+        uses: ./.github/workflows/inlang.yml
+
     lint_markdownlint:
         name: lint
         uses: ./.github/workflows/markdownlint.yml
@@ -46,9 +50,10 @@ jobs:
         uses: ./.github/workflows/prettier.yml
 
     lint_size_limit:
-        if: github.event_name == 'pull_request'
         name: lint
         uses: ./.github/workflows/size-limit.yml
+        needs: [build_packages]
+        if: github.event_name == 'pull_request'
 
     lint_typos:
         name: lint
@@ -61,12 +66,22 @@ jobs:
 
     docs_typedoc:
         name: docs
-        needs: [build_packages]
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: ./.github/workflows/typedoc.yml
+        needs: [build_packages]
+        if: |
+            github.event_name == 'push' &&
+            github.event.ref == 'refs/heads/main'
 
     test_vitest:
-        needs: [build_packages]
         name: test
         uses: ./.github/workflows/vitest.yml
+        needs: [build_packages]
         secrets: inherit
+
+    release:
+        name: Release
+        uses: ./.github/workflows/changesets.yml
+        needs: [build_packages, docs_typedoc, test_vitest]
+        if: |
+            github.event_name == 'push' &&
+            github.event.ref == 'refs/heads/main'

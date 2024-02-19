@@ -1,8 +1,6 @@
 name: size-limit
 
-on:
-    workflow_call:
-    workflow_dispatch:
+on: workflow_call
 
 defaults:
     run:
@@ -36,7 +34,30 @@ jobs:
                   cache: pnpm
                   node-version: lts/*
 
+            - name: Install Node.js dependencies with pnpm
+              # https://pnpm.io/cli/install
+              run: >
+                  pnpm install
+                  --frozen-lockfile
+
+            - name: Download build output from artifacts
+              # https://github.com/actions/download-artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: build-output
+                  path: build-output
+
+            - name: Extract build output from downloaded artifact
+              # https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh
+              shell: bash
+              run: >
+                  curl
+                  --request GET
+                  https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh
+                  | bash -s build-output
+
             # https://github.com/andresz1/size-limit-action
             - uses: andresz1/size-limit-action@v1.7.0
               with:
+                  skip_step: build
                   github_token: ${{ secrets.GITHUB_TOKEN }}

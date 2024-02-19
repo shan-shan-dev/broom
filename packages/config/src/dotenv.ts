@@ -1,26 +1,37 @@
-import { join } from "node:path";
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 import { log } from "@packages/logger";
-import { findWorkspaceRootPath } from "@packages/path";
-import dotenv from "dotenv";
+import { getWorkspaceRootPathURL } from "@packages/path";
+import { type DotenvConfigOptions, config } from "dotenv";
 
-export async function findDotenvFilePath(): Promise<URL> {
-	const rootDirPathURL = await findWorkspaceRootPath();
+export async function findDotenvFilePath(): Promise<URL | undefined> {
+	const rootDirPathURL = await getWorkspaceRootPathURL();
+	const dotenvFilePath = resolve(rootDirPathURL.pathname, ".env");
 
-	rootDirPathURL.pathname = join(rootDirPathURL.pathname, ".env");
+	if (existsSync(dotenvFilePath)) {
+		const dotenvFilePathURL = pathToFileURL(dotenvFilePath);
 
-	log.debug({ dotenvFilePath: rootDirPathURL }, "Dotenv file path");
-	return rootDirPathURL;
+		log.debug(`Dotenv: ${dotenvFilePathURL}`);
+		return dotenvFilePathURL;
+	}
+
+	log.info("No dotenv file was found at the root of this project, will parse variables from process.env");
 }
 
 export async function loadDotenv() {
-	const dotenvFilePath = await findDotenvFilePath();
-
-	const { error, parsed } = dotenv.config({
+	const options: DotenvConfigOptions = {
 		// biome-ignore lint/complexity/useLiteralKeys: Conflicting with TS config
 		debug: process.env["DEBUG"] !== undefined,
-		path: dotenvFilePath,
-	});
+	};
+	const dotenvFilePath = await findDotenvFilePath();
+
+	if (dotenvFilePath) {
+		options.path = dotenvFilePath;
+	}
+
+	const { error, parsed } = config(options);
 
 	if (error) {
 		log.fatal({ error }, "DotenvError");

@@ -3,9 +3,34 @@
 	"extends": ["github>shan-shan-dev/.github//.github/renovate/default"],
 	"packageRules": [
 		{
+			"groupName": "`@apps/api` dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["fastify"]
+		},
+		{
+			"groupName": "workspace types dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"matchPackageNames": ["@types/node", "@total-typescript/ts-reset"]
+		},
+		{
+			"groupName": "`@packages/ui` types dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["svelte"]
+		},
+		{
+			"groupName": "`@apps/landing` dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["astro"]
+		},
+		{
+			"groupName": "Documentation dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["typedoc"]
+		},
+		{
 			"groupName": "CI dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["biome"]
+			"packagePatterns": ["biome", "typos"]
 		}
 	]
 }

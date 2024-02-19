@@ -1,23 +1,15 @@
-import path from "node:path";
+import { join } from "node:path";
+import { pathToFileURL } from "node:url";
+import { existsSync } from "node:fs";
 
 import { log } from "@packages/logger";
 
-import { findWorkspaceRootPath } from "./main.js";
+import { WORKSPACE_PACKAGES } from "./package.gen.js";
+import { getWorkspaceRootPathURL } from "./main.js";
 
-/**
- * Currently available project's workspace **library** packages.
- */
-export const WORKSPACE_PACKAGES = [
-	// TODO: Make it automatically generated via script.
-	"config",
-	"core",
-	"database",
-	"logger",
-	"path",
-	"unit",
-	"util",
-] as const;
+export const PACKAGES_DIRNAME = "packages";
 
+export { WORKSPACE_PACKAGES } from "./package.gen.js";
 /** @see {@link WORKSPACE_PACKAGES} */
 export type WorkspacePackage = (typeof WORKSPACE_PACKAGES)[number];
 
@@ -25,12 +17,14 @@ export type WorkspacePackage = (typeof WORKSPACE_PACKAGES)[number];
  * Get the **absolute path URL** to the project's workspace targeted _package_ root directory.
  * @param name - workspace package to target
  */
-export async function findPackageRootPath<T extends WorkspacePackage>(name: T): Promise<URL> {
-	const directory = "packages";
-	const directoryURL = await findWorkspaceRootPath();
+export async function getPackageRootPathURL<T extends WorkspacePackage>(name: T): Promise<URL> {
+	const workspaceRootURL = await getWorkspaceRootPathURL();
+	const packageRootURL = pathToFileURL(join(workspaceRootURL.pathname, PACKAGES_DIRNAME, name));
 
-	directoryURL.pathname = path.join(directoryURL.pathname, directory, name);
+	if (existsSync(packageRootURL.pathname)) {
+		log.debug(`Absolute path of the package directory: ${packageRootURL}`);
+		return packageRootURL;
+	}
 
-	log.debug({ directoryURL }, "Absolute path of the APP directory");
-	return directoryURL;
+	throw Error(`Couldn't determine the absolute path for the package - "${name}" - root directory!`);
 }

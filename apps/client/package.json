@@ -21,7 +21,7 @@
 		"dev:build": "vite dev",
 		"dev:doc": "typedoc --watch",
 		"check:svelte": "svelte-kit sync && svelte-check --tsconfig \"./tsconfig.json\" --watch",
-		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui",
+		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui --open=false",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"fix:js": "biome lint . --verbose --apply-unsafe",
@@ -43,10 +43,14 @@
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "5.0.8",
+		"@inlang/paraglide-js-adapter-sveltekit": "0.4.1",
 		"@neoconfetti/svelte": "2.2.1",
 		"@sveltejs/adapter-auto": "3.1.1",
 		"@sveltejs/kit": "2.5.0",
 		"svelte": "5.0.0-next.51",
 		"svelte-check": "3.6.4"
+	},
+	"dependencies": {
+		"@packages/i18n": "workspace:*"
 	}
 }

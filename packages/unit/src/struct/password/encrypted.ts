@@ -2,14 +2,14 @@ import { log } from "@packages/logger";
 import bcrypt from "bcrypt";
 import { z } from "zod";
 
-import type { Password } from "./index.js";
 import type { NewType } from "../struct.d.ts";
+import type { Password } from "./index.js";
 
 /** A better string type for the encrypted password format. */
 export type StringifiedEncryptedPassword =
 	`${(typeof EncryptedPassword)["HASH_ALGORITHM_IDENTIFIER"]}$${(typeof EncryptedPassword)["SALT_ROUNDS"]}$${string}`;
 
-/** @see {@Link EncryptedPassword} */
+/** @see {@link EncryptedPassword} */
 export type EncryptedPasswordType = StringifiedEncryptedPassword | EncryptedPassword;
 
 /**

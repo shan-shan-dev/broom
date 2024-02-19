@@ -12,7 +12,7 @@
 	},
 	{
 		"name": "@apps/landing",
-		"path": "./apps/landing/bin/",
+		"path": "./apps/landing/dist/",
 		"limit": "1 s"
 	},
 	{
@@ -29,6 +29,11 @@
 		"name": "@packages/database",
 		"path": "./packages/database/lib/**/*.js",
 		"limit": "10 kB"
+	},
+	{
+		"name": "@packages/i18n",
+		"path": "./packages/i18n/lib/**/*.js",
+		"limit": "5 kB"
 	},
 	{
 		"name": "@packages/logger",

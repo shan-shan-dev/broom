@@ -24,6 +24,7 @@
 		"dev:doc": "pnpm run --recursive \"dev:doc\" ",
 		"dev:test": "pnpm vitest watch --passWithNoTests --typecheck --ui",
 		"doc": "typedoc",
+		"edit:i18n": "pnpm run --filter \"@packages/i18n\" \"editor\" ",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"fix:js": "biome lint . --verbose --apply-unsafe",

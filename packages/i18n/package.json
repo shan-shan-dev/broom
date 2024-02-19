@@ -8,9 +8,13 @@
 		"node": ">=20"
 	},
 	"files": [
-		"/lib/**/*.js"
+		"/lib/"
 	],
 	"exports": {
+		".": {
+			"types": "./lib/messages/index.d.ts",
+			"default": "./lib/messages/index.js"
+		},
 		"./*": {
 			"types": "./lib/*.d.ts",
 			"default": "./lib/*.js"
@@ -45,7 +49,8 @@
 	},
 	"dependencies": {
 		"@inlang/paraglide-js": "1.2.5",
-		"@packages/logger": "workspace:*"
+		"@packages/logger": "workspace:*",
+		"@packages/path": "workspace:*"
 	},
 	"devDependencies": {
 		"@inlang/cli": "2.12.3"

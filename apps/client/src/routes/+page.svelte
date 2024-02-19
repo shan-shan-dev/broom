@@ -1,5 +1,5 @@
 <script>
-	import { greet, title } from "@packages/i18n/messages";
+	import { greet, title } from "@packages/i18n";
 
 	import welcome from "$lib/images/svelte-welcome.webp";
 	import welcome_fallback from "$lib/images/svelte-welcome.png";
@@ -20,9 +20,7 @@
 				<img src={welcome_fallback} alt="Welcome" />
 			</picture>
 		</span>
-
 		<span>{greet({ name: "xeho91" }, { languageTag: "zh-TW" })}</span>
-
 		to your new<br />
 		{title()}
 	</h1>

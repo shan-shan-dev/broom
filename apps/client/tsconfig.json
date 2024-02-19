@@ -3,7 +3,6 @@
 	"extends": ["../../tsconfig.json", "./.svelte-kit/tsconfig.json"],
 	"compilerOptions": {
 		"baseUrl": ".",
-		"moduleResolution": "Bundler",
 		"paths": {
 			"$lib": ["src/lib"],
 			"$lib/*": ["src/lib/*"],

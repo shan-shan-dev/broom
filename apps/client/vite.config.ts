@@ -1,20 +1,18 @@
 /// <reference types="vite/client" />
 
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-
 import { paraglide } from "@inlang/paraglide-js-adapter-sveltekit/vite";
+import { getInlangConfigDirURL, getInlangOutputDirURL } from "@packages/i18n/config";
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vitest/config";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const INLANG_CONFIG_URL = await getInlangConfigDirURL();
+const INLANG_OUTPUT_URL = await getInlangOutputDirURL();
 
 const config = defineConfig({
 	plugins: [
 		paraglide({
-			outdir: resolve(__dirname, "..", "..", "packages", "i18n", "src"),
-			project: resolve(__dirname, "..", "..", "packages", "i18n", "project.inlang"),
+			outdir: INLANG_OUTPUT_URL.pathname,
+			project: INLANG_CONFIG_URL.pathname,
 		}),
 		sveltekit(),
 	],

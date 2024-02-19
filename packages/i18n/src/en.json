@@ -1,4 +1,5 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"title": "Shan-Shan application"
+	"title": "Shan-Shan application",
+	"greet": "Welcome {name}"
 }

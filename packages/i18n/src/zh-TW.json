@@ -1,1 +1,1 @@
-{ "$schema": "https://inlang.com/schema/inlang-message-format", "title": "杉杉應用" }
+{ "$schema": "https://inlang.com/schema/inlang-message-format", "title": "杉杉應用", "greet": "歡迎{name}" }

@@ -2,10 +2,8 @@
 	"$schema": "https://inlang.com/schema/project-settings",
 	"sourceLanguageTag": "en",
 	"languageTags": ["en", "pl", "zh-TW"],
-	"messageLintRuleLevels": {
-		"messageLintRule.inlang.camelCaseId": "error"
-	},
 	"modules": [
+		"https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-camel-case-id@latest/dist/index.js",
 		"https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-empty-pattern@latest/dist/index.js",
 		"https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-identical-pattern@latest/dist/index.js",
 		"https://cdn.jsdelivr.net/npm/@inlang/message-lint-rule-missing-translation@latest/dist/index.js",
@@ -14,6 +12,14 @@
 		"https://cdn.jsdelivr.net/npm/@inlang/plugin-message-format@latest/dist/index.js",
 		"https://cdn.jsdelivr.net/npm/@inlang/plugin-m-function-matcher@latest/dist/index.js"
 	],
+	"messageLintRuleLevels": {
+		"messageLintRule.inlang.camelCaseId": "error",
+		"messageLintRule.inlang.emptyPattern": "error",
+		"messageLintRule.inlang.identicalPattern": "error",
+		"messageLintRule.inlang.missingTranslation": "error",
+		"messageLintRule.inlang.withoutSource": "error",
+		"messageLintRule.inlang.validJsIdentifier": "error"
+	},
 	"plugin.inlang.messageFormat": {
 		"pathPattern": "./src/messages/{languageTag}.json"
 	}

@@ -26,4 +26,4 @@ jobs:
 
             - name: Spell check with `typos`
               # https://github.com/crate-ci/typos
-              uses: crate-ci/typos@v1.18.0
+              uses: crate-ci/typos@v1.18.2

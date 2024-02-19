@@ -12,7 +12,7 @@
 	},
 	{
 		"name": "@apps/landing",
-		"path": "./apps/landing/bin/",
+		"path": "./apps/landing/dist/",
 		"limit": "1 s"
 	},
 	{

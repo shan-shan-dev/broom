@@ -36,6 +36,9 @@ importers:
       '@size-limit/preset-app':
         specifier: 11.0.2
         version: 11.0.2(size-limit@11.0.2)
+      '@storybook/addon-designs':
+        specifier: 8.0.0-next.0
+        version: 8.0.0-next.0
       '@storybook/addon-essentials':
         specifier: 8.0.0-beta.3
         version: 8.0.0-beta.3
@@ -2804,6 +2807,25 @@ packages:
       - supports-color
     dev: false
 
+  /@figspec/components@1.0.3:
+    resolution: {integrity: sha512-fBwHzJ4ouuOUJEi+yBZIrOy+0/fAjB3AeTcIHTT1PRxLz8P63xwC7R0EsIJXhScIcc+PljGmqbbVJCjLsnaGYA==}
+    requiresBuild: true
+    dependencies:
+      lit: 2.8.0
+    dev: false
+    optional: true
+
+  /@figspec/react@1.0.3:
+    resolution: {integrity: sha512-r683qOko+5CbT48Ox280fMx2MNAtaFPgCNJvldOqN3YtmAzlcTT+YSxd3OahA+kjXGGrnzDbUgeTOX1cPLII+g==}
+    requiresBuild: true
+    peerDependencies:
+      react: ^16.14.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@figspec/components': 1.0.3
+      '@lit-labs/react': 1.2.1
+    dev: false
+    optional: true
+
   /@fontsource/fira-mono@5.0.8:
     resolution: {integrity: sha512-8OJiUK2lzJjvDlkmamEfhtpL1cyFApg1Pk4kE5Pw5UTf1ETF3Yy/pprgwV5I+LQPDjuFvinsinT9xSUZ2b/zuQ==}
     dev: true
@@ -3086,6 +3108,26 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  /@lit-labs/react@1.2.1:
+    resolution: {integrity: sha512-DiZdJYFU0tBbdQkfwwRSwYyI/mcWkg3sWesKRsHUd4G+NekTmmeq9fzsurvcKTNVa0comNljwtg4Hvi1ds3V+A==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@lit-labs/ssr-dom-shim@1.2.0:
+    resolution: {integrity: sha512-yWJKmpGE6lUURKAaIltoPIE/wrbY3TEkqQt+X0m+7fQNnAv0keydnYvbiJFP1PnMhizmIWRWOG5KLhYyc/xl+g==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@lit/reactive-element@1.6.3:
+    resolution: {integrity: sha512-QuTgnG52Poic7uM1AN5yJ09QMe0O28e10XzSvWDz02TJiiKee4stsiownEIadWm8nYzyDAyT+gKzUoZmiWQtsQ==}
+    requiresBuild: true
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.2.0
+    dev: false
+    optional: true
 
   /@lix-js/client@0.8.0:
     resolution: {integrity: sha512-ljcbFeSjcKy3aRvrz/aNKFhXeRM3rLmG0cm3BREEfi8P64CF2k9nAFSHjXINbr78g+eK8Lrn0qD2n3J0thJwxw==}
@@ -3735,6 +3777,27 @@ packages:
       - react
       - react-dom
       - supports-color
+    dev: false
+    optional: true
+
+  /@storybook/addon-designs@8.0.0-next.0:
+    resolution: {integrity: sha512-5X8nZ4sQqde9bJw77AucmtWNdkYSThcbuOgOCKeLwPq9g6irEXeFXB2ywAM0CH1oZQ9pA9lB8FN6Srb1KtJP+w==}
+    requiresBuild: true
+    peerDependencies:
+      '@storybook/addon-docs': 8.0.0-alpha.10
+      '@storybook/components': 8.0.0-alpha.10
+      '@storybook/manager-api': 8.0.0-alpha.10
+      '@storybook/preview-api': 8.0.0-alpha.10
+      '@storybook/theming': 8.0.0-alpha.10
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@figspec/react': 1.0.3
     dev: false
     optional: true
 
@@ -4998,6 +5061,12 @@ packages:
       '@types/http-errors': 2.0.4
       '@types/mime': 3.0.4
       '@types/node': 20.11.16
+    dev: false
+    optional: true
+
+  /@types/trusted-types@2.0.7:
+    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -9765,6 +9834,34 @@ packages:
     requiresBuild: true
     dependencies:
       uc.micro: 2.0.0
+    dev: false
+    optional: true
+
+  /lit-element@3.3.3:
+    resolution: {integrity: sha512-XbeRxmTHubXENkV4h8RIPyr8lXc+Ff28rkcQzw3G6up2xg5E8Zu1IgOWIwBLEQsu3cOVFqdYwiVi0hv0SlpqUA==}
+    requiresBuild: true
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.2.0
+      '@lit/reactive-element': 1.6.3
+      lit-html: 2.8.0
+    dev: false
+    optional: true
+
+  /lit-html@2.8.0:
+    resolution: {integrity: sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==}
+    requiresBuild: true
+    dependencies:
+      '@types/trusted-types': 2.0.7
+    dev: false
+    optional: true
+
+  /lit@2.8.0:
+    resolution: {integrity: sha512-4Sc3OFX9QHOJaHbmTMk28SYgVxLN3ePDjg7hofEft2zWlehFL3LiAuapWc4U/kYwMYJSh2hTCPZ6/LIC7ii0MA==}
+    requiresBuild: true
+    dependencies:
+      '@lit/reactive-element': 1.6.3
+      lit-element: 3.3.3
+      lit-html: 2.8.0
     dev: false
     optional: true
 

@@ -14,6 +14,12 @@ const meta = {
 			options: ["small", "medium", "large"],
 		},
 	},
+	parameters: {
+		design: {
+			type: "figma",
+			url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample",
+		},
+	},
 } satisfies Meta<Button>;
 
 export default meta;

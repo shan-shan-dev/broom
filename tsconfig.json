@@ -2,12 +2,13 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "@terminal-nerds/typescript-config/es-module",
 	"compilerOptions": {
+		"allowJs": true,
 		"allowImportingTsExtensions": false,
-		"baseUrl": ".",
 		"composite": true,
 		"declaration": true,
 		"declarationMap": true,
 		"incremental": true,
+		"moduleResolution": "Bundler",
 		"noEmit": false,
 		"tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
 	},
@@ -22,6 +23,9 @@
 		},
 		{
 			"path": "packages/database",
+		},
+		{
+			"path": "packages/i18n",
 		},
 		{
 			"path": "packages/logger",

@@ -31,6 +31,11 @@
 		"limit": "10 kB"
 	},
 	{
+		"name": "@packages/i18n",
+		"path": "./packages/i18n/lib/**/*.js",
+		"limit": "5 kB"
+	},
+	{
 		"name": "@packages/logger",
 		"path": "./packages/logger/lib/**/*.js",
 		"limit": "3 kB"

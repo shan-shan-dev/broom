@@ -1,6 +1,8 @@
 name: Changesets
 
-on: workflow_call
+on:
+    workflow_call:
+    workflow_dispatch:
 
 defaults:
     run:
@@ -11,12 +13,11 @@ env:
 
 permissions:
     contents: read
-    pull-requests: write
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-    changesets:
+    inlang:
         runs-on: ubuntu-latest
         timeout-minutes: 1
         steps:
@@ -40,12 +41,7 @@ jobs:
                   pnpm install
                   --frozen-lockfile
 
-            - name: Create Release Pull Request
-              # https://github.com/changesets/action
-              uses: changesets/action@v1
-              if: ${{ github.ref_name == 'main' && github.repository_owner == 'terminal-nerds' }}
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  title: "chore(Changesets): Versioning package(s)"
-                  version: pnpm changeset version
+            - name: Lint the translation messages
+              # https://inlang.com/m/2qj2w8pu/app-inlang-cli#lint
+              run: >
+                  pnpm lint:i18n

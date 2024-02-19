@@ -37,6 +37,10 @@ jobs:
         name: lint
         uses: ./.github/workflows/biome.yml
 
+    lint_inlang:
+        name: lint
+        uses: ./.github/workflows/inlang.yml
+
     lint_markdownlint:
         name: lint
         uses: ./.github/workflows/markdownlint.yml

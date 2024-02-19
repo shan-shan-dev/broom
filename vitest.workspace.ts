@@ -69,6 +69,13 @@ const config = defineWorkspace([
 			name: "@packages/path",
 		},
 	},
+	{
+		extends: resolve(__dirname, "packages", "i18n", "vitest.config.ts"),
+		test: {
+			include: [resolve(__dirname, "packages", "i18n", "src", "**", "*.test.ts")],
+			name: "@packages/i18n",
+		},
+	},
 	// {
 	// 	extends: resolve(__dirname, "packages", "ui", "vitest.config.ts"),
 	// 	test: {

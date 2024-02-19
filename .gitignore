@@ -2,10 +2,14 @@
 node_modules/
 
 # Build outputs
-/packages/**/lib/
-bin/
-.svelte-kit/
 .astro/
+.svelte-kit/
+bin/
+dist/
+/packages/*/lib/
+
+# Cache
+.turbo/
 
 # Documentation output (auto-generated)
 docs/
@@ -21,6 +25,3 @@ pnpm-debug.log*
 
 # MacOS-specific files
 .DS_Store
-
-# Turborepo cache
-.turbo/

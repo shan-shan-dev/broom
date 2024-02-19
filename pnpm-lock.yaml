@@ -67,8 +67,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(typedoc@0.25.7)
       typedoc-plugin-mdn-links:
-        specifier: 3.1.14
-        version: 3.1.14(typedoc@0.25.7)
+        specifier: 3.1.16
+        version: 3.1.16(typedoc@0.25.7)
       typedoc-plugin-zod:
         specifier: 1.1.2
         version: 1.1.2(typedoc@0.25.7)
@@ -9234,8 +9234,8 @@ packages:
     dev: false
     optional: true
 
-  /typedoc-plugin-mdn-links@3.1.14(typedoc@0.25.7):
-    resolution: {integrity: sha512-zPnzIHvMChiuS4BvI4mbs89HwS6HSPE+q7rPRliJCeIkQYqW7YaTXuBwbUQFPg++02KNUY0IMp0MFvouoi1Qgw==}
+  /typedoc-plugin-mdn-links@3.1.16(typedoc@0.25.7):
+    resolution: {integrity: sha512-Jdnw3tI3KOOMMahUNiCwKXJcH+Ov9y3syRQ8HP1ce8nT2O9Bsg9aqqa0LWye+CdCiSpWJ/USzOK3MFNxRYzL4A==}
     requiresBuild: true
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'

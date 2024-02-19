@@ -3,6 +3,7 @@
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
+		"lib": ["DOM", "ESNext"]
 	},
 	"include": ["../../types/*.d.ts", "src/"],
 }

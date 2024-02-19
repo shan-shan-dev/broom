@@ -13,7 +13,7 @@
 	"exports": {
 		".": {
 			"types": "./lib/main.d.ts",
-			"import": "./lib/main.js"
+			"default": "./lib/main.js"
 		}
 	},
 	"scripts": {

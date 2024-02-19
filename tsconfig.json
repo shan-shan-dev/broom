@@ -13,7 +13,7 @@
 		"tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
 	},
 	"exclude": ["**/node_modules/"],
-	"include": ["types/*.d.ts", "*.js", "*.json", "*.ts"],
+	"include": [".storybook/*.ts", "types/*.d.ts", "*.js", "*.json", "*.ts"],
 	"references": [
 		{
 			"path": "packages/config",

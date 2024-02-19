@@ -64,8 +64,8 @@ importers:
         specifier: 0.25.7
         version: 0.25.7(typescript@5.3.3)
       typedoc-plugin-coverage:
-        specifier: 2.2.0
-        version: 2.2.0(typedoc@0.25.7)
+        specifier: 3.1.0
+        version: 3.1.0(typedoc@0.25.7)
       typedoc-plugin-mdn-links:
         specifier: 3.1.14
         version: 3.1.14(typedoc@0.25.7)
@@ -9223,12 +9223,12 @@ packages:
     dev: false
     optional: true
 
-  /typedoc-plugin-coverage@2.2.0(typedoc@0.25.7):
-    resolution: {integrity: sha512-/hq9nwSNBz2p7+VYfljT/zFSmaxN8tlfcIp6CCAaQN6VIxXCciYFIqR+pcckRhjmfHIeSJ5uy2OpCt5F683npA==}
-    engines: {node: '>= 16'}
+  /typedoc-plugin-coverage@3.1.0(typedoc@0.25.7):
+    resolution: {integrity: sha512-fxeJRrxQR3yM/aFZU7mOuatgRCztiMCbeNiCRVZKY6VNgOcVMC1HS+ZfZnlbLLteUOdeWleSQ6yntuipz5zi6A==}
+    engines: {node: '>= 18'}
     requiresBuild: true
     peerDependencies:
-      typedoc: ^0.22.12 || 0.23.x || 0.24.x || 0.25.x
+      typedoc: 0.25.x
     dependencies:
       typedoc: 0.25.7(typescript@5.3.3)
     dev: false

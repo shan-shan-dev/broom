@@ -1,8 +1,6 @@
 name: size-limit
 
-on:
-    workflow_call:
-    workflow_dispatch:
+on: workflow_call
 
 defaults:
     run:
@@ -63,4 +61,3 @@ jobs:
               with:
                   skip_step: build
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  package_manager: pnpm

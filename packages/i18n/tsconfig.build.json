@@ -3,8 +3,8 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"outDir": "lib/",
-		"rootDir": "src/"
+		"rootDir": "src/paraglide"
 	},
-	"exclude": ["src/**/*.test.ts", "scripts/"],
-	"include": ["src/"]
+	"exclude": ["src/**/*.test.ts"],
+	"include": ["src"]
 }

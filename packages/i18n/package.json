@@ -17,16 +17,17 @@
 		}
 	},
 	"scripts": {
-		"prebuild": "paraglide-js compile --outdir \"./src\" --project \"./project.inlang\" ",
+		"prebuild": "paraglide-js compile --outdir \"./src/paraglide\" --project \"./project.inlang\" ",
 		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
 		"clean:build": "del \"./lib\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",
-		"dev:build": "paraglide-js compile --outdir \"./lib\" --project \"./project.inlang\" --watch",
+		"dev:build": "paraglide-js compile --outdir \"./src/paraglide\" --project \"./project.inlang\" --watch",
 		"dev:doc": "typedoc --watch",
 		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui --open=false",
+		"editor": "inlang open editor",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"fix:i18n": "inlang machine translate --project \"./project.inlang\" ",
@@ -40,8 +41,7 @@
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" ",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
-		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck",
-		"postinstall": "paraglide-js compile --project \"./project.inlang\" "
+		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
 		"@inlang/paraglide-js": "1.2.5",

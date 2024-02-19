@@ -3,7 +3,6 @@
 	"extends": "@terminal-nerds/typescript-config/es-module",
 	"compilerOptions": {
 		"allowImportingTsExtensions": false,
-		"baseUrl": ".",
 		"composite": true,
 		"declaration": true,
 		"declarationMap": true,

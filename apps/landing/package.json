@@ -45,7 +45,7 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "0.5.2",
-		"astro": "4.3.5"
+		"astro": "4.4.0"
 	},
 	"devDependencies": {
 		"@inlang/paraglide-js-adapter-astro": "0.1.3",

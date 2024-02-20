@@ -1,0 +1,69 @@
+name: Chromatic
+
+on: workflow_call
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+
+permissions:
+    contents: read
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    chromatic:
+        runs-on: macos-14
+        timeout-minutes: 3
+        steps:
+            # https://github.com/actions/checkout
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Enable corepack (for pnpm)
+              # https://nodejs.org/api/corepack.html
+              run: corepack enable
+
+            - name: Setup the latest Node.js LTS version
+              # https://github.com/actions/setup-node
+              uses: actions/setup-node@v4
+              with:
+                  cache: pnpm
+                  node-version: lts/*
+
+            - name: Install Node.js dependencies with pnpm
+              # https://pnpm.io/cli/install
+              run: >
+                  pnpm install
+                  --frozen-lockfile
+
+            - name: Download build output from artifacts
+              # https://github.com/actions/download-artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: build-output
+                  path: build-output
+
+            - name: Extract build output from downloaded artifact
+              # https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh
+              shell: bash
+              run: >
+                  curl
+                  --request GET
+                  https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh
+                  | bash -s build-output
+
+            - name: Publish to Chromatic
+              uses: chromaui/action@latest
+              with:
+                  autoAcceptChanges: main
+                  buildScriptName: build:sb
+                  exitZeroOnChanges: true
+                  onlyChanged: true
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+                  skip: "@(renovate/**|dependabot/**)"
+                  zip: true

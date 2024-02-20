@@ -78,6 +78,11 @@ jobs:
         needs: [build_packages]
         secrets: inherit
 
+    public_chromatic:
+        name: Release
+        uses: ./.github/workflows/chromatic.yml
+        needs: [build_packages]
+
     release:
         name: Release
         uses: ./.github/workflows/changesets.yml

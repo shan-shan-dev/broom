@@ -1,7 +1,11 @@
 name: TypeDoc
 on:
     workflow_call:
-    workflow_dispatch:
+        inputs:
+            type:
+                description: Should it be a `pr-preview` or `deploy`?
+                required: true
+                type: string
 
 defaults:
     run:
@@ -12,6 +16,9 @@ env:
     # Prevent possible memory leaks by setting limit
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     NODE_OPTIONS: --max-old-space-size=6144
+    BRANCH: gh-pages
+    OUTPUT_DIR: docs
+    UMBRELLA_DIR: docs/pr-preview
 
 permissions:
     contents: read
@@ -64,9 +71,20 @@ jobs:
             - name: Build docs
               run: pnpm run build:doc
 
-            - name: Deploy preview to to GitHub Pages
+            - name: Create PR preview on the GitHub Pages
               # https://github.com/rossjrw/pr-preview-action
-              uses: rossjrw/pr-preview-action@v1
+              uses: rossjrw/pr-preview-action@v1.4.7
+              if: ${{ inputs.type == 'pr-preview' }}
               with:
-                  source-dir: docs
-                  umbrella-dir: docs/pr-preview
+                  preview-branch: ${{ env.BRANCH }}
+                  source-dir: ${{ env.OUTPUT_DIR }}
+                  umbrella-dir: ${{ env.UMBRELLA_DIR }}
+
+            - name: Deploy TypeDoc to GitHub Pages
+              # https://github.com/JamesIves/github-pages-deploy-action
+              uses: JamesIves/github-pages-deploy-action@v4.5.0
+              if: ${{ inputs.type == 'deploy' }}
+              with:
+                  clean-exclude: ${{ env.UMBRELLA_DIR }}
+                  folder: ${{ env.OUTPUT_DIR }}
+                  branch: ${{ env.BRANCH }}

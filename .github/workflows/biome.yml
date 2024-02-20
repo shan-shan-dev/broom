@@ -17,6 +17,7 @@ permissions:
 
 jobs:
     biome:
+        name: Biome
         runs-on: macos-14
         timeout-minutes: 2
         steps:

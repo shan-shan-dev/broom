@@ -16,6 +16,7 @@ permissions:
 
 jobs:
     vitest:
+        name: Vitest
         # FIXME: Using Docker action fails on MacOS, needs invegistation
         runs-on: ubuntu-latest
         timeout-minutes: 2

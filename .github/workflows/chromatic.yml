@@ -16,6 +16,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
     chromatic:
+        name: Chromatic
         runs-on: macos-14
         timeout-minutes: 3
         steps:

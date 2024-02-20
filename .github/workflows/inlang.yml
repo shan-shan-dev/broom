@@ -18,6 +18,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
     inlang:
+        name: inlang
         runs-on: ubuntu-latest
         timeout-minutes: 1
         steps:

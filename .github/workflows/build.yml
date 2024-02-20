@@ -19,6 +19,7 @@ permissions:
 
 jobs:
     build:
+        name: apps & packages
         runs-on: macos-14
         timeout-minutes: 2
         steps:

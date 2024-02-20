@@ -39,33 +39,33 @@ jobs:
         secrets: inherit
 
     lint_biome:
-        name: lint
+        name: Lint
         uses: ./.github/workflows/biome.yml
 
     lint_inlang:
-        name: lint
+        name: Lint
         uses: ./.github/workflows/inlang.yml
 
     lint_markdownlint:
-        name: lint
+        name: Lint
         uses: ./.github/workflows/markdownlint.yml
 
     lint_prettier:
-        name: lint
+        name: Lint
         uses: ./.github/workflows/prettier.yml
 
     lint_size_limit:
-        name: lint
+        name: Lint
         uses: ./.github/workflows/size-limit.yml
         needs: [build_packages]
         if: github.event_name == 'pull_request'
 
     lint_typos:
-        name: lint
+        name: Lint
         uses: ./.github/workflows/typos.yml
 
     test_vitest:
-        name: test
+        name: Test
         uses: ./.github/workflows/vitest.yml
         needs: [build_packages]
         secrets: inherit
@@ -90,8 +90,10 @@ jobs:
         needs:
             [
                 lint_biome,
+                lint_inlang,
                 lint_markdownlint,
                 lint_prettier,
+                lint_size_limit,
                 lint_typos,
                 build_packages,
                 publish_chromatic,

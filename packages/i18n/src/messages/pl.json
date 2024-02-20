@@ -1,6 +1,0 @@
-{
-	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"title": "Aplikacja Shan-Shan",
-	"greet": "Witaj {name}",
-	"bye": "Do widzenia {name}"
-}

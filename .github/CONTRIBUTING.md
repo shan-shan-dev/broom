@@ -1,4 +1,0 @@
-# Contributing
-
-> [!WARN]
-> 🚧 Under construction

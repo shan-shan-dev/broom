@@ -1,3 +1,0 @@
-# `@packages/util`
-
-Reusable snippets.

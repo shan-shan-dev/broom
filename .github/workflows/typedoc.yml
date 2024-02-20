@@ -1,7 +1,11 @@
 name: TypeDoc
 on:
     workflow_call:
-    workflow_dispatch:
+        inputs:
+            type:
+                description: Should it be a `pr-preview` or `deploy`?
+                required: true
+                type: string
 
 defaults:
     run:
@@ -12,12 +16,15 @@ env:
     # Prevent possible memory leaks by setting limit
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     NODE_OPTIONS: --max-old-space-size=6144
+    BRANCH: gh-pages
+    OUTPUT_DIR: docs
+    UMBRELLA_DIR: docs/pr-preview
 
 permissions:
-    contents: read
+    contents: write
     id-token: write
     pages: write
-    pull-requests: read
+    pull-requests: write
 
 jobs:
     typedoc:
@@ -64,21 +71,20 @@ jobs:
             - name: Build docs
               run: pnpm run build:doc
 
-            - name: Configure GitHub Pages
-              # https://github.com/actions/configure-pages
-              uses: actions/configure-pages@v4
-
-            - name: Configure GitHub Pages
-              # https://github.com/actions/configure-pages
-              uses: actions/configure-pages@v4
-
-            - name: Upload page artifact
-              # https://github.com/actions/upload-pages-artifact
-              uses: actions/upload-pages-artifact@v3
+            - name: Create PR preview on the GitHub Pages
+              # https://github.com/rossjrw/pr-preview-action
+              uses: rossjrw/pr-preview-action@v1.4.7
+              if: ${{ inputs.type == 'pr-preview' }}
               with:
-                  path: "./docs"
+                  preview-branch: ${{ env.BRANCH }}
+                  source-dir: ${{ env.OUTPUT_DIR }}
+                  umbrella-dir: ${{ env.UMBRELLA_DIR }}
 
-            - name: Deploy to GitHub Pages
-              id: deployment
-              # https://github.com/actions/deploy-pages
-              uses: actions/deploy-pages@v4
+            - name: Deploy TypeDoc to GitHub Pages
+              # https://github.com/JamesIves/github-pages-deploy-action
+              uses: JamesIves/github-pages-deploy-action@v4.5.0
+              if: ${{ inputs.type == 'deploy' }}
+              with:
+                  clean-exclude: ${{ env.UMBRELLA_DIR }}
+                  folder: ${{ env.OUTPUT_DIR }}
+                  branch: ${{ env.BRANCH }}

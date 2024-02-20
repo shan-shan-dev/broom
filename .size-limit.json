@@ -46,6 +46,16 @@
 		"limit": "3 kB"
 	},
 	{
+		"name": "@packages/token",
+		"path": "./packages/token/lib/**/*.js",
+		"limit": "3 kB"
+	},
+	{
+		"name": "@packages/ui",
+		"path": "./packages/ui/lib/**/*.js",
+		"limit": "15 kB"
+	},
+	{
 		"name": "@packages/unit",
 		"path": "./packages/unit/lib/**/*.js",
 		"limit": "5 kB"

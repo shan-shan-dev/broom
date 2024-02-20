@@ -81,7 +81,7 @@ jobs:
         uses: ./.github/workflows/typedoc.yml
         needs: [build_packages]
         with:
-            type: ${{ github.event_name == 'pull_request' && contains(['opened', 'reopened', 'synchronize'], github.event.action) && 'pr-preview' || 'deploy' }}
+            type: ${{ github.event_name == 'pull_request' && contains(fromJson('["opened", "reopened", "synchronize"]'), github.event.action) && 'pr-preview' || 'deploy' }}
 
     release:
         name: Release

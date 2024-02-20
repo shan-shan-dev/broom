@@ -27,9 +27,6 @@ importers:
       '@chromatic-com/storybook':
         specifier: 1.1.9
         version: 1.1.9
-      '@packages/path':
-        specifier: workspace:*
-        version: link:packages/path
       '@size-limit/esbuild-why':
         specifier: 11.0.2
         version: 11.0.2(size-limit@11.0.2)

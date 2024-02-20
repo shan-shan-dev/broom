@@ -61,7 +61,7 @@ jobs:
                   | bash -s build-output
 
             - name: Build docs
-              run: pnpm run doc
+              run: pnpm run build:doc
 
             - name: Configure GitHub Pages
               # https://github.com/actions/configure-pages

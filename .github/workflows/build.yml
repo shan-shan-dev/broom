@@ -59,7 +59,7 @@ jobs:
                   sort_keys: true
 
             - name: Execute build tasks
-              run: pnpm build
+              run: pnpm build:pkg
 
             - name: Upload built output to GitHub Actions workflow artifacts
               # https://github.com/actions/upload-artifact

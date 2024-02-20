@@ -257,13 +257,13 @@ importers:
   packages/database:
     devDependencies:
       '@packages/config':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../config
       '@packages/logger':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../logger
       '@packages/util':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../util
       drizzle-orm:
         specifier: 0.29.3

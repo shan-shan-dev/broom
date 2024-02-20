@@ -44,9 +44,9 @@
 		"up:container": "docker compose --env-file \"../../.env\" --file \"./docker-compose.yml\" up --detach --build"
 	},
 	"devDependencies": {
-		"@packages/config": "workspace:^",
-		"@packages/logger": "workspace:^",
-		"@packages/util": "workspace:^",
+		"@packages/config": "workspace:*",
+		"@packages/logger": "workspace:*",
+		"@packages/util": "workspace:*",
 		"drizzle-orm": "0.29.3",
 		"postgres": "3.4.3"
 	}

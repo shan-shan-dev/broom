@@ -45,4 +45,4 @@ jobs:
               with:
                   globs: |
                       *.md
-                      !techstack.md
+                      !.github/TECHSTACK.md

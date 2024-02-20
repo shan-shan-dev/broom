@@ -11,9 +11,9 @@
 		"/lib"
 	],
 	"exports": {
-		".": {
-			"types": "./lib/main.d.ts",
-			"import": "./lib/main.js"
+		"./*": {
+			"types": "./lib/*.d.ts",
+			"import": "./lib/*.js"
 		}
 	},
 	"scripts": {
@@ -38,5 +38,12 @@
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
+	},
+	"dependencies": {
+		"@packages/logger": "workspace:*"
+	},
+	"devDependencies": {
+		"@testing-library/dom": "9.3.4",
+		"@testing-library/user-event": "14.5.2"
 	}
 }

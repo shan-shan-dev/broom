@@ -1,7 +1,6 @@
-name: TypeDoc
-on:
-    workflow_call:
-    workflow_dispatch:
+name: Chromatic
+
+on: workflow_call
 
 defaults:
     run:
@@ -9,24 +8,22 @@ defaults:
 
 env:
     CI: true
-    # Prevent possible memory leaks by setting limit
-    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
-    NODE_OPTIONS: --max-old-space-size=6144
 
 permissions:
     contents: read
-    id-token: write
-    pages: write
-    pull-requests: read
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-    typedoc:
-        name: TypeDoc
+    chromatic:
+        name: Chromatic
         runs-on: macos-14
-        timeout-minutes: 2
+        timeout-minutes: 3
         steps:
             # https://github.com/actions/checkout
             - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
             - name: Enable corepack (for pnpm)
               # https://nodejs.org/api/corepack.html
@@ -61,24 +58,13 @@ jobs:
                   https://raw.githubusercontent.com/shan-shan-dev/shan-shan/main/.github/scripts/extract-build-output.sh
                   | bash -s build-output
 
-            - name: Build docs
-              run: pnpm run build:doc
-
-            - name: Configure GitHub Pages
-              # https://github.com/actions/configure-pages
-              uses: actions/configure-pages@v4
-
-            - name: Configure GitHub Pages
-              # https://github.com/actions/configure-pages
-              uses: actions/configure-pages@v4
-
-            - name: Upload page artifact
-              # https://github.com/actions/upload-pages-artifact
-              uses: actions/upload-pages-artifact@v3
+            - name: Publish to Chromatic
+              uses: chromaui/action@latest
               with:
-                  path: "./docs"
-
-            - name: Deploy to GitHub Pages
-              id: deployment
-              # https://github.com/actions/deploy-pages
-              uses: actions/deploy-pages@v4
+                  autoAcceptChanges: main
+                  buildScriptName: build:sb
+                  exitZeroOnChanges: true
+                  onlyChanged: true
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+                  skip: "@(renovate/**|dependabot/**)"
+                  zip: true

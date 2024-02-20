@@ -1,27 +1,29 @@
-# Dependency directories
-node_modules/
-
 # Build outputs
 .astro/
 .svelte-kit/
+/packages/**/lib/
 bin/
 dist/
-/packages/*/lib/
+packages/*/lib/
+storybook-static/
 
 # Cache
 .turbo/
 
+# Dependency directories
+node_modules/
+
 # Documentation output (auto-generated)
 docs/
-
-# Tests coverage (auto-generated)
-coverage/
-
-# Sensitive data
-.env
 
 # Logs
 pnpm-debug.log*
 
 # MacOS-specific files
 .DS_Store
+
+# Sensitive data
+.env
+
+# Tests coverage (auto-generated)
+coverage/

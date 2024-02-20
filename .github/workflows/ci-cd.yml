@@ -93,7 +93,6 @@ jobs:
                 lint_inlang,
                 lint_markdownlint,
                 lint_prettier,
-                lint_size_limit,
                 lint_typos,
                 build_packages,
                 publish_chromatic,

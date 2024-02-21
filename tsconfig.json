@@ -10,6 +10,7 @@
 		"incremental": true,
 		"moduleResolution": "Bundler",
 		"noEmit": false,
+		"sourceMap": false,
 		"tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
 	},
 	"exclude": ["**/node_modules/"],

@@ -11,10 +11,7 @@
 		"/lib"
 	],
 	"exports": {
-		".": {
-			"types": "./lib/main.d.ts",
-			"import": "./lib/main.js"
-		}
+		"./*": "./lib/*.js"
 	},
 	"scripts": {
 		"build": "tsc --project \"./tsconfig.build.json\" ",

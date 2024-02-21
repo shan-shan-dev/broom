@@ -13,6 +13,9 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		alias: {
+			"$lib/*": "src/lib/*",
+		},
 		files: {
 			lib: resolve(__dirname, "src", "lib"),
 		},

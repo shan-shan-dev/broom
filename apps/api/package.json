@@ -7,9 +7,6 @@
 	"engines": {
 		"node": ">=20"
 	},
-	"files": [
-		"/lib"
-	],
 	"exports": {
 		".": {
 			"types": "./lib/main.d.ts",

@@ -7,15 +7,6 @@
 	"engines": {
 		"node": ">=20"
 	},
-	"files": [
-		"/lib"
-	],
-	"exports": {
-		".": {
-			"types": "./lib/main.d.ts",
-			"import": "./lib/main.js"
-		}
-	},
 	"scripts": {
 		"build": "astro check && astro build",
 		"clean": "pnpm run \"/^clean:.*/\" ",

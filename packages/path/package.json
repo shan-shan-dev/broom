@@ -11,14 +11,8 @@
 		"/lib"
 	],
 	"exports": {
-		".": {
-			"types": "./lib/main.d.ts",
-			"default": "./lib/main.js"
-		},
-		"./*": {
-			"types": "./lib/*.d.ts",
-			"default": "./lib/*.js"
-		}
+		".": "./lib/main.js",
+		"./*": "./lib/*.js"
 	},
 	"scripts": {
 		"prebuild": "tsx \"./hooks/prebuild.ts\" ",

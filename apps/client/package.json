@@ -7,9 +7,6 @@
 	"engines": {
 		"node": ">=20"
 	},
-	"files": [
-		"/.svelte-kit"
-	],
 	"scripts": {
 		"build": "vite build",
 		"clean": "pnpm run \"/^clean:.*/\" ",

@@ -1,13 +1,10 @@
-// import adapter from "@sveltejs/adapter-auto";
+// NOTE: This was needed by Storybook, see if we can get rid of it.
+
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
-/** @type {import("@sveltejs/kit").Config} */
+/** @type {import("@sveltejs/vite-plugin-svelte").Options} */
 const config = {
 	preprocess: vitePreprocess(),
-
-	// kit: {
-	// 	adapter: adapter(),
-	// },
 };
 
 export default config;

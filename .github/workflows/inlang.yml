@@ -1,4 +1,4 @@
-name: Changesets
+name: inlang
 
 on:
     workflow_call:

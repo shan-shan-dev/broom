@@ -44,16 +44,14 @@ jobs:
         timeout-minutes: 1
         outputs:
             files: ${{ steps.files.outputs.all_changed_files }}
-            has_astro: ${{ steps.astroon.outputs.has_astro }}
-            has_html: ${{ steps.htmlon.outputs.has_html }}
-            has_js: ${{ steps.json.outputs.has_js }}
-            has_jsx: ${{ steps.jsxon.outputs.has_jsx }}
+            has_astro: ${{ steps.astro.outputs.has_astro }}
+            has_html: ${{ steps.html.outputs.has_html }}
+            has_js: ${{ steps.js.outputs.has_js }}
             has_json: ${{ steps.json.outputs.has_json }}
             has_md: ${{ steps.md.outputs.has_md }}
             has_mdx: ${{ steps.mdx.outputs.has_mdx }}
             has_svelte: ${{ steps.svelte.outputs.has_svelte }}
-            has_ts: ${{ steps.tson.outputs.has_ts }}
-            has_tsx: ${{ steps.tsxon.outputs.has_tsx }}
+            has_ts: ${{ steps.ts.outputs.has_ts }}
         steps:
             # https://github.com/actions/checkout
             - uses: actions/checkout@v4
@@ -83,7 +81,7 @@ jobs:
               run: echo "has_mdx=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".mdx"))')" >> "$GITHUB_OUTPUT"
             - name: Set output 'has_svelte'
               id: svelte
-              run: echo "has_svelte=$(echo '${{ steps.files.outpusvelte.all_changed_files }}' | jq 'any(. | endswith(".svelte"))')" >> "$GITHUB_OUTPUT"
+              run: echo "has_svelte=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".svelte"))')" >> "$GITHUB_OUTPUT"
             - name: Set output 'has_ts'
               id: ts
               run: echo "has_ts=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".ts"))')" >> "$GITHUB_OUTPUT"
@@ -92,7 +90,7 @@ jobs:
         name: Lint
         uses: shan-shan-dev/.github/.github/workflows/biome.yml@main
         needs: [changed_files]
-        if: needs.changed_files.outputs.has_js || needs.changed_files.outputs.has_json || needs.changed_files.outputs.has_ts
+        if: needs.changed_files.outputs.has_js == 'true' || needs.changed_files.outputs.has_json == 'true' || needs.changed_files.outputs.has_ts == 'true'
 
     lint_inlang:
         name: Lint
@@ -102,13 +100,13 @@ jobs:
         name: Lint
         uses: shan-shan-dev/.github/.github/workflows/markdownlint.yml@main
         needs: [changed_files]
-        if: needs.changed_files.outputs.has_md && needs.changed_files.outputs.has_mdx
+        if: needs.changed_files.outputs.has_md == 'true' || needs.changed_files.outputs.has_mdx == 'true'
 
     lint_prettier:
         name: Lint
         uses: shan-shan-dev/.github/.github/workflows/prettier.yml@main
         needs: [changed_files]
-        if: needs.changed_files.outputs.has_astro && needs.changed_files.outputs.has_html && needs.changed_files.outputs.has_svelte
+        if: needs.changed_files.outputs.has_astro == 'true' || needs.changed_files.outputs.has_html == 'true' || needs.changed_files.outputs.has_svelte == 'true'
 
     lint_size_limit:
         name: Lint

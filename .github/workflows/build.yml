@@ -19,7 +19,7 @@ permissions:
 
 jobs:
     build:
-        name: apps & packages
+        name: apps & libs
         runs-on: macos-14
         timeout-minutes: 2
         steps:
@@ -69,6 +69,6 @@ jobs:
                   if-no-files-found: error
                   name: build-output
                   path: |
-                      ./apps/*/bin/
+                      ./apps/*/build/
                       ./apps/*/.svelte-kit/
-                      ./packages/*/lib/
+                      ./libs/*/dist/

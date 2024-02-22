@@ -38,9 +38,61 @@ jobs:
         uses: ./.github/workflows/build.yml
         secrets: inherit
 
+    changed_files:
+        name: Get changed files
+        runs-on: macos-14
+        timeout-minutes: 1
+        outputs:
+            files: ${{ steps.files.outputs.all_changed_files }}
+            has_astro: ${{ steps.astroon.outputs.has_astro }}
+            has_html: ${{ steps.htmlon.outputs.has_html }}
+            has_js: ${{ steps.json.outputs.has_js }}
+            has_jsx: ${{ steps.jsxon.outputs.has_jsx }}
+            has_json: ${{ steps.json.outputs.has_json }}
+            has_md: ${{ steps.md.outputs.has_md }}
+            has_mdx: ${{ steps.mdx.outputs.has_mdx }}
+            has_svelte: ${{ steps.svelte.outputs.has_svelte }}
+            has_ts: ${{ steps.tson.outputs.has_ts }}
+            has_tsx: ${{ steps.tsxon.outputs.has_tsx }}
+        steps:
+            # https://github.com/actions/checkout
+            - uses: actions/checkout@v4
+              # https://github.com/tj-actions/changed-files
+            - uses: tj-actions/changed-files@v42.0.4
+              id: files
+              with:
+                  escape_json: false
+                  json: true
+            - name: Set output 'has_astro'
+              id: astro
+              run: echo "has_astro=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".astro"))')" >> "$GITHUB_OUTPUT"
+            - name: Set output 'has_html'
+              id: html
+              run: echo "has_html=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".html"))')" >> "$GITHUB_OUTPUT"
+            - name: Set output 'has_js'
+              id: js
+              run: echo "has_js=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".js"))')" >> "$GITHUB_OUTPUT"
+            - name: Set output 'has_json'
+              id: json
+              run: echo "has_json=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".json"))')" >> "$GITHUB_OUTPUT"
+            - name: Set output 'has_md'
+              id: md
+              run: echo "has_md=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".md"))')" >> "$GITHUB_OUTPUT"
+            - name: Set output 'has_mdx'
+              id: mdx
+              run: echo "has_mdx=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".mdx"))')" >> "$GITHUB_OUTPUT"
+            - name: Set output 'has_svelte'
+              id: svelte
+              run: echo "has_svelte=$(echo '${{ steps.files.outpusvelte.all_changed_files }}' | jq 'any(. | endswith(".svelte"))')" >> "$GITHUB_OUTPUT"
+            - name: Set output 'has_ts'
+              id: ts
+              run: echo "has_ts=$(echo '${{ steps.files.outputs.all_changed_files }}' | jq 'any(. | endswith(".ts"))')" >> "$GITHUB_OUTPUT"
+
     lint_biome:
         name: Lint
-        uses: ./.github/workflows/biome.yml
+        uses: shan-shan-dev/.github/.github/workflows/biome.yml@main
+        needs: [changed_files]
+        if: needs.changed_files.outputs.has_js || needs.changed_files.outputs.has_json || needs.changed_files.outputs.has_ts
 
     lint_inlang:
         name: Lint
@@ -48,11 +100,15 @@ jobs:
 
     lint_markdownlint:
         name: Lint
-        uses: ./.github/workflows/markdownlint.yml
+        uses: shan-shan-dev/.github/.github/workflows/markdownlint.yml@main
+        needs: [changed_files]
+        if: needs.changed_files.outputs.has_md && needs.changed_files.outputs.has_mdx
 
     lint_prettier:
         name: Lint
-        uses: ./.github/workflows/prettier.yml
+        uses: shan-shan-dev/.github/.github/workflows/prettier.yml@main
+        needs: [changed_files]
+        if: needs.changed_files.outputs.has_astro && needs.changed_files.outputs.has_html && needs.changed_files.outputs.has_svelte
 
     lint_size_limit:
         name: Lint
@@ -62,7 +118,7 @@ jobs:
 
     lint_typos:
         name: Lint
-        uses: ./.github/workflows/typos.yml
+        uses: shan-shan-dev/.github/.github/workflows/typos.yml@main
 
     test_vitest:
         name: Test

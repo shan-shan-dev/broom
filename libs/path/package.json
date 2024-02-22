@@ -8,17 +8,17 @@
 		"node": ">=20"
 	},
 	"files": [
-		"/lib"
+		"/dist"
 	],
 	"exports": {
-		".": "./lib/main.js",
-		"./*": "./lib/*.js"
+		".": "./dist/main.js",
+		"./*": "./dist/*.js"
 	},
 	"scripts": {
 		"prebuild": "tsx \"./hooks/prebuild.ts\" ",
 		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
-		"clean:build": "del \"./lib\" ",
+		"clean:build": "del \"./dist\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",

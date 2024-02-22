@@ -7,16 +7,10 @@
 	"engines": {
 		"node": ">=20"
 	},
-	"exports": {
-		".": {
-			"types": "./lib/main.d.ts",
-			"import": "./lib/main.js"
-		}
-	},
 	"scripts": {
 		"build": "tsup",
 		"clean": "pnpm run \"/^clean:.*/\" ",
-		"clean:build": "del \"./bin\" ",
+		"clean:build": "del \"./dist\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",

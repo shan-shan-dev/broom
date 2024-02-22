@@ -10,7 +10,7 @@
 	"scripts": {
 		"build": "astro check && astro build",
 		"clean": "pnpm run \"/^clean:.*/\" ",
-		"clean:build": "del \"./bin\" ",
+		"clean:build": "del \"./build\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",

@@ -20,7 +20,7 @@ const config = defineConfig({
 		}),
 	],
 
-	outDir: resolve(__dirname, "dist"),
+	outDir: resolve(__dirname, "build"),
 });
 
 export default config;

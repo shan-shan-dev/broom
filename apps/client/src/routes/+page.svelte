@@ -1,5 +1,5 @@
 <script>
-	import { greet, title } from "@libs/i18n";
+	import { greet, title } from "@libs/i18n/messages";
 
 	import welcome from "$lib/images/svelte-welcome.webp";
 	import welcome_fallback from "$lib/images/svelte-welcome.png";

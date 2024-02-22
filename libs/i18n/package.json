@@ -8,23 +8,23 @@
 		"node": ">=20"
 	},
 	"files": [
-		"/lib/"
+		"/dist/"
 	],
 	"exports": {
-		".": {
-			"types": "./lib/messages/index.d.ts",
-			"default": "./lib/messages/index.js"
-		},
 		"./*": {
-			"types": "./lib/*.d.ts",
-			"default": "./lib/*.js"
+			"types": "./dist/*.d.ts",
+			"import": "./dist/*.js"
+		},
+		"./messages": {
+			"types": "./dist/messages/index.d.ts",
+			"default": "./dist/messages/index.js"
 		}
 	},
 	"scripts": {
 		"prebuild": "pnpm run compile",
 		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
-		"clean:build": "del \"./lib\" ",
+		"clean:build": "del \"./dist\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"compile": "paraglide-js compile --outdir \"./src/paraglide\" --project \"./project.inlang\" ",

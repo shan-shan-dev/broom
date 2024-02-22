@@ -1,9 +1,6 @@
-// import { execa } from "execa";
 import { defineConfig } from "tsup";
 
-export default defineConfig((options) => {
-	const { watch } = options;
-
+export default defineConfig((_options) => {
 	return {
 		cjsInterop: true,
 		clean: true,
@@ -11,21 +8,12 @@ export default defineConfig((options) => {
 		entry: ["./src/**/*.ts", "!./src/**/*.test.ts"],
 		format: "esm",
 		minify: false,
-		outDir: "./bin",
+		outDir: "./build",
 		platform: "node",
 		shims: true,
 		sourcemap: false,
 		splitting: false,
 		target: "esnext",
 		treeshake: false,
-		// onSuccess: async () => {
-		// 	if (watch) {
-		// 		execa("pnpm", ["start"], {
-		// 			all: true,
-		// 			shell: true,
-		// 			stdio: "inherit",
-		// 		});
-		// 	}
-		// },
 	};
 });

@@ -2,7 +2,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import AutoLoad from "@fastify/autoload";
-import { type Config } from "@packages/config";
+import { type Config } from "@libs/config";
 import type { FastifyPluginAsync } from "fastify";
 
 const __filename = fileURLToPath(import.meta.url);

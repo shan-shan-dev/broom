@@ -2,7 +2,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import paraglide from "@inlang/paraglide-js-adapter-astro";
-import { getInlangConfigDirURL, getInlangOutputDirURL } from "@packages/i18n/config";
+import { getInlangConfigDirURL, getInlangOutputDirURL } from "@libs/i18n/config";
 import { defineConfig } from "astro/config";
 
 const __filename = fileURLToPath(import.meta.url);

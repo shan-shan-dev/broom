@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
 import { paraglide } from "@inlang/paraglide-js-adapter-sveltekit/vite";
-import { getInlangConfigDirURL, getInlangOutputDirURL } from "@packages/i18n/config";
+import { getInlangConfigDirURL, getInlangOutputDirURL } from "@libs/i18n/config";
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vitest/config";
 

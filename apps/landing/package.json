@@ -40,6 +40,6 @@
 	},
 	"devDependencies": {
 		"@inlang/paraglide-js-adapter-astro": "0.1.3",
-		"@packages/i18n": "workspace:*"
+		"@libs/i18n": "workspace:*"
 	}
 }

@@ -1,5 +1,5 @@
-import { type Config } from "@packages/config";
-import { log } from "@packages/logger";
+import { type Config } from "@libs/config";
+import { log } from "@libs/logger";
 import Fastify from "fastify";
 
 import { createApp } from "./app.js";

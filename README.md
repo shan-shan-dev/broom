@@ -1,4 +1,4 @@
-# Shan-Shan
+# Broom
 
 > [!CAUTION]
 > 🚧 Under construction
@@ -32,7 +32,7 @@ how to navigate in this project workspace root **directories**.
 ├── [1] .changeset
 ├── [2] .github
 ├── [3] apps
-├── [4] packages
+├── [4] libs
 └── [5] types
 ```
 
@@ -41,7 +41,7 @@ Where as:
 - [`[1] .changeset`](https://github.com/shan-shan-dev/shan-shan/tree/main/.changeset) -> Atomized upcoming release notes
 - [`[2] .github`](https://github.com/shan-shan-dev/shan-shan/tree/main/.github) -> GitHub related setup for this repository
 - [`[3] apps`](https://github.com/shan-shan-dev/shan-shan/tree/main/apps) -> workspace apps
-- [`[4] packages`](https://github.com/shan-shan-dev/shan-shan/tree/main/packages) -> library packages
+- [`[4] libs`](https://github.com/shan-shan-dev/shan-shan/tree/main/libs) -> library packages
 - [`[5] types`](https://github.com/shan-shan-dev/shan-shan/tree/main/types) -> reusable types for the entire workspace
 
 ## Getting started

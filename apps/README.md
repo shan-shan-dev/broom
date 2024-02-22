@@ -1,6 +1,6 @@
 # Apps
 
-**Binary** packages, to be deployed.
+**Application** packages, to be deployed.
 
 > [!NOTE]
 > All of the binary packages are **prefixed with `@apps/`**.

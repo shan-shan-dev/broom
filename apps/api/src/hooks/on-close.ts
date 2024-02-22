@@ -1,4 +1,4 @@
-import { log } from "@packages/logger";
+import { log } from "@libs/logger";
 import closeWithGrace from "close-with-grace";
 import type { onCloseAsyncHookHandler } from "fastify";
 

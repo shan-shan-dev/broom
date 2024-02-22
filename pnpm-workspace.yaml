@@ -1,5 +1,5 @@
 # https://pnpm.io/pnpm-workspace_yaml
 ---
 packages:
-    - "apps/*" # Binary
-    - "packages/*" # Libraries
+    - "apps/*" # Applications
+    - "libs/*" # Libraries

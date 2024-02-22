@@ -1,0 +1,3 @@
+# `@libs/util`
+
+Reusable snippets.

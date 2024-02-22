@@ -21,9 +21,9 @@ const config: StorybookConfig = {
 	stories: [
 		resolve(__dirname, "..", "apps", "client", "src", "**", "*.stories.ts"),
 		resolve(__dirname, "..", "apps", "ladding", "src", "**", "*.stories.ts"),
-		resolve(__dirname, "..", "packages", "token", "stories", "**", "*.mdx"),
-		resolve(__dirname, "..", "packages", "ui", "src", "**", "*.stories.ts"),
-		resolve(__dirname, "..", "packages", "ui", "stories", "**", "*.mdx"),
+		resolve(__dirname, "..", "libs", "token", "stories", "**", "*.mdx"),
+		resolve(__dirname, "..", "libs", "ui", "src", "**", "*.stories.ts"),
+		resolve(__dirname, "..", "libs", "ui", "stories", "**", "*.mdx"),
 	],
 	typescript: {},
 };

@@ -35,66 +35,66 @@ const config = defineWorkspace([
 	},
 	// Libraries
 	{
-		extends: resolve(__dirname, "packages", "config", "vitest.config.ts"),
+		extends: resolve(__dirname, "libs", "config", "vitest.config.ts"),
 		test: {
-			include: [resolve(__dirname, "packages", "config", "src", "**", "*.test.ts")],
-			name: "@packages/config",
+			include: [resolve(__dirname, "libs", "config", "src", "**", "*.test.ts")],
+			name: "@libs/config",
 		},
 	},
 	{
-		extends: resolve(__dirname, "packages", "core", "vitest.config.ts"),
+		extends: resolve(__dirname, "libs", "core", "vitest.config.ts"),
 		test: {
-			include: [resolve(__dirname, "packages", "core", "src", "**", "*.test.ts")],
-			name: "@packages/core",
+			include: [resolve(__dirname, "libs", "core", "src", "**", "*.test.ts")],
+			name: "@libs/core",
 		},
 	},
 	{
-		extends: resolve(__dirname, "packages", "database", "vitest.config.ts"),
+		extends: resolve(__dirname, "libs", "database", "vitest.config.ts"),
 		test: {
-			include: [resolve(__dirname, "packages", "database", "src", "**", "*.test.ts")],
-			name: "@packages/database",
+			include: [resolve(__dirname, "libs", "database", "src", "**", "*.test.ts")],
+			name: "@libs/database",
 		},
 	},
 	{
-		extends: resolve(__dirname, "packages", "logger", "vitest.config.ts"),
+		extends: resolve(__dirname, "libs", "logger", "vitest.config.ts"),
 		test: {
-			include: [resolve(__dirname, "packages", "logger", "src", "**", "*.test.ts")],
-			name: "@packages/logger",
+			include: [resolve(__dirname, "libs", "logger", "src", "**", "*.test.ts")],
+			name: "@libs/logger",
 		},
 	},
 	{
-		extends: resolve(__dirname, "packages", "path", "vitest.config.ts"),
+		extends: resolve(__dirname, "libs", "path", "vitest.config.ts"),
 		test: {
-			include: [resolve(__dirname, "packages", "path", "src", "**", "*.test.ts")],
-			name: "@packages/path",
+			include: [resolve(__dirname, "libs", "path", "src", "**", "*.test.ts")],
+			name: "@libs/path",
 		},
 	},
 	{
-		extends: resolve(__dirname, "packages", "i18n", "vitest.config.ts"),
+		extends: resolve(__dirname, "libs", "i18n", "vitest.config.ts"),
 		test: {
-			include: [resolve(__dirname, "packages", "i18n", "src", "**", "*.test.ts")],
-			name: "@packages/i18n",
+			include: [resolve(__dirname, "libs", "i18n", "src", "**", "*.test.ts")],
+			name: "@libs/i18n",
 		},
 	},
 	// {
-	// 	extends: resolve(__dirname, "packages", "ui", "vitest.config.ts"),
+	// 	extends: resolve(__dirname, "libs", "ui", "vitest.config.ts"),
 	// 	test: {
-	// 		include: [resolve(__dirname, "packages", "ui", "src", "**", "*.test.ts")],
-	// 		name: "@packages/path",
+	// 		include: [resolve(__dirname, "libs", "ui", "src", "**", "*.test.ts")],
+	// 		name: "@libs/path",
 	// 	},
 	// },
 	{
-		extends: resolve(__dirname, "packages", "unit", "vitest.config.ts"),
+		extends: resolve(__dirname, "libs", "unit", "vitest.config.ts"),
 		test: {
-			include: [resolve(__dirname, "packages", "unit", "src", "**", "*.test.ts")],
-			name: "@packages/unit",
+			include: [resolve(__dirname, "libs", "unit", "src", "**", "*.test.ts")],
+			name: "@libs/unit",
 		},
 	},
 	{
-		extends: resolve(__dirname, "packages", "util", "vitest.config.ts"),
+		extends: resolve(__dirname, "libs", "util", "vitest.config.ts"),
 		test: {
-			include: [resolve(__dirname, "packages", "util", "src", "**", "*.test.ts")],
-			name: "@packages/util",
+			include: [resolve(__dirname, "libs", "util", "src", "**", "*.test.ts")],
+			name: "@libs/util",
 		},
 	},
 ]);

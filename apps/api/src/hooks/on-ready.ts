@@ -1,4 +1,4 @@
-import { log } from "@packages/logger";
+import { log } from "@libs/logger";
 import type { onReadyAsyncHookHandler } from "fastify";
 
 export const handleReady: onReadyAsyncHookHandler = async function ready() {

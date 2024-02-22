@@ -154,12 +154,12 @@ importers:
       '@fastify/swagger-ui':
         specifier: 2.1.0
         version: 2.1.0
-      '@packages/config':
+      '@libs/config':
         specifier: workspace:*
-        version: link:../../packages/config
-      '@packages/logger':
+        version: link:../../libs/config
+      '@libs/logger':
         specifier: workspace:*
-        version: link:../../packages/logger
+        version: link:../../libs/logger
       close-with-grace:
         specifier: 1.2.0
         version: 1.2.0
@@ -185,9 +185,9 @@ importers:
 
   apps/client:
     dependencies:
-      '@packages/i18n':
+      '@libs/i18n':
         specifier: workspace:*
-        version: link:../../packages/i18n
+        version: link:../../libs/i18n
     devDependencies:
       '@fontsource/fira-mono':
         specifier: 5.0.8
@@ -220,22 +220,22 @@ importers:
       '@inlang/paraglide-js-adapter-astro':
         specifier: 0.1.3
         version: 0.1.3(astro@4.3.5)
-      '@packages/i18n':
+      '@libs/i18n':
         specifier: workspace:*
-        version: link:../../packages/i18n
+        version: link:../../libs/i18n
 
-  packages/config:
+  libs/config:
     dependencies:
-      '@packages/logger':
+      '@libs/logger':
         specifier: workspace:*
         version: link:../logger
-      '@packages/path':
+      '@libs/path':
         specifier: workspace:*
         version: link:../path
-      '@packages/unit':
+      '@libs/unit':
         specifier: workspace:*
         version: link:../unit
-      '@packages/util':
+      '@libs/util':
         specifier: workspace:*
         version: link:../util
       dotenv:
@@ -249,17 +249,17 @@ importers:
         specifier: 2.4.1
         version: 2.4.1
 
-  packages/core: {}
+  libs/core: {}
 
-  packages/database:
+  libs/database:
     devDependencies:
-      '@packages/config':
+      '@libs/config':
         specifier: workspace:*
         version: link:../config
-      '@packages/logger':
+      '@libs/logger':
         specifier: workspace:*
         version: link:../logger
-      '@packages/util':
+      '@libs/util':
         specifier: workspace:*
         version: link:../util
       drizzle-orm:
@@ -269,15 +269,15 @@ importers:
         specifier: 3.4.3
         version: 3.4.3
 
-  packages/i18n:
+  libs/i18n:
     dependencies:
       '@inlang/paraglide-js':
         specifier: 1.2.5
         version: 1.2.5
-      '@packages/logger':
+      '@libs/logger':
         specifier: workspace:*
         version: link:../logger
-      '@packages/path':
+      '@libs/path':
         specifier: workspace:*
         version: link:../path
     devDependencies:
@@ -285,7 +285,7 @@ importers:
         specifier: 2.12.3
         version: 2.12.3
 
-  packages/logger:
+  libs/logger:
     dependencies:
       pino:
         specifier: 8.18.0
@@ -294,9 +294,9 @@ importers:
         specifier: 10.3.1
         version: 10.3.1
 
-  packages/path:
+  libs/path:
     dependencies:
-      '@packages/logger':
+      '@libs/logger':
         specifier: workspace:*
         version: link:../logger
       find-up:
@@ -307,11 +307,11 @@ importers:
         specifier: 4.7.8
         version: 4.7.8
 
-  packages/token: {}
+  libs/token: {}
 
-  packages/ui:
+  libs/ui:
     dependencies:
-      '@packages/logger':
+      '@libs/logger':
         specifier: workspace:*
         version: link:../logger
     devDependencies:
@@ -322,15 +322,15 @@ importers:
         specifier: 14.5.2
         version: 14.5.2(@testing-library/dom@9.3.4)
 
-  packages/unit:
+  libs/unit:
     dependencies:
       '@faker-js/faker':
         specifier: 8.4.0
         version: 8.4.0
-      '@packages/logger':
+      '@libs/logger':
         specifier: workspace:*
         version: link:../logger
-      '@packages/util':
+      '@libs/util':
         specifier: workspace:*
         version: link:../util
       '@types/bcrypt':
@@ -340,7 +340,7 @@ importers:
         specifier: 5.1.1
         version: 5.1.1
 
-  packages/util: {}
+  libs/util: {}
 
 packages:
 
@@ -6271,6 +6271,7 @@ packages:
   /chownr@2.0.0:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
+    requiresBuild: true
     dev: false
 
   /chromatic@10.9.6:
@@ -8298,6 +8299,7 @@ packages:
   /fs-minipass@2.1.0:
     resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
     engines: {node: '>= 8'}
+    requiresBuild: true
     dependencies:
       minipass: 3.3.6
     dev: false
@@ -9655,7 +9657,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
-      ms: 2.1.2
+      ms: 2.1.3
       semver: 7.5.4
     dev: true
 
@@ -10750,6 +10752,7 @@ packages:
   /minipass@3.3.6:
     resolution: {integrity: sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw==}
     engines: {node: '>=8'}
+    requiresBuild: true
     dependencies:
       yallist: 4.0.0
     dev: false
@@ -10761,6 +10764,7 @@ packages:
   /minizlib@2.1.2:
     resolution: {integrity: sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==}
     engines: {node: '>= 8'}
+    requiresBuild: true
     dependencies:
       minipass: 3.3.6
       yallist: 4.0.0
@@ -10795,6 +10799,7 @@ packages:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
     hasBin: true
+    requiresBuild: true
     dev: false
 
   /mlly@1.5.0:
@@ -10829,8 +10834,6 @@ packages:
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     requiresBuild: true
-    dev: false
-    optional: true
 
   /muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}

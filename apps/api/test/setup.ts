@@ -1,4 +1,4 @@
-import { loadConfig } from "@packages/config";
+import { loadConfig } from "@libs/config";
 import type { FastifyInstance } from "fastify";
 import { afterEach, beforeEach } from "vitest";
 

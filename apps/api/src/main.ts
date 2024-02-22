@@ -1,4 +1,4 @@
-import { loadConfig } from "@packages/config";
+import { loadConfig } from "@libs/config";
 
 import { createServer } from "./server.js";
 

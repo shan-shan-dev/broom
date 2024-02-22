@@ -17,34 +17,34 @@
 	"include": [".storybook/*.ts", "types/*.d.ts", "*.js", "*.json", "*.ts"],
 	"references": [
 		{
-			"path": "packages/config",
+			"path": "libs/config",
 		},
 		{
-			"path": "packages/core",
+			"path": "libs/core",
 		},
 		{
-			"path": "packages/database",
+			"path": "libs/database",
 		},
 		{
-			"path": "packages/i18n",
+			"path": "libs/i18n",
 		},
 		{
-			"path": "packages/logger",
+			"path": "libs/logger",
 		},
 		{
-			"path": "packages/path",
+			"path": "libs/path",
 		},
 		{
-			"path": "packages/token",
+			"path": "libs/token",
 		},
 		{
-			"path": "packages/ui",
+			"path": "libs/ui",
 		},
 		{
-			"path": "packages/unit",
+			"path": "libs/unit",
 		},
 		{
-			"path": "packages/util",
+			"path": "libs/util",
 		},
 	],
 }

@@ -1,10 +1,10 @@
 # Build outputs
 .astro/
 .svelte-kit/
-/packages/**/lib/
+/libs/**/lib/
 bin/
 dist/
-packages/*/lib/
+libs/*/lib/
 storybook-static/
 
 # Cache

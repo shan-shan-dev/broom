@@ -35,5 +35,8 @@
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
+	},
+	"dependencies": {
+		"utopia-core": "1.3.0"
 	}
 }

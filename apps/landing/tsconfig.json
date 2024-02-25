@@ -1,5 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"allowJs": true
+	},
 	"extends": ["../../tsconfig.json", "./node_modules/astro/tsconfigs/strictest.json"],
 	"include": ["../../types/*.d.ts", "src/", "astro.config.ts", "vitest.config.ts"],
 }

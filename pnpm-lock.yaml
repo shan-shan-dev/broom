@@ -239,8 +239,8 @@ importers:
         specifier: workspace:*
         version: link:../util
       dotenv:
-        specifier: 16.4.1
-        version: 16.4.1
+        specifier: 16.4.5
+        version: 16.4.5
       znv:
         specifier: 0.4.0
         version: 0.4.0(zod@3.22.4)
@@ -7137,6 +7137,12 @@ packages:
   /dotenv@16.4.1:
     resolution: {integrity: sha512-CjA3y+Dr3FyFDOAMnxZEGtnW9KBR2M0JvvUtXNW+dYJL5ROWxP9DUHCwgFqpMk0OXCc0ljhaNTr2w/kutYIcHQ==}
     engines: {node: '>=12'}
+    dev: true
+
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /dotenv@8.6.0:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
@@ -9703,7 +9709,7 @@ packages:
     requiresBuild: true
     dependencies:
       app-root-dir: 1.0.2
-      dotenv: 16.4.1
+      dotenv: 16.4.5
       dotenv-expand: 10.0.0
     dev: false
     optional: true

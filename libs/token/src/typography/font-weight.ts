@@ -1,27 +1,36 @@
 import type { CSSVar, CSSVarDef, DesignToken } from "../main.js";
 import type { FontFamilyKey } from "./font-family.js";
 
-export type FontWeightKey = `${FontFamilyKey}-weight-${(typeof FontWeight.KEYS)[number]}`;
+export type FontWeightKey = (typeof FontWeight.KEYS)[number];
+type PrefixedKey<F extends FontFamilyKey, K extends FontWeightKey> = `font-${F}-weight-${K}`;
 
-export class FontWeight implements DesignToken<FontWeightKey, number> {
+type Val = number;
+
+/**
+ * Design token keys for the font weight.
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight}
+ */
+export class FontWeight<F extends FontFamilyKey, K extends FontWeightKey, V extends Val>
+	implements DesignToken<PrefixedKey<F, K>, V>
+{
 	/**
-	 * Available design token keys for the font eight.
+	 * Available design token keys for the font weight.
 	 */
-	static KEYS = ["thin", "light", "regular", "medium", "bold", "black"] as const;
+	static KEYS = ["light", "regular", "medium", "bold", "black"] as const;
 
-	public key: FontWeightKey;
-	public value: number;
+	public key: PrefixedKey<F, K>;
+	public value: V;
 
-	constructor(key: FontWeightKey, value: number) {
-		this.key = key;
+	constructor(family: F, key: K, value: V) {
+		this.key = `font-${family}-weight-${key}`;
 		this.value = value;
 	}
 
-	public get cssVarDef(): CSSVarDef {
+	public get cssVarDef(): CSSVarDef<PrefixedKey<F, K>, V> {
 		return `--${this.key}:${this.value}`;
 	}
 
-	public get cssVar(): CSSVar {
+	public get cssVar(): CSSVar<PrefixedKey<F, K>> {
 		return `var(--${this.key})`;
 	}
 
@@ -33,20 +42,3 @@ export class FontWeight implements DesignToken<FontWeightKey, number> {
 		return this.value;
 	}
 }
-
-export const FontMonoWeightRegular = new FontWeight("font-mono-weight-regular", 400);
-export const FontMonoWeightBold = new FontWeight("font-mono-weight-bold", 700);
-
-export const FontSansWeightThin = new FontWeight("font-sans-weight-thin", 100);
-export const FontSansWeightLight = new FontWeight("font-sans-weight-light", 300);
-export const FontSansWeightRegular = new FontWeight("font-sans-weight-regular", 400);
-export const FontSansWeightMedium = new FontWeight("font-sans-weight-medium", 500);
-export const FontSansWeightBold = new FontWeight("font-sans-weight-bold", 700);
-export const FontSansWeightBlack = new FontWeight("font-sans-weight-black", 900);
-
-export const FontSerifWeightThin = new FontWeight("font-serif-weight-thin", 100);
-export const FontSerifWeightLight = new FontWeight("font-serif-weight-light", 300);
-export const FontSerifWeightRegular = new FontWeight("font-serif-weight-regular", 400);
-export const FontSerifWeightMedium = new FontWeight("font-serif-weight-regular", 500);
-export const FontSerifWeightBold = new FontWeight("font-serif-weight-bold", 700);
-export const FontSerifWeightBlack = new FontWeight("font-serif-weight-black", 900);

@@ -1,32 +1,36 @@
 import type { CSSVar, CSSVarDef, DesignToken } from "../main.js";
 
-export type FontFamilyKey = `font-${(typeof FontFamily.KEYS)[number]}`;
+export type FontFamilyKey = (typeof FontFamily.KEYS)[number];
+type PrefixedKey<K extends FontFamilyKey> = `font-${K}`;
 
-// TODO: Add fallbacks
+type Val = string;
+type WrappedVal<V extends Val> = `"${V}"`;
+
+// TODO: Add font fallbacks
 
 /**
  * Design token keys for the font family.
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-family}
  */
-export class FontFamily implements DesignToken<FontFamilyKey, string> {
+export class FontFamily<K extends FontFamilyKey, V extends Val> implements DesignToken<PrefixedKey<K>, V> {
 	/**
 	 * Available design token keys for the font family.
 	 */
 	public static KEYS = ["mono", "sans", "serif"] as const;
 
-	public key: FontFamilyKey;
-	public value: string;
+	public key: PrefixedKey<K>;
+	public value: V;
 
-	constructor(key: FontFamilyKey, value: string) {
-		this.key = key;
+	constructor(key: K, value: V) {
+		this.key = `font-${key}`;
 		this.value = value;
 	}
 
-	public get cssVarDef(): CSSVarDef {
-		return `--${this.key}:${this.value}`;
+	public get cssVarDef(): CSSVarDef<PrefixedKey<K>, WrappedVal<V>> {
+		return `--${this.key}:"${this.value}"`;
 	}
 
-	public get cssVar(): CSSVar {
+	public get cssVar(): CSSVar<PrefixedKey<K>> {
 		return `var(--${this.key})`;
 	}
 
@@ -38,7 +42,3 @@ export class FontFamily implements DesignToken<FontFamilyKey, string> {
 		return this.key;
 	}
 }
-
-export const FontMono = new FontFamily("font-mono", "Noto Sans Mono");
-export const FontSans = new FontFamily("font-sans", "Noto Sans TC");
-export const FontSerif = new FontFamily("font-serif", "Noto Serif TC");

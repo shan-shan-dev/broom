@@ -3,25 +3,31 @@ import { calculateClamp } from "utopia-core";
 import { FLUID_CONFIG } from "../fluid.js";
 import type { CSSVar, CSSVarDef, DesignToken } from "../main.js";
 
-export type FontSizeKey = `font-size-${(typeof FontSize.KEYS)[number]}`;
+export type FontSizeKey = (typeof FontSize.KEYS)[number];
+type PrefixedKey<K extends FontSizeKey> = `font-size-${K}`;
 
 type FontSizeMin = number;
 type FontSizeMax = number;
-
-export type FontSizeValue = [FontSizeMin, FontSizeMax];
+type Val<Min extends FontSizeMin = number, Max extends FontSizeMax = number> = [Min, Max];
 
 type Clamp = `clamp(${number}rem, ${number}rem + ${number}cqi, ${number}rem)`;
 
-export class FontSize implements DesignToken<FontSizeKey, FontSizeValue> {
+/**
+ * Design token keys for the font size.
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-size}
+ */
+export class FontSize<K extends FontSizeKey, Min extends FontSizeMin, Max extends FontSizeMax>
+	implements DesignToken<PrefixedKey<K>, Val<Min, Max>>
+{
 	/**
 	 * Available design token keys for the font size.
 	 */
 	static KEYS = ["5xl", "4xl", "3xl", "2xl", "xl", "l", "m", "s", "xs"] as const;
 
-	public key: FontSizeKey;
-	public value: FontSizeValue;
+	public key: PrefixedKey<K>;
+	public value: Val<Min, Max>;
 
-	constructor(key: (typeof FontSize.KEYS)[number], value: FontSizeValue) {
+	constructor(key: K, value: Val<Min, Max>) {
 		this.key = `font-size-${key}`;
 		this.value = value;
 	}
@@ -36,11 +42,11 @@ export class FontSize implements DesignToken<FontSizeKey, FontSizeValue> {
 		}) as Clamp;
 	}
 
-	public get cssVarDef(): CSSVarDef {
+	public get cssVarDef(): CSSVarDef<PrefixedKey<K>, Clamp> {
 		return `--${this.key}:${this.clamp}`;
 	}
 
-	public get cssVar(): CSSVar {
+	public get cssVar(): CSSVar<PrefixedKey<K>> {
 		return `var(--${this.key})`;
 	}
 
@@ -52,12 +58,3 @@ export class FontSize implements DesignToken<FontSizeKey, FontSizeValue> {
 		return this.value;
 	}
 }
-
-export const FontSize5XL = new FontSize("5xl", [53.75, 76.29]);
-export const FontSize4XL = new FontSize("4xl", [44.79, 61.04]);
-export const FontSize3XL = new FontSize("3xl", [37.32, 48.83]);
-export const FontSize2XL = new FontSize("2xl", [31.1, 39.06]);
-export const FontSizeXL = new FontSize("xl", [25.92, 31.25]);
-export const FontSizeL = new FontSize("l", [21.6, 25.0]);
-export const FontSizeM = new FontSize("m", [18.0, 20.0]);
-export const FontSizeS = new FontSize("s", [15.0, 16.0]);

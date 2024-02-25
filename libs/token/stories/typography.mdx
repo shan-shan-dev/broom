@@ -1,0 +1,76 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Typography" />
+
+export const typography = {
+  type: {
+    mono: '"Noto Sans Mono", monospace',
+    sans: '"Noto Sans TC", sans',
+    serif: '"Noto Serif TC", sans-serif',
+  },
+  weight: {
+    regular: '400',
+    bold: '700',
+    extrabold: '800',
+    black: '900',
+  },
+  size: {
+    s1: 12,
+    s2: 14,
+    s3: 16,
+    m1: 20,
+    m2: 24,
+    m3: 28,
+    l1: 32,
+    l2: 40,
+    l3: 48,
+  },
+};
+
+export const SAMPLE_TEXT = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+# Typography
+
+<iframe
+	width="800"
+	height="450"
+	src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FytEIsjZoaeRlY4f6IxxEps%2FBroom%3Ftype%3Ddesign%26node-id%3D34%253A51%26mode%3Ddesign%26t%3Dspjtc1R70pDLke8J-1"
+	allowfullscreen
+/>
+
+## Font Mono
+
+
+<iframe
+	width="800"
+	height="450"
+	src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FytEIsjZoaeRlY4f6IxxEps%2FBroom%3Ftype%3Ddesign%26node-id%3D48%253A52%26mode%3Ddesign%26t%3Dspjtc1R70pDLke8J-1"
+	allowfullscreen
+/>
+
+### Weights
+
+<iframe
+	width="800"
+	height="450"
+	src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FytEIsjZoaeRlY4f6IxxEps%2FBroom%3Ftype%3Ddesign%26node-id%3D23%253A3%26mode%3Ddesign%26t%3Dspjtc1R70pDLke8J-1"
+	allowfullscreen
+/>
+
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.s1),
+    Number(typography.size.s2),
+    Number(typography.size.s3),
+    Number(typography.size.m1),
+    Number(typography.size.m2),
+    Number(typography.size.m3),
+    Number(typography.size.l1),
+    Number(typography.size.l2),
+    Number(typography.size.l3),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SAMPLE_TEXT}
+  fontFamily={typography.type.primary}
+/>

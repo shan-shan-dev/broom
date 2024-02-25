@@ -1,7 +1,7 @@
 [
 	{
 		"name": "@apps/api",
-		"path": "./apps/api/bin/main.js",
+		"path": "./apps/api/build/main.js",
 		"limit": "3 MB"
 	},
 	{
@@ -12,7 +12,7 @@
 	},
 	{
 		"name": "@apps/landing",
-		"path": "./apps/landing/dist/",
+		"path": "./apps/landing/build/",
 		"limit": "1 s"
 	},
 	{

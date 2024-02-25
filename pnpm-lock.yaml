@@ -34,8 +34,8 @@ importers:
         specifier: 11.0.2
         version: 11.0.2(size-limit@11.0.2)
       '@storybook/addon-designs':
-        specifier: 8.0.0-next.0
-        version: 8.0.0-next.0
+        specifier: 8.0.0-next.1
+        version: 8.0.0-next.1
       '@storybook/addon-essentials':
         specifier: 8.0.0-beta.3
         version: 8.0.0-beta.3
@@ -3777,15 +3777,15 @@ packages:
     dev: false
     optional: true
 
-  /@storybook/addon-designs@8.0.0-next.0:
-    resolution: {integrity: sha512-5X8nZ4sQqde9bJw77AucmtWNdkYSThcbuOgOCKeLwPq9g6irEXeFXB2ywAM0CH1oZQ9pA9lB8FN6Srb1KtJP+w==}
+  /@storybook/addon-designs@8.0.0-next.1:
+    resolution: {integrity: sha512-i5vU8WxDzj6EaOvWG2ItFD4dGQl3/pWwwhpE8ACf3vbY7YfXUgKAHZeVOhknsgGmA1dpUO61lVuUXNNn8wSl3A==}
     requiresBuild: true
     peerDependencies:
-      '@storybook/addon-docs': 8.0.0-alpha.10
-      '@storybook/components': 8.0.0-alpha.10
-      '@storybook/manager-api': 8.0.0-alpha.10
-      '@storybook/preview-api': 8.0.0-alpha.10
-      '@storybook/theming': 8.0.0-alpha.10
+      '@storybook/addon-docs': ^8.0.0-alpha.10 || ^8.0.0
+      '@storybook/components': ^8.0.0-alpha.10 || ^8.0.0
+      '@storybook/manager-api': ^8.0.0-alpha.10 || ^8.0.0
+      '@storybook/preview-api': ^8.0.0-alpha.10 || ^8.0.0
+      '@storybook/theming': ^8.0.0-alpha.10 || ^8.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     peerDependenciesMeta:

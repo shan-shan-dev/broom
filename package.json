@@ -91,9 +91,9 @@
 		"size-limit-preset-node-lib": "0.3.0",
 		"storybook": "8.0.0-beta.3",
 		"tsx": "4.7.0",
-		"typedoc": "0.25.7",
+		"typedoc": "0.25.8",
 		"typedoc-plugin-coverage": "2.2.0",
-		"typedoc-plugin-mdn-links": "3.1.14",
+		"typedoc-plugin-mdn-links": "3.1.16",
 		"typedoc-plugin-zod": "1.1.2",
 		"vitest": "1.2.2"
 	}

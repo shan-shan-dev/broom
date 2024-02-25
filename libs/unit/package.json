@@ -37,7 +37,7 @@
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
-		"@faker-js/faker": "8.4.0",
+		"@faker-js/faker": "8.4.1",
 		"@libs/logger": "workspace:*",
 		"@libs/util": "workspace:*",
 		"@types/bcrypt": "5.0.2",

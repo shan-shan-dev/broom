@@ -55,6 +55,6 @@
 		"@libs/path": "workspace:*"
 	},
 	"devDependencies": {
-		"@inlang/cli": "2.12.3"
+		"@inlang/cli": "2.12.4"
 	}
 }

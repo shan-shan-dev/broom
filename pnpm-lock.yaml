@@ -282,8 +282,8 @@ importers:
         version: link:../path
     devDependencies:
       '@inlang/cli':
-        specifier: 2.12.3
-        version: 2.12.3
+        specifier: 2.12.4
+        version: 2.12.4
 
   libs/logger:
     dependencies:
@@ -2846,8 +2846,8 @@ packages:
     dev: false
     optional: true
 
-  /@inlang/cli@2.12.3:
-    resolution: {integrity: sha512-NwU16BVBsVqFV0O1jiRw25ZMrNH55RbQEFlRaA9TZlhsGoOpt02aJEF6dQ5KMQN3U7XLnCj4v4EtWVCEhjHy6w==}
+  /@inlang/cli@2.12.4:
+    resolution: {integrity: sha512-THKYFpO1WhyEGfMeaWa1QaQZmUHwBzs3oogk5OVoV3UGm43I1gH1L/5zF218QoBcPc9zjOA0p9Qn5t1x1fM/IQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
@@ -2858,6 +2858,7 @@ packages:
       '@lix-js/fs': 0.6.0
       esbuild-wasm: 0.19.12
       fs-extra: 11.1.1
+      p-limit: 5.0.0
     transitivePeerDependencies:
       - babel-plugin-macros
     dev: true

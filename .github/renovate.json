@@ -1,7 +1,37 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>shan-shan-dev/.github//.github/renovate/default"],
+	"extends": ["github>shan-shan-dev/.github//renovate/default"],
 	"packageRules": [
+		{
+			"groupName": "build dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["tslib", "tsup", "turbo", "typescript", "vite"]
+		},
+		{
+			"groupName": "CI dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["biome", "lefhook", "markdownlint", "prettier", "size-limit", "typos"]
+		},
+		{
+			"groupName": "development dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["del-cli", "tsx"]
+		},
+		{
+			"groupName": "documentation dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["chromatic", "storybook", "typedoc"]
+		},
+		{
+			"groupName": "GitHub actions",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"fileMatch": ["/\\.github/workflows/.+\\.ya?ml$"]
+		},
+		{
+			"groupName": "testing dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["happydom", "vitest"]
+		},
 		{
 			"groupName": "`@apps/api` dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
@@ -21,16 +51,6 @@
 			"groupName": "`@apps/landing` dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
 			"packagePatterns": ["astro"]
-		},
-		{
-			"groupName": "Documentation dependencies",
-			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["typedoc"]
-		},
-		{
-			"groupName": "CI dependencies",
-			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["biome", "typos"]
 		}
 	]
 }

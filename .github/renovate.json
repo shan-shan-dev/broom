@@ -1,11 +1,36 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>shan-shan-dev/.github//.github/renovate/default"],
+	"extends": ["github>shan-shan-dev/.github//renovate/default"],
 	"packageRules": [
 		{
-			"groupName": "`@apps/api` dependencies",
+			"groupName": "build dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["fastify"]
+			"packagePatterns": ["tslib", "tsup", "turbo", "typescript", "vite"]
+		},
+		{
+			"groupName": "CI dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["biome", "lefhook", "markdownlint", "prettier", "size-limit", "typos"]
+		},
+		{
+			"groupName": "development dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["del-cli", "tsx"]
+		},
+		{
+			"groupName": "documentation dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["chromatic", "storybook", "typedoc"]
+		},
+		{
+			"groupName": "GitHub actions",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"fileMatch": ["^/\\.github/workflows/.+\\.ya?ml$"]
+		},
+		{
+			"groupName": "testing dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["happydom", "vitest"]
 		},
 		{
 			"groupName": "workspace types dependencies",
@@ -13,9 +38,9 @@
 			"matchPackageNames": ["@types/node", "@total-typescript/ts-reset"]
 		},
 		{
-			"groupName": "`@packages/ui` types dependencies",
+			"groupName": "`@apps/api` dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["svelte"]
+			"packagePatterns": ["close-with-grace", "fastify"]
 		},
 		{
 			"groupName": "`@apps/landing` dependencies",
@@ -23,14 +48,19 @@
 			"packagePatterns": ["astro"]
 		},
 		{
-			"groupName": "Documentation dependencies",
+			"groupName": "`@libs/database` types dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["typedoc"]
+			"packagePatterns": ["drizzle-orm"]
 		},
 		{
-			"groupName": "CI dependencies",
+			"groupName": "`@libs/logger` types dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["biome", "typos"]
+			"packagePatterns": ["pino"]
+		},
+		{
+			"groupName": "`@libs/ui` types dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["svelte"]
 		}
 	]
 }

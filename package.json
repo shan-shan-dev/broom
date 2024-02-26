@@ -49,7 +49,7 @@
 		"test": "turbo run test"
 	},
 	"dependencies": {
-		"svelte": "5.0.0-next.55",
+		"svelte": "5.0.0-next.66",
 		"zod": "3.22.4"
 	},
 	"devDependencies": {
@@ -74,8 +74,8 @@
 		"@storybook/addon-interactions": "8.0.0-beta.3",
 		"@storybook/addon-links": "8.0.0-beta.3",
 		"@storybook/blocks": "8.0.0-beta.3",
-		"@storybook/svelte": "8.0.0-beta.3",
-		"@storybook/svelte-vite": "8.0.0-beta.3",
+		"@storybook/svelte": "8.0.0-beta.4",
+		"@storybook/svelte-vite": "8.0.0-beta.4",
 		"@storybook/test": "8.0.0-beta.3",
 		"@sveltejs/vite-plugin-svelte": "3.0.2",
 		"@terminal-nerds/markdownlint-config": "0.14.0",

@@ -1,0 +1,9 @@
+{
+	"autoAcceptChanges": "main",
+	"buildScriptName": "build:sb",
+	"exitOnceUploaded": true,
+	"exitZeroOnChanges": true,
+	"onlyChanged": true,
+	"skip": "@(renovate/**|dependabot/**)",
+	"zip": true
+}

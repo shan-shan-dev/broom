@@ -1,4 +1,4 @@
-// NOTE: This was needed by Storybook, see if we can get rid of it.
+// NOTE: This file is needed, because without it building Storybook will fail
 
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 

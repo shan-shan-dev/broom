@@ -32,6 +32,10 @@ export class FontSize<K extends FontSizeKey, Min extends FontSizeMin, Max extend
 		this.value = value;
 	}
 
+	public get cssCustomProperty() {
+		return `--${this.key}` as const;
+	}
+
 	public get clamp(): Clamp {
 		const [minSize, maxSize] = this.value;
 
@@ -43,7 +47,7 @@ export class FontSize<K extends FontSizeKey, Min extends FontSizeMin, Max extend
 	}
 
 	public get cssVarDef(): CSSVarDef<PrefixedKey<K>, Clamp> {
-		return `--${this.key}:${this.clamp}`;
+		return `${this.cssCustomProperty}:${this.clamp}`;
 	}
 
 	public get cssVar(): CSSVar<PrefixedKey<K>> {

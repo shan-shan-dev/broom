@@ -15,6 +15,12 @@ export interface DesignToken<K extends Key, V extends Val> {
 	 */
 	value: V;
 
+	/**
+	 * CSS custom property
+	 * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties}
+	 */
+	cssCustomProperty: `--${K}`;
+
 	/** @see {@link CSSVarDef} */
 	cssVarDef: CSSVarDef<K, string>;
 

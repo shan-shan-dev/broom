@@ -321,6 +321,9 @@ importers:
       '@libs/logger':
         specifier: workspace:*
         version: link:../logger
+      '@libs/token':
+        specifier: workspace:*
+        version: link:../token
     devDependencies:
       '@testing-library/dom':
         specifier: 9.3.4

@@ -22,7 +22,7 @@ export class FontSize<K extends FontSizeKey, Min extends FontSizeMin, Max extend
 	/**
 	 * Available design token keys for the font size.
 	 */
-	static KEYS = ["5xl", "4xl", "3xl", "2xl", "xl", "l", "m", "s", "xs"] as const;
+	static KEYS = ["5xl", "4xl", "3xl", "2xl", "xl", "l", "m", "s"] as const;
 
 	public key: PrefixedKey<K>;
 	public value: Val<Min, Max>;

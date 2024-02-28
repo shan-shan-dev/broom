@@ -6,6 +6,11 @@ export type ColorSwatch = (typeof Color.SWATCHES)[number];
 export type ColorKey<N extends ColorName, S extends ColorSwatch> = `${N}-${S}`;
 type PrefixedKey<N extends ColorName, S extends ColorSwatch> = `color-${ColorKey<N, S>}`;
 
+/**
+ * Design token key instance dedicated to the individual color swatch from palette.
+ * NOTE: **In our project, we use `oklch` color model**.
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/color_value}
+ */
 export class Color<
 	N extends ColorName,
 	S extends ColorSwatch,
@@ -15,11 +20,26 @@ export class Color<
 	A extends number,
 > implements DesignToken<PrefixedKey<N, S>, Oklch<L, C, H, A>>
 {
+	/**
+	 * Enum of available color names.
+	 */
 	public static NAMES = ["primary", "secondary", "info", "success", "warning", "error", "surface"] as const;
+	/**
+	 * Enum of available color swatches.
+	 */
 	public static SWATCHES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
 
+	/**
+	 * Name of the color.
+	 */
 	public name: N;
+	/**
+	 * Name of the color swatch.
+	 */
 	public swatch: S;
+	/**
+	 * Color value represented in **oklch** color model.
+	 */
 	public value: Oklch<L, C, H, A>;
 
 	constructor(name: N, swatch: S, value: OklchData<L, C, H, A>) {
@@ -53,6 +73,9 @@ export class Color<
 	}
 }
 
+/**
+ * Design tokens related to color palette scope.
+ */
 export const COLOR = {
 	/**
 	 * @see {@link https://www.figma.com/file/ytEIsjZoaeRlY4f6IxxEps/Broom?type=design&node-id=538-21&mode=design&t=N2wwFF2gK4WZBqKP-11}

@@ -1,4 +1,8 @@
-export class OklchProperty<N extends number, U extends string> {
+/**
+ * Shared parent class for every OKLCH value
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch#values}
+ */
+export class OklchValue<N extends number, U extends string> {
 	public value: N;
 	public unit: U;
 
@@ -16,25 +20,37 @@ export class OklchProperty<N extends number, U extends string> {
 	}
 }
 
-export class Lightness<N extends number> extends OklchProperty<N, "%"> {
+/**
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch#l}
+ */
+export class Lightness<N extends number> extends OklchValue<N, "%"> {
 	constructor(value: N) {
 		super(value, "%");
 	}
 }
 
-export class Chroma<N extends number> extends OklchProperty<N, "%"> {
+/**
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch#c}
+ */
+export class Chroma<N extends number> extends OklchValue<N, "%"> {
 	constructor(value: N) {
 		super(value, "%");
 	}
 }
 
-export class Hue<N extends number> extends OklchProperty<N, "deg"> {
+/**
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/hue}
+ */
+export class Hue<N extends number> extends OklchValue<N, "deg"> {
 	constructor(value: N) {
 		super(value, "deg");
 	}
 }
 
-export class Alpha<N extends number> extends OklchProperty<N, "%"> {
+/**
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/alpha-value}
+ */
+export class Alpha<N extends number> extends OklchValue<N, "%"> {
 	constructor(value: N) {
 		super(value, "%");
 	}
@@ -65,6 +81,9 @@ export class Oklch<L extends number, C extends number, H extends number, A exten
 		this.alpha = new Alpha(a);
 	}
 
+	/*
+	 * Get the string of CSS function representation.
+	 */
 	public get css() {
 		return `oklch(${this.lightness.css} ${this.chroma.css} ${this.hue.css} / ${this.alpha.css})` as const;
 	}

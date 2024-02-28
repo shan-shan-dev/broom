@@ -62,17 +62,17 @@ const config = defineWorkspace([
 		},
 	},
 	{
-		extends: resolve(__dirname, "libs", "path", "vitest.config.ts"),
-		test: {
-			include: [resolve(__dirname, "libs", "path", "src", "**", "*.test.ts")],
-			name: "@libs/path",
-		},
-	},
-	{
 		extends: resolve(__dirname, "libs", "i18n", "vitest.config.ts"),
 		test: {
 			include: [resolve(__dirname, "libs", "i18n", "src", "**", "*.test.ts")],
 			name: "@libs/i18n",
+		},
+	},
+	{
+		extends: resolve(__dirname, "libs", "path", "vitest.config.ts"),
+		test: {
+			include: [resolve(__dirname, "libs", "path", "src", "**", "*.test.ts")],
+			name: "@libs/path",
 		},
 	},
 	{

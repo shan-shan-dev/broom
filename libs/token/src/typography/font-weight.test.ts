@@ -1,24 +1,27 @@
 import { describe, it } from "vitest";
-import { typedObjectEntries } from "@libs/util/object";
 
-import { FONT } from "./font.js";
+import { FontWeight } from "./font-weight.js";
 
-describe("FontWeight", () => {
-	for (const weights of [FONT.mono.weight, FONT.sans.weight, FONT.serif.weight]) {
-		for (const [_weight, instance] of typedObjectEntries(weights)) {
-			describe(instance.toString(), () => {
-				it("get `cssVarDef` - returns correctly the CSS variable definition", ({ expect }) => {
-					const pattern = new RegExp(`${instance.key}:${instance.value}`);
+describe(FontWeight.name, () => {
+	const family = "mono";
+	const name = "bold";
+	const value = 700;
+	const fontWeight = new FontWeight(family, name, value);
 
-					expect(instance.cssVarDef).toMatch(pattern);
-				});
+	it("get `key` - returns correctly the design token key", ({ expect }) => {
+		expect(fontWeight.key).toBe(`font-${family}-weight-${name}`);
+	});
 
-				it("get `cssVarDef` - returns correctly the CSS variable", ({ expect }) => {
-					const pattern = new RegExp(`var\\(--${instance.key}\\)`);
+	it("get `cssCustomProperty` - returns correctly the CSS custom property", ({ expect }) => {
+		expect(fontWeight.cssCustomProperty).toBe(`--font-${family}-weight-${name}`);
+	});
 
-					expect(instance.cssVar).toMatch(pattern);
-				});
-			});
-		}
-	}
+	it("get `cssDec` - returns correctly the CSS custom property declaration", ({ expect }) => {
+		expect(fontWeight.cssDec.startsWith(fontWeight.cssCustomProperty)).toBe(true);
+		expect(fontWeight.cssDec.endsWith(value.toString())).toBe(true);
+	});
+
+	it("get `cssVar` - returns correctly the CSS variable", ({ expect }) => {
+		expect(fontWeight.cssVar).toMatch(new RegExp(`var\\(${fontWeight.cssCustomProperty}\\)`));
+	});
 });

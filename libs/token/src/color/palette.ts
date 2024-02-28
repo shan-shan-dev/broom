@@ -1,39 +1,46 @@
-import type { CSSVar, CSSVarDef, DesignToken } from "../main.js";
+import type { CSSDec, CSSVar, DesignToken } from "../main.js";
 import { Oklch, type OklchData } from "./oklch.js";
 
 export type ColorName = (typeof Color.NAMES)[number];
-export type ColorSchade = (typeof Color.SCHADES)[number];
-export type ColorKey<N extends ColorName, S extends ColorSchade> = `${N}-${S}`;
+export type ColorSwatch = (typeof Color.SWATCHES)[number];
+export type ColorKey<N extends ColorName, S extends ColorSwatch> = `${N}-${S}`;
+type PrefixedKey<N extends ColorName, S extends ColorSwatch> = `color-${ColorKey<N, S>}`;
 
 export class Color<
 	N extends ColorName,
-	S extends ColorSchade,
+	S extends ColorSwatch,
 	L extends number,
 	C extends number,
 	H extends number,
 	A extends number,
-> implements DesignToken<ColorKey<N, S>, Oklch<L, C, H, A>>
+> implements DesignToken<PrefixedKey<N, S>, Oklch<L, C, H, A>>
 {
 	public static NAMES = ["primary", "secondary", "info", "success", "warning", "error", "surface"] as const;
-	public static SCHADES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
+	public static SWATCHES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
 
-	public key: ColorKey<N, S>;
+	public name: N;
+	public swatch: S;
 	public value: Oklch<L, C, H, A>;
 
-	constructor(name: N, shade: S, value: OklchData<L, C, H, A>) {
-		this.key = `${name}-${shade}`;
+	constructor(name: N, swatch: S, value: OklchData<L, C, H, A>) {
+		this.name = name;
+		this.swatch = swatch;
 		this.value = new Oklch(value);
+	}
+
+	public get key(): PrefixedKey<N, S> {
+		return `color-${this.name}-${this.swatch}`;
 	}
 
 	public get cssCustomProperty() {
 		return `--${this.key}` as const;
 	}
 
-	public get cssVar(): CSSVar<ColorKey<N, S>> {
+	public get cssVar(): CSSVar<PrefixedKey<N, S>> {
 		return `var(${this.cssCustomProperty})`;
 	}
 
-	public get cssVarDef(): CSSVarDef<ColorKey<N, S>, Oklch<L, C, H, A>["css"]> {
+	public get cssDec(): CSSDec<PrefixedKey<N, S>, Oklch<L, C, H, A>["css"]> {
 		return `${this.cssCustomProperty}:${this.value.css}`;
 	}
 

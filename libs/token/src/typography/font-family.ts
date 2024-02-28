@@ -1,4 +1,4 @@
-import type { CSSVar, CSSVarDef, DesignToken } from "../main.js";
+import type { CSSDec, CSSVar, DesignToken } from "../main.js";
 
 export type FontFamilyKey = (typeof FontFamily.KEYS)[number];
 type PrefixedKey<K extends FontFamilyKey> = `font-${K}`;
@@ -30,7 +30,7 @@ export class FontFamily<K extends FontFamilyKey, V extends Val> implements Desig
 		return `--${this.key}` as const;
 	}
 
-	public get cssVarDef(): CSSVarDef<PrefixedKey<K>, WrappedVal<V>> {
+	public get cssDec(): CSSDec<PrefixedKey<K>, WrappedVal<V>> {
 		return `${this.cssCustomProperty}:"${this.value}"`;
 	}
 

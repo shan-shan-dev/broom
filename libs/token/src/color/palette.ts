@@ -61,7 +61,7 @@ export class Color<
 	}
 
 	public get cssDec(): CSSDec<PrefixedKey<N, S>, Oklch<L, C, H, A>["css"]> {
-		return `${this.cssCustomProperty}:${this.value.css}`;
+		return `${this.cssCustomProperty}: ${this.value.css}`;
 	}
 
 	public toString() {

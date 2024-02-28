@@ -31,7 +31,7 @@ export class FontFamily<K extends FontFamilyKey, V extends Val> implements Desig
 	}
 
 	public get cssDec(): CSSDec<PrefixedKey<K>, WrappedVal<V>> {
-		return `${this.cssCustomProperty}:"${this.value}"`;
+		return `${this.cssCustomProperty}: "${this.value}"`;
 	}
 
 	public get cssVar(): CSSVar<PrefixedKey<K>> {

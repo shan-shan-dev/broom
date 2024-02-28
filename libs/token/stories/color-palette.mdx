@@ -1,0 +1,39 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+
+import { COLOR } from "../src/color/palette.ts";
+
+<Meta title="Design system/Color palette" />
+
+export const IFRAME_WIDTH = 720;
+export const IFRAME_HEIGHT = 450;
+
+/* TODO: Remove once we add global styles */
+<div
+	id="styles"
+	style={JSON.parse(`{${Object.values(COLOR).flatMap((color) => Object.values(color).map((swatch) => `"${swatch.cssCustomProperty}":"${swatch.value.css}"`))}}`)}
+>
+
+# Color palette
+
+<iframe
+	width={IFRAME_WIDTH}
+	height={IFRAME_HEIGHT}
+	src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FytEIsjZoaeRlY4f6IxxEps%2FBroom%3Ftype%3Ddesign%26node-id%3D539%253A251%26mode%3Ddesign%26t%3DN2wwFF2gK4WZBqKP-1"
+	allowfullscreen
+/>
+
+## Preview
+
+<ColorPalette>
+	{Object.entries(COLOR).map(([colorName, swatches]) => {
+		return (
+			<ColorItem
+				title={colorName}
+				subtitle="Description.."
+				colors={Object.fromEntries(Object.entries(swatches).map(([swatch, color]) => [swatch, color.cssVar]))}
+			/>
+		);
+	})}
+</ColorPalette>
+
+</div>

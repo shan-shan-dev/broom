@@ -1,19 +1,26 @@
 import { describe, it } from "vitest";
 
-import { FONT } from "./font.js";
+import { FontFamily } from "./font-family.js";
 
-describe("FontFamily", () => {
-	for (const family of [FONT.mono.family, FONT.sans.family, FONT.serif.family]) {
-		describe(family.toString(), () => {
-			it("get `cssVarDef`- returns correctly the CSS variable definition", ({ expect }) => {
-				const pattern = new RegExp(`${family.key}:"${family.value}"`);
+describe(FontFamily.name, () => {
+	const name = "mono";
+	const value = "monospace";
+	const font = new FontFamily(name, value);
 
-				expect(family.cssVarDef).toMatch(pattern);
-			});
+	it("get `key` - returns correctly the design token key", ({ expect }) => {
+		expect(font.key).toBe(`font-${name}`);
+	});
 
-			it("get `cssVar` - returns correctly the CSS variable", ({ expect }) => {
-				expect(family.cssVar).toMatch(new RegExp(`var\\(--${family.key}\\)`));
-			});
-		});
-	}
+	it("get `cssCustomProperty` - returns correctly the CSS custom property", ({ expect }) => {
+		expect(font.cssCustomProperty).toBe(`--font-${name}`);
+	});
+
+	it("get `cssDec` - returns correctly the CSS custom property declaration", ({ expect }) => {
+		expect(font.cssDec.startsWith(font.cssCustomProperty)).toBe(true);
+		expect(font.cssDec.endsWith(`"${value}"`)).toBe(true);
+	});
+
+	it("get `cssVar` - returns correctly the CSS variable", ({ expect }) => {
+		expect(font.cssVar).toMatch(new RegExp(`var\\(${font.cssCustomProperty}\\)`));
+	});
 });

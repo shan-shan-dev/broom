@@ -1,7 +1,7 @@
 import { calculateClamp } from "utopia-core";
 
 import { FLUID_CONFIG } from "../fluid.js";
-import type { CSSVar, CSSVarDef, DesignToken } from "../main.js";
+import type { CSSDec, CSSVar, DesignToken } from "../main.js";
 
 export type FontSizeKey = (typeof FontSize.KEYS)[number];
 type PrefixedKey<K extends FontSizeKey> = `font-size-${K}`;
@@ -22,7 +22,7 @@ export class FontSize<K extends FontSizeKey, Min extends FontSizeMin, Max extend
 	/**
 	 * Available design token keys for the font size.
 	 */
-	static KEYS = ["5xl", "4xl", "3xl", "2xl", "xl", "l", "m", "s", "xs"] as const;
+	static KEYS = ["5xl", "4xl", "3xl", "2xl", "xl", "l", "m", "s"] as const;
 
 	public key: PrefixedKey<K>;
 	public value: Val<Min, Max>;
@@ -46,7 +46,7 @@ export class FontSize<K extends FontSizeKey, Min extends FontSizeMin, Max extend
 		}) as Clamp;
 	}
 
-	public get cssVarDef(): CSSVarDef<PrefixedKey<K>, Clamp> {
+	public get cssDec(): CSSDec<PrefixedKey<K>, Clamp> {
 		return `${this.cssCustomProperty}:${this.clamp}`;
 	}
 

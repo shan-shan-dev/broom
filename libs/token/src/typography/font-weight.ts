@@ -1,4 +1,4 @@
-import type { CSSVar, CSSVarDef, DesignToken } from "../main.js";
+import type { CSSDec, CSSVar, DesignToken } from "../main.js";
 import type { FontFamilyKey } from "./font-family.js";
 
 export type FontWeightKey = (typeof FontWeight.KEYS)[number];
@@ -30,7 +30,7 @@ export class FontWeight<F extends FontFamilyKey, K extends FontWeightKey, V exte
 		return `--${this.key}` as const;
 	}
 
-	public get cssVarDef(): CSSVarDef<PrefixedKey<F, K>, V> {
+	public get cssDec(): CSSDec<PrefixedKey<F, K>, V> {
 		return `${this.cssCustomProperty}:${this.value}`;
 	}
 

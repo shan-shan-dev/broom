@@ -9,7 +9,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 /** @see {@link https://vitest.dev/guide/workspace} */
-
 const config = defineWorkspace([
 	// Apps
 	{
@@ -76,13 +75,20 @@ const config = defineWorkspace([
 			name: "@libs/i18n",
 		},
 	},
-	// {
-	// 	extends: resolve(__dirname, "libs", "ui", "vitest.config.ts"),
-	// 	test: {
-	// 		include: [resolve(__dirname, "libs", "ui", "src", "**", "*.test.ts")],
-	// 		name: "@libs/path",
-	// 	},
-	// },
+	{
+		extends: resolve(__dirname, "libs", "token", "vitest.config.ts"),
+		test: {
+			include: [resolve(__dirname, "libs", "token", "src", "**", "*.test.ts")],
+			name: "@libs/token",
+		},
+	},
+	{
+		extends: resolve(__dirname, "libs", "ui", "vitest.config.ts"),
+		test: {
+			include: [resolve(__dirname, "libs", "ui", "src", "**", "*.test.ts")],
+			name: "@libs/ui",
+		},
+	},
 	{
 		extends: resolve(__dirname, "libs", "unit", "vitest.config.ts"),
 		test: {

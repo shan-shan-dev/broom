@@ -37,7 +37,8 @@
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
-		"@libs/logger": "workspace:*"
+		"@libs/logger": "workspace:*",
+		"@libs/token": "workspace:*"
 	},
 	"devDependencies": {
 		"@testing-library/dom": "9.3.4",

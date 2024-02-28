@@ -1,0 +1,19 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+ * Font sizes
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#typography
+ */
+:root {
+	--font-size-5xl: clamp(3.3594rem, 2.8485rem + 2.4769cqi, 4.7681rem);
+	--font-size-4xl: clamp(2.7994rem, 2.4311rem + 1.7857cqi, 3.815rem);
+	--font-size-3xl: clamp(2.3325rem, 2.0716rem + 1.2648cqi, 3.0519rem);
+	--font-size-2xl: clamp(1.9438rem, 1.7633rem + 0.8747cqi, 2.4413rem);
+	--font-size-xl: clamp(1.62rem, 1.4992rem + 0.5857cqi, 1.9531rem);
+	--font-size-l: clamp(1.35rem, 1.2729rem + 0.3736cqi, 1.5625rem);
+	--font-size-m: clamp(1.125rem, 1.0797rem + 0.2198cqi, 1.25rem);
+	--font-size-s: clamp(0.9375rem, 0.9148rem + 0.1099cqi, 1rem);
+}

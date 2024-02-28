@@ -1,0 +1,5 @@
+@import url("./typography/font-family.gen.css");
+@import url("./typography/font-weight.gen.css");
+@import url("./typography/font-size.gen.css");
+
+/* TODO: Add default styles for textual HTML elements */

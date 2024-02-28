@@ -1,0 +1,21 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+* Color swatch - surface
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#color-palette
+ */
+:root {
+	--color-surface-50: oklch(91% 0.5% 67.8deg / 100%);
+	--color-surface-100: oklch(88% 0.75% 48.7deg / 100%);
+	--color-surface-200: oklch(85% 0.75% 48.7deg / 100%);
+	--color-surface-300: oklch(76% 1% 56.4deg / 100%);
+	--color-surface-400: oklch(56% 0.25% 56.2deg / 100%);
+	--color-surface-500: oklch(34% 0.375% 59.1deg / 100%);
+	--color-surface-600: oklch(32% 0.35% 62.9deg / 100%);
+	--color-surface-700: oklch(29% 0.275% 55.9deg / 100%);
+	--color-surface-800: oklch(25% 0.275% 61deg / 100%);
+	--color-surface-900: oklch(23% 0.2% 59.2deg / 100%)
+}

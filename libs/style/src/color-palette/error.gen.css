@@ -1,0 +1,21 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+* Color swatch - error
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#color-palette
+ */
+:root {
+	--color-error-50: oklch(95% 3.5% 22.8deg / 100%);
+	--color-error-100: oklch(94% 5% 21.4deg / 100%);
+	--color-error-200: oklch(92% 6% 23.9deg / 100%);
+	--color-error-300: oklch(87% 10% 21.8deg / 100%);
+	--color-error-400: oklch(78% 18.25% 23.1deg / 100%);
+	--color-error-500: oklch(69% 27.25% 24.5deg / 100%);
+	--color-error-600: oklch(63% 25.25% 24.2deg / 100%);
+	--color-error-700: oklch(56% 21.5% 24.9deg / 100%);
+	--color-error-800: oklch(48% 17.75% 24.8deg / 100%);
+	--color-error-900: oklch(41% 15% 24.4deg / 100%)
+}

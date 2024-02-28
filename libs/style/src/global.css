@@ -1,0 +1,4 @@
+/* TODO: Change importing strategy for performance/optimization purposes */
+
+@import url("./typography.css") layer(design-tokens);
+@import url("./color-palette.css") layer(design-tokens);

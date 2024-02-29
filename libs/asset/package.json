@@ -2,45 +2,43 @@
 	"$schema": "https://json.schemastore.org/package",
 	"private": true,
 	"type": "module",
-	"name": "@apps/landing",
+	"name": "@libs/asset",
 	"version": "0.1.0",
 	"engines": {
 		"node": ">=20"
 	},
+	"files": [
+		"/dist"
+	],
+	"exports": {
+		"./*": "./dist/*.js"
+	},
 	"scripts": {
-		"build": "astro check && astro build",
+		"build": "tsc --project \"./tsconfig.build.json\" ",
 		"clean": "pnpm run \"/^clean:.*/\" ",
-		"clean:build": "del \"./build\" ",
+		"clean:build": "del \"./dist\" ",
 		"clean:cache": "del \"./node_modules/.cache\" \"./.turbo\" ",
 		"clean:test": "del \"./coverage\" ",
 		"dev": "pnpm run \"/^dev:.*/\" ",
-		"dev:build": "astro dev",
+		"dev:build": "",
 		"dev:doc": "typedoc --watch",
 		"dev:test": "pnpm vitest watch --dir \"./src\" --passWithNoTests --typecheck --ui --open=false",
 		"fix": "pnpm run \"/^fix:.*/\" ",
 		"fix:format": "biome format . --verbose --write",
 		"fix:js": "biome lint . --verbose --apply-unsafe",
-		"fix:prettier": "prettier --cache --cache-location=\"./node_modules/.cache/prettier\" --ignore-path=\"../../.gitignore\" --log-level=log --plugin prettier-plugin-astro --plugin prettier-plugin-svelte \"./**/*.{astro,html,svelte}\" --write",
 		"fix:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" --fix",
 		"fix:typos": "typos --verbose --write-changes",
 		"lint": "pnpm run \"/^lint:.*/\" ",
-		"lint:astro": "astro check",
 		"lint:format": "biome format . --verbose",
 		"lint:js": "biome lint . --verbose",
 		"lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" ",
-		"lint:prettier": "prettier --cache --cache-location=\"./node_modules/.cache/prettier\" --ignore-path=\"../../.gitignore\" --log-level=log --plugin prettier-plugin-astro --plugin prettier-plugin-svelte \"./**/*.{astro,html,svelte}\" --check",
 		"lint:ts": "tsc --noEmit",
 		"lint:typos": "typos --verbose",
-		"preview": "astro preview",
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.5.2",
-		"@libs/asset": "workspace:*",
-		"astro": "4.3.5"
-	},
-	"devDependencies": {
-		"@inlang/paraglide-js-adapter-astro": "0.1.3",
-		"@libs/i18n": "workspace:*"
+		"@fontsource-variable/noto-sans-mono": "5.0.18",
+		"@fontsource-variable/noto-sans-tc": "5.0.4",
+		"@fontsource/noto-serif-tc": "5.0.11"
 	}
 }

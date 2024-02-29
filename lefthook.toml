@@ -1,7 +1,7 @@
 #:schema https://json.schemastore.org/lefthook.json
 
 [pre-commit.commands]
-biome = { glob = "*.{cjs,js,ts,d.ts,json,jsonc}", run = "pnpm biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}" }
+biome = { glob = "*.{js,ts,d.ts,json,jsonc}", run = "pnpm biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}" }
 inlang = { glob = "libs/i18n/src/messages/*.json", run = "pnpm lint:i18n" }
 markdownlint = { glob = "*.md", run = "pnpm markdownlint-cli2 {staged_files}" }
 prettier = { glob = "*.{astro,html,svelte}", run = "pnpm prettier --cache --cache-location node_modules/.cache/prettier --plugin prettier-plugin-astro --plugin prettier-plugin-svelte --list-different {staged_files}" }

@@ -1,4 +1,8 @@
 ---
+import "@libs/asset/font/sans";
+import "@libs/asset/font/serif";
+import "@libs/asset/font/mono";
+
 import { languageTag } from "@libs/i18n/runtime";
 
 interface Props {
@@ -37,19 +41,11 @@ const { title } = Astro.props;
 		);
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: "Noto Serif TC", sans-serif;
 		background: #13151a;
 		background-size: 224px;
 	}
 	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+		font-family: "Noto Sans Mono Variable", monospace;
 	}
 </style>

@@ -195,9 +195,6 @@ importers:
         specifier: workspace:*
         version: link:../../libs/i18n
     devDependencies:
-      '@fontsource/fira-mono':
-        specifier: 5.0.8
-        version: 5.0.8
       '@inlang/paraglide-js-adapter-sveltekit':
         specifier: 0.4.1
         version: 0.4.1(@sveltejs/kit@2.5.0)
@@ -216,6 +213,9 @@ importers:
       '@astrojs/check':
         specifier: 0.5.2
         version: 0.5.2(prettier@3.2.5)(typescript@5.3.3)
+      '@libs/asset':
+        specifier: workspace:*
+        version: link:../../libs/asset
       astro:
         specifier: 4.3.5
         version: 4.3.5(@types/node@20.11.16)(typescript@5.3.3)
@@ -2870,10 +2870,6 @@ packages:
   /@fontsource-variable/noto-sans-tc@5.0.4:
     resolution: {integrity: sha512-VWQE0FUjm3J8kwQV0isoQbmijD8SBZsQbwNf+YTrfbIEVA4PdHF/JZXHuSaCEd6l7GnP6Q15IorEHEMCaWHkzg==}
     dev: false
-
-  /@fontsource/fira-mono@5.0.8:
-    resolution: {integrity: sha512-8OJiUK2lzJjvDlkmamEfhtpL1cyFApg1Pk4kE5Pw5UTf1ETF3Yy/pprgwV5I+LQPDjuFvinsinT9xSUZ2b/zuQ==}
-    dev: true
 
   /@fontsource/noto-serif-tc@5.0.11:
     resolution: {integrity: sha512-+h4mfrojI81bC256H/Yghdn9+h4nux15bTkOfUjHxj37NkhgY7UVM8U3NgXwDudbcWwMmaUGTe2W0/hQODMeOw==}

@@ -1,4 +1,8 @@
 <script>
+	import "@libs/asset/font/sans";
+	import "@libs/asset/font/serif";
+	import "@libs/asset/font/mono";
+
 	import { ParaglideJS } from "@inlang/paraglide-js-adapter-sveltekit";
 	import { i18n } from "$lib/i18n";
 

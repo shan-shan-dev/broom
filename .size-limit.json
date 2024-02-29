@@ -1,8 +1,8 @@
 [
 	{
 		"name": "@apps/api",
-		"path": "./apps/api/build/main.js",
-		"limit": "3 MB"
+		"path": "./apps/api/build/**/*.js",
+		"limit": "1 MB"
 	},
 	{
 		"name": "@apps/client",
@@ -12,8 +12,13 @@
 	},
 	{
 		"name": "@apps/landing",
-		"path": "./apps/landing/build/",
+		"path": "./apps/landing/build/**/*.html",
 		"limit": "1 s"
+	},
+	{
+		"name": "@libs/asset",
+		"path": "./libs/asset/dist/**/*.js",
+		"limit": "1 kB"
 	},
 	{
 		"name": "@libs/config",
@@ -48,11 +53,11 @@
 	{
 		"name": "@libs/token",
 		"path": "./libs/token/dist/**/*.js",
-		"limit": "3 kB"
+		"limit": "5 kB"
 	},
 	{
 		"name": "@libs/ui",
-		"path": "./libs/ui/dist/**/*.js",
+		"path": "./libs/ui/dist/**/*",
 		"limit": "15 kB"
 	},
 	{

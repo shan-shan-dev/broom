@@ -224,6 +224,8 @@ importers:
         specifier: workspace:*
         version: link:../../libs/i18n
 
+  libs/asset: {}
+
   libs/config:
     dependencies:
       '@libs/logger':

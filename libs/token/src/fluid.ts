@@ -15,3 +15,5 @@ export const FLUID_CONFIG = {
 	negativeSteps: 2,
 	relativeTo: "container",
 } as const satisfies UtopiaTypeConfig;
+
+export type FluidClamp = `clamp(${number}rem, ${number}rem + ${number}cqi, ${number}rem)`;

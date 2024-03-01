@@ -14,5 +14,5 @@ export const GRID = {
 		max: new GridWidth("max", maxWidth),
 	},
 	column: new GridColumn(12),
-	gutter: new GridGutter([minWidth, maxWidth]),
+	gutter: new GridGutter([18, 40]),
 } as const;

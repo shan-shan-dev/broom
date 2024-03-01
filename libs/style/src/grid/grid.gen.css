@@ -1,0 +1,15 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+ * Grid system
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#grid
+ */
+:root {
+	--grid-width-min: 330;
+	--grid-width-max: 1240;
+	--grid-column: 12;
+	--grid-gutter: clamp(1.125rem, 0.6264rem + 2.4176cqi, 2.5rem);
+}

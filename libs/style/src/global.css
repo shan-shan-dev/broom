@@ -2,3 +2,4 @@
 
 @import url("./typography.css") layer(design-tokens);
 @import url("./color-palette.css") layer(design-tokens);
+@import url("./grid.gen.css") layer(design-tokens);

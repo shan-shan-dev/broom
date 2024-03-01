@@ -1,7 +1,6 @@
 import { GRID } from "@libs/token/grid";
 import { compileTemplate, getOutputPath, getTemplate, saveCompiled } from "./shared.js";
 
-const OUTPUT_DIR = "grid";
 const TEMPLATE = getTemplate("grid.css.hbs");
 
 export function generateGridCSS(): void {
@@ -11,7 +10,7 @@ export function generateGridCSS(): void {
 		column: GRID.column.cssDec,
 		gutter: GRID.gutter.cssDec,
 	});
-	const outputPath = getOutputPath(OUTPUT_DIR, "grid");
+	const outputPath = getOutputPath("", "grid");
 
 	saveCompiled(compiled, outputPath);
 }

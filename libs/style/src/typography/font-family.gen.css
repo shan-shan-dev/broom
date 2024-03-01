@@ -8,7 +8,7 @@
  * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#typography
  */
 :root {
-	--font-mono: "Noto Sans Mono";
-	--font-sans: "Noto Sans TC";
+	--font-mono: "Noto Sans Mono Variable";
+	--font-sans: "Noto Sans TC Variable";
 	--font-serif: "Noto Serif TC";
 }

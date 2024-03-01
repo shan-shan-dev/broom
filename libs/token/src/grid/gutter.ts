@@ -35,7 +35,7 @@ export class GridGutter<Min extends GridWidthMin, Max extends GridWidthMax> impl
 	}
 
 	public get cssDec(): CSSDec<Key, FluidClamp> {
-		return `${this.cssCustomProperty}:${this.clamp}`;
+		return `${this.cssCustomProperty}: ${this.clamp}`;
 	}
 
 	public get cssVar(): CSSVar<Key> {

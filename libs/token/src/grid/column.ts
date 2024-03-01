@@ -23,7 +23,7 @@ export class GridColumn<V extends Val> implements DesignToken<Key, V> {
 	}
 
 	public get cssDec(): CSSDec<Key, V> {
-		return `${this.cssCustomProperty}:${this.value}`;
+		return `${this.cssCustomProperty}: ${this.value}`;
 	}
 
 	public get cssVar(): CSSVar<Key> {

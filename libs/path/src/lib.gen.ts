@@ -15,6 +15,7 @@ export const WORKSPACE_LIBS = [
 	"i18n",
 	"logger",
 	"path",
+	"style",
 	"token",
 	"ui",
 	"unit",

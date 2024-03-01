@@ -1,7 +1,6 @@
 import { COLOR, Color, type ColorName } from "@libs/token/color/palette";
 import { compileTemplate, getOutputPath, getTemplate, saveCompiled } from "./shared.js";
 
-const OUTPUT_EXT = ".gen.css";
 const OUTPUT_DIR = "color-palette";
 const TEMPLATE = getTemplate("color-swatch.css.hbs");
 
@@ -13,7 +12,7 @@ export function generateColorPaletteCSS(): void {
 
 export function compileSwatch(name: ColorName, formatted: string): void {
 	const compiled = compileTemplate(TEMPLATE, { name, colors: formatted });
-	const outputPath = getOutputPath(OUTPUT_DIR, `${name}${OUTPUT_EXT}`);
+	const outputPath = getOutputPath(OUTPUT_DIR, name);
 
 	saveCompiled(compiled, outputPath);
 }

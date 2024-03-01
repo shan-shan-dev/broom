@@ -2,7 +2,6 @@ import { FONT } from "@libs/token/typography/font";
 import { compileTemplate, getOutputPath, getTemplate, saveCompiled } from "./shared.js";
 
 const FONTS = [FONT.mono, FONT.sans, FONT.serif] as const;
-const OUTPUT_EXT = ".gen.css";
 const OUTPUT_DIR = "typography";
 
 export function generateTypographyCSS(): void {
@@ -16,7 +15,7 @@ type Target = "family" | "weight" | "size";
 export function compileFont(target: Target, formatted: string): void {
 	const template = getTemplate(`font-${target}.css.hbs`);
 	const compiled = compileTemplate(template, { [target]: formatted });
-	const outputPath = getOutputPath(OUTPUT_DIR, `font-${target}${OUTPUT_EXT}`);
+	const outputPath = getOutputPath(OUTPUT_DIR, `font-${target}`);
 
 	saveCompiled(compiled, outputPath);
 }

@@ -12,7 +12,7 @@ export function generateTypographyCSS(): void {
 
 type Target = "family" | "weight" | "size";
 
-export function compileFont(target: Target, formatted: string): void {
+function compileFont(target: Target, formatted: string): void {
 	const template = getTemplate(`font-${target}.css.hbs`);
 	const compiled = compileTemplate(template, { [target]: formatted });
 	const outputPath = getOutputPath(OUTPUT_DIR, `font-${target}`);

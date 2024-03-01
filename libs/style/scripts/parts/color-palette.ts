@@ -10,7 +10,7 @@ export function generateColorPaletteCSS(): void {
 	}
 }
 
-export function compileSwatch(name: ColorName, formatted: string): void {
+function compileSwatch(name: ColorName, formatted: string): void {
 	const compiled = compileTemplate(TEMPLATE, { name, colors: formatted });
 	const outputPath = getOutputPath(OUTPUT_DIR, name);
 

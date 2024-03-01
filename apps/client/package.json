@@ -39,13 +39,13 @@
 		"test:unit": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"devDependencies": {
-		"@fontsource/fira-mono": "5.0.8",
 		"@inlang/paraglide-js-adapter-sveltekit": "0.4.1",
 		"@neoconfetti/svelte": "2.2.1",
 		"@sveltejs/adapter-auto": "3.1.1",
 		"@sveltejs/kit": "2.5.0"
 	},
 	"dependencies": {
+		"@libs/asset": "workspace:*",
 		"@libs/i18n": "workspace:*"
 	}
 }

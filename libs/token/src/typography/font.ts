@@ -7,7 +7,7 @@ import { FontWeight } from "./font-weight.js";
  */
 export const FONT = {
 	mono: {
-		family: new FontFamily("mono", "Noto Sans Mono"),
+		family: new FontFamily("mono", "Noto Sans Mono Variable"),
 		weight: {
 			regular: new FontWeight("mono", "regular", 400),
 			bold: new FontWeight("mono", "bold", 700),
@@ -15,7 +15,7 @@ export const FONT = {
 	},
 
 	sans: {
-		family: new FontFamily("sans", "Noto Sans TC"),
+		family: new FontFamily("sans", "Noto Sans TC Variable"),
 		weight: {
 			light: new FontWeight("sans", "light", 300),
 			medium: new FontWeight("sans", "medium", 500),

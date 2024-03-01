@@ -34,6 +34,13 @@ const config = defineWorkspace([
 	},
 	// Libraries
 	{
+		extends: resolve(__dirname, "libs", "asset", "vitest.config.ts"),
+		test: {
+			include: [resolve(__dirname, "libs", "asset", "src", "**", "*.test.ts")],
+			name: "@libs/asset",
+		},
+	},
+	{
 		extends: resolve(__dirname, "libs", "config", "vitest.config.ts"),
 		test: {
 			include: [resolve(__dirname, "libs", "config", "src", "**", "*.test.ts")],

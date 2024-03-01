@@ -112,7 +112,7 @@ jobs:
         name: Lint
         uses: ./.github/workflows/size-limit.yml
         needs: [build_packages]
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
 
     lint_typos:
         name: Lint
@@ -122,18 +122,21 @@ jobs:
         name: Test
         uses: ./.github/workflows/vitest.yml
         needs: [build_packages]
+        if: github.event.pull_request.draft == false
         secrets: inherit
 
     publish_chromatic:
         name: Publish
         uses: ./.github/workflows/chromatic.yml
         needs: [build_packages]
+        if: github.event.pull_request.draft == false
         secrets: inherit
 
     publish_typedoc:
         name: Publish
         uses: ./.github/workflows/typedoc.yml
         needs: [build_packages]
+        if: github.event.pull_request.draft == false
         with:
             type: ${{ github.event_name == 'pull_request' && contains(fromJson('["opened", "reopened", "synchronize"]'), github.event.action) && 'pr-preview' || 'deploy' }}
 

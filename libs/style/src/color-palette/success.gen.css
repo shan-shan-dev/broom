@@ -1,0 +1,21 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+ * Color swatch - success
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#color-palette
+ */
+:root {
+	--color-success-50: oklch(96% 6% 133.5deg / 100%);
+	--color-success-100: oklch(95% 8.25% 133.5deg / 100%);
+	--color-success-200: oklch(94% 10.25% 133.1deg / 100%);
+	--color-success-300: oklch(91% 16.5% 134.2deg / 100%);
+	--color-success-400: oklch(84% 28.75% 135.1deg / 100%);
+	--color-success-500: oklch(77% 40.25% 135.7deg / 100%);
+	--color-success-600: oklch(71% 37% 135.8deg / 100%);
+	--color-success-700: oklch(62% 31.75% 135.7deg / 100%);
+	--color-success-800: oklch(53% 26.75% 135.8deg / 100%);
+	--color-success-900: oklch(46% 22.25% 135.4deg / 100%)
+}

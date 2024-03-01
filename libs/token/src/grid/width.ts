@@ -28,7 +28,7 @@ export class GridWidth<K extends GridWidthKey, V extends Val> implements DesignT
 	}
 
 	public get cssDec(): CSSDec<PrefixedKey<K>, V> {
-		return `${this.cssCustomProperty}:${this.value}`;
+		return `${this.cssCustomProperty}: ${this.value}`;
 	}
 
 	public get cssVar(): CSSVar<PrefixedKey<K>> {

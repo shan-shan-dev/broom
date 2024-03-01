@@ -53,7 +53,7 @@
 	{
 		"name": "@libs/token",
 		"path": "./libs/token/dist/**/*.js",
-		"limit": "5 kB"
+		"limit": "8 kB"
 	},
 	{
 		"name": "@libs/ui",

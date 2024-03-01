@@ -45,7 +45,7 @@ export class FontSize<K extends FontSizeKey, Min extends FontSizeMin, Max extend
 	}
 
 	public get cssDec(): CSSDec<PrefixedKey<K>, FluidClamp> {
-		return `${this.cssCustomProperty}:${this.clamp}`;
+		return `${this.cssCustomProperty}: ${this.clamp}`;
 	}
 
 	public get cssVar(): CSSVar<PrefixedKey<K>> {

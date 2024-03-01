@@ -1,0 +1,11 @@
+@import url("./color-palette/surface.gen.css");
+
+@import url("./color-palette/primary.gen.css");
+@import url("./color-palette/secondary.gen.css");
+
+@import url("./color-palette/error.gen.css");
+@import url("./color-palette/info.gen.css");
+@import url("./color-palette/success.gen.css");
+@import url("./color-palette/warning.gen.css");
+
+/* TODO: Add default styles */

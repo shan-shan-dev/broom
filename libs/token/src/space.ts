@@ -46,7 +46,7 @@ export class Space<K extends SpaceKey, V extends Val> implements DesignToken<Pre
 	}
 
 	public get cssDec(): CSSDec<PrefixedKey<K>, FluidClamp> {
-		return `${this.cssCustomProperty}:${this.clamp}`;
+		return `${this.cssCustomProperty}: ${this.clamp}`;
 	}
 
 	public get cssVar(): CSSVar<PrefixedKey<K>> {

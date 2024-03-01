@@ -7,6 +7,8 @@ import "../libs/asset/src/font/serif";
 
 import type { Preview } from "@storybook/svelte";
 
+import "../libs/style/src/global.css";
+
 const preview: Preview = {
 	parameters: {
 		controls: {

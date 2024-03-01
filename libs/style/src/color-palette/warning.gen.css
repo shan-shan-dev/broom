@@ -1,0 +1,21 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+ * Color swatch - warning
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#color-palette
+ */
+:root {
+	--color-warning-50: oklch(97% 7.5% 85.6deg / 100%);
+	--color-warning-100: oklch(97% 9.75% 83.8deg / 100%);
+	--color-warning-200: oklch(94% 12.25% 83.4deg / 100%);
+	--color-warning-300: oklch(91% 19.25% 84deg / 100%);
+	--color-warning-400: oklch(85% 31.75% 82.4deg / 100%);
+	--color-warning-500: oklch(79% 39.25% 77.6deg / 100%);
+	--color-warning-600: oklch(73% 36.25% 77.7deg / 100%);
+	--color-warning-700: oklch(64% 31.25% 77.8deg / 100%);
+	--color-warning-800: oklch(54% 26.5% 78.3deg / 100%);
+	--color-warning-900: oklch(47% 22.75% 78.2deg / 100%)
+}

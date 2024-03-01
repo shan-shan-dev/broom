@@ -43,7 +43,7 @@ export interface DesignToken<K extends Key, V extends Val> {
  * CSS custom property declaration.
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#declaring_custom_properties}
  */
-export type CSSDec<K extends Key, V extends number | string> = `--${K}:${V}`;
+export type CSSDec<K extends Key, V extends number | string> = `--${K}: ${V}`;
 
 /**
  * The CSS `var()` function  _(reference to custom property)_ associated with the design token.

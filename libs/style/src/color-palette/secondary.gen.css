@@ -1,0 +1,21 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+ * Color swatch - secondary
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#color-palette
+ */
+:root {
+	--color-secondary-50: oklch(97% 3% 157deg / 100%);
+	--color-secondary-100: oklch(96% 4% 154.5deg / 100%);
+	--color-secondary-200: oklch(95% 5% 154.9deg / 100%);
+	--color-secondary-300: oklch(92% 8% 154.1deg / 100%);
+	--color-secondary-400: oklch(86% 14.25% 152.9deg / 100%);
+	--color-secondary-500: oklch(80% 20.25% 152.2deg / 100%);
+	--color-secondary-600: oklch(74% 18.25% 152.6deg / 100%);
+	--color-secondary-700: oklch(65% 16.25% 152.4deg / 100%);
+	--color-secondary-800: oklch(55% 13.5% 151.8deg / 100%);
+	--color-secondary-900: oklch(48% 11.25% 152.5deg / 100%)
+}

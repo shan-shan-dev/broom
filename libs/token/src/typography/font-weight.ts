@@ -31,7 +31,7 @@ export class FontWeight<F extends FontFamilyKey, K extends FontWeightKey, V exte
 	}
 
 	public get cssDec(): CSSDec<PrefixedKey<F, K>, V> {
-		return `${this.cssCustomProperty}:${this.value}`;
+		return `${this.cssCustomProperty}: ${this.value}`;
 	}
 
 	public get cssVar(): CSSVar<PrefixedKey<F, K>> {

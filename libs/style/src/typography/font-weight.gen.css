@@ -1,0 +1,21 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+ * Font weights
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#typography
+ */
+:root {
+	--font-mono-weight-regular: 400;
+	--font-mono-weight-bold: 700;
+	--font-sans-weight-light: 300;
+	--font-sans-weight-medium: 500;
+	--font-sans-weight-bold: 700;
+	--font-sans-weight-black: 900;
+	--font-serif-weight-light: 300;
+	--font-serif-weight-medium: 500;
+	--font-serif-weight-bold: 700;
+	--font-serif-weight-black: 900;
+}

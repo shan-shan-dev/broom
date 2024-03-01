@@ -1,0 +1,21 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+ * Color swatch - info
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#color-palette
+ */
+:root {
+	--color-info-50: oklch(95% 7% 210.5deg / 100%);
+	--color-info-100: oklch(93% 9.25% 209.1deg / 100%);
+	--color-info-200: oklch(92% 11.5% 208.2deg / 100%);
+	--color-info-300: oklch(87% 18% 209.2deg / 100%);
+	--color-info-400: oklch(78% 27.75% 210.8deg / 100%);
+	--color-info-500: oklch(71% 31.5% 215.2deg / 100%);
+	--color-info-600: oklch(66% 29% 215.1deg / 100%);
+	--color-info-700: oklch(58% 25.25% 214.4deg / 100%);
+	--color-info-800: oklch(49% 21.5% 214.5deg / 100%);
+	--color-info-900: oklch(43% 18.5% 214.4deg / 100%)
+}

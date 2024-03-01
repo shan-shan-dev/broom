@@ -1,0 +1,21 @@
+/**
+ * WARN: Do not edit manually!
+ * This file is generated automatically via `build` script.
+ */
+
+/**
+ * Color swatch - primary
+ * Reference: https://shan-shan.gitbook.io/handbook/design/brandbook/broom#color-palette
+ */
+:root {
+	--color-primary-50: oklch(95% 6.75% 69.3deg / 100%);
+	--color-primary-100: oklch(94% 9% 70deg / 100%);
+	--color-primary-200: oklch(92% 11.25% 69.4deg / 100%);
+	--color-primary-300: oklch(88% 18.25% 69.3deg / 100%);
+	--color-primary-400: oklch(79% 30.75% 66.2deg / 100%);
+	--color-primary-500: oklch(71% 40.25% 59.7deg / 100%);
+	--color-primary-600: oklch(66% 37.25% 60deg / 100%);
+	--color-primary-700: oklch(58% 32.25% 60.3deg / 100%);
+	--color-primary-800: oklch(49% 27% 60.6deg / 100%);
+	--color-primary-900: oklch(43% 23% 61.5deg / 100%)
+}

@@ -322,6 +322,18 @@ importers:
         specifier: 4.7.8
         version: 4.7.8
 
+  libs/style:
+    devDependencies:
+      '@libs/logger':
+        specifier: workspace:*
+        version: link:../logger
+      '@libs/token':
+        specifier: workspace:*
+        version: link:../token
+      handlebars:
+        specifier: 4.7.8
+        version: 4.7.8
+
   libs/token:
     dependencies:
       '@libs/util':

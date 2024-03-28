@@ -45,7 +45,7 @@ jobs:
 
             - name: Create .env file
               # https://github.com/SpicyPizza/create-envfile
-              uses: SpicyPizza/create-envfile@v2.0.2
+              uses: SpicyPizza/create-envfile@v2.0.3
               with:
                   envkey_DEBUG: true
                   envkey_LOG: debug

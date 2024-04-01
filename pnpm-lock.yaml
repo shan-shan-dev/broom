@@ -76,8 +76,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       happy-dom:
-        specifier: 13.3.8
-        version: 13.3.8
+        specifier: 14.3.9
+        version: 14.3.9
       lefthook:
         specifier: 1.6.1
         version: 1.6.1
@@ -113,7 +113,7 @@ importers:
         version: 1.1.2(typedoc@0.25.12)
       vitest:
         specifier: 1.4.0
-        version: 1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@13.3.8)
+        version: 1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@14.3.9)
     devDependencies:
       '@terminal-nerds/typescript-config':
         specifier: 0.10.1
@@ -4717,7 +4717,7 @@ packages:
       dom-accessibility-api: 0.6.3
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@13.3.8)
+      vitest: 1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@14.3.9)
     dev: false
     optional: true
 
@@ -5088,7 +5088,7 @@ packages:
       strip-literal: 2.0.0
       test-exclude: 6.0.0
       v8-to-istanbul: 9.2.0
-      vitest: 1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@13.3.8)
+      vitest: 1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@14.3.9)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -5163,7 +5163,7 @@ packages:
       pathe: 1.1.2
       picocolors: 1.0.0
       sirv: 2.0.4
-      vitest: 1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@13.3.8)
+      vitest: 1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@14.3.9)
     dev: false
     optional: true
 
@@ -8597,8 +8597,8 @@ packages:
     optionalDependencies:
       uglify-js: 3.17.4
 
-  /happy-dom@13.3.8:
-    resolution: {integrity: sha512-RAbq4oYfJNkVan1m1F3jfA4YEyRY0/ASoNvZsNJbuX85jIypidmsz9jQZD7Tqz0VXA2MhAGfcsh5oshwmwNYSg==}
+  /happy-dom@14.3.9:
+    resolution: {integrity: sha512-0kPQchwthekcYpYN8CvCiq+/z5bqFYDLbTxZ+yDLwT8AFRVJDFadShHRxp3VAZRy7a5isOZ1j/LzsU1dtAIZMQ==}
     engines: {node: '>=16.0.0'}
     requiresBuild: true
     dependencies:
@@ -14582,7 +14582,7 @@ packages:
     dependencies:
       vite: 5.1.4(@types/node@20.11.16)
 
-  /vitest@1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@13.3.8):
+  /vitest@1.4.0(@types/node@20.11.16)(@vitest/ui@1.4.0)(happy-dom@14.3.9):
     resolution: {integrity: sha512-gujzn0g7fmwf83/WzrDTnncZt2UiXP41mHuFYFrdwaLRVQ6JYQEiME2IfEjU3vcFL3VKa75XhI3lFgn+hfVsQw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -14619,7 +14619,7 @@ packages:
       chai: 4.4.1
       debug: 4.3.4
       execa: 8.0.1
-      happy-dom: 13.3.8
+      happy-dom: 14.3.9
       local-pkg: 0.5.0
       magic-string: 0.30.7
       pathe: 1.1.2

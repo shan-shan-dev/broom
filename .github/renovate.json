@@ -23,11 +23,6 @@
 			"packagePatterns": ["chromatic", "storybook", "typedoc"]
 		},
 		{
-			"groupName": "GitHub actions",
-			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"fileMatch": ["^/\\.github/workflows/.+\\.ya?ml$"]
-		},
-		{
 			"groupName": "testing dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
 			"packagePatterns": ["happydom", "vitest"]

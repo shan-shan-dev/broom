@@ -45,6 +45,6 @@
 		"@libs/logger": "workspace:*",
 		"@libs/util": "workspace:*",
 		"drizzle-orm": "0.29.3",
-		"postgres": "3.4.3"
+		"postgres": "3.4.4"
 	}
 }

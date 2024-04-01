@@ -5,7 +5,7 @@
 		{
 			"groupName": "build dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["tslib", "tsup", "turbo", "typescript", "vite"]
+			"packagePatterns": ["tslib", "tsup", "tsx", "turbo", "typescript", "vite"]
 		},
 		{
 			"groupName": "CI dependencies",
@@ -23,6 +23,11 @@
 			"packagePatterns": ["chromatic", "storybook", "typedoc"]
 		},
 		{
+			"groupName": "i18n dependencies",
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["inlang"]
+		},
+		{
 			"groupName": "testing dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
 			"packagePatterns": ["happydom", "vitest"]
@@ -30,7 +35,7 @@
 		{
 			"groupName": "workspace types dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"matchPackageNames": ["@types/node", "@total-typescript/ts-reset"]
+			"matchPackageNames": ["@types/node", "@total-typescript/ts-reset", "type-fest"]
 		},
 		{
 			"groupName": "`@apps/api` dependencies",
@@ -45,7 +50,7 @@
 		{
 			"groupName": "`@libs/database` types dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["drizzle-orm"]
+			"packagePatterns": ["drizzle-orm", "postgres"]
 		},
 		{
 			"groupName": "`@libs/logger` types dependencies",
@@ -53,9 +58,10 @@
 			"packagePatterns": ["pino"]
 		},
 		{
-			"groupName": "`@libs/ui` types dependencies",
+			"groupName": "`@libs/ui` dependencies",
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["svelte"]
+			"packagePatterns": ["svelte"],
+			"excludePackagePatterns": ["inlang", "storybook"]
 		}
 	]
 }

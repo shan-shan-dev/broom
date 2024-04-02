@@ -19,6 +19,9 @@ const config = {
 		files: {
 			lib: resolve(__dirname, "src", "lib"),
 		},
+		prerender: {
+			handleHttpError: "warn",
+		},
 	},
 };
 

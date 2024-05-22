@@ -37,8 +37,8 @@
 		"test": "vitest run --dir \"./src\" --passWithNoTests --typecheck"
 	},
 	"dependencies": {
-		"@fontsource-variable/noto-sans-mono": "5.0.18",
-		"@fontsource-variable/noto-sans-tc": "5.0.4",
-		"@fontsource/noto-serif-tc": "5.0.11"
+		"@fontsource-variable/noto-sans-mono": "5.0.20",
+		"@fontsource-variable/noto-sans-tc": "5.0.6",
+		"@fontsource/noto-serif-tc": "5.0.13"
 	}
 }

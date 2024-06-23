@@ -84,7 +84,7 @@
 		"@vitest/coverage-v8": "1.4.0",
 		"@vitest/ui": "1.4.0",
 		"del-cli": "5.1.0",
-		"happy-dom": "14.3.9",
+		"happy-dom": "14.12.3",
 		"lefthook": "1.6.7",
 		"markdownlint-cli2": "0.12.1",
 		"prettier": "3.2.5",

@@ -39,6 +39,6 @@
 	},
 	"dependencies": {
 		"@libs/util": "workspace:*",
-		"utopia-core": "1.3.0"
+		"utopia-core": "1.6.0"
 	}
 }

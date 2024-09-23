@@ -75,7 +75,7 @@ jobs:
 
             - name: Start Docker container(s)
               # https://github.com/isbang/compose-action
-              uses: isbang/compose-action@v1.5.1
+              uses: isbang/compose-action@v2.0.2
               with:
                   compose-file: "./packages/database/docker-compose.yml"
                   compose-flags: "--env-file ./.env"

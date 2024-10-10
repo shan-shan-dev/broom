@@ -50,11 +50,11 @@
 		"prepare": "pnpm run compile"
 	},
 	"dependencies": {
-		"@inlang/paraglide-js": "1.3.5",
+		"@inlang/paraglide-js": "1.11.3",
 		"@libs/logger": "workspace:*",
 		"@libs/path": "workspace:*"
 	},
 	"devDependencies": {
-		"@inlang/cli": "2.13.3"
+		"@inlang/cli": "2.18.1"
 	}
 }

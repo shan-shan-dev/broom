@@ -46,6 +46,6 @@
 	},
 	"devDependencies": {
 		"fastify-cli": "6.1.0",
-		"tsup": "8.0.2"
+		"tsup": "8.3.0"
 	}
 }

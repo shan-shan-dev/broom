@@ -57,7 +57,7 @@ jobs:
                   | bash -s build-output
 
             # https://github.com/andresz1/size-limit-action
-            - uses: andresz1/size-limit-action@v1.7.0
+            - uses: andresz1/size-limit-action@v1.8.0
               with:
                   build_script: build:pkg
                   github_token: ${{ secrets.GITHUB_TOKEN }}
